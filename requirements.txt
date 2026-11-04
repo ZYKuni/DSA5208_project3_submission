@@ -12,5 +12,4 @@
 # not Python dependencies. C's optional targets use MPI/OpenMP system runtimes.
 # Performance collection/statistics remain stdlib-only. Plot/PDF dependencies
 # are isolated in requirements-analysis.txt and the development Dockerfile.
-# See docs/A/dependencies.md for requirements, verification and update policy.
 # Add packages only when the corresponding scripts actually use them.

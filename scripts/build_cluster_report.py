@@ -156,9 +156,9 @@ def generate(measure, pilot, output):
     para('These are measured results from a completed PBS allocation. Fixed-iteration workloads test execution efficiency; a separate small-grid convergence experiment tests time to solution. No real dataset is used.','SmallReport')
     para('Keywords: Jacobi iteration; domain decomposition; halo exchange; hybrid parallelism; strong and weak scaling.','SmallReport')
     sub('Provenance and code availability')
-    para(f'Performance PBS job: {manifest["job_id"]}. Validation PBS job: 1514325.stdct-mgmt-02. Fixed source revision: {source["revision"]}. All per-run commands, standard output, standard error, verdicts, source hashes, and executable hashes are archived with the report source.','SmallReport')
+    para(f'Performance PBS job: {manifest["job_id"]}. Validation PBS job: 1514325.stdct-mgmt-02. Fixed source revision: {source["revision"]}.','SmallReport')
 
-    para('Planned submission repository: <link href="'+team['submission_repository']+'" color="#157C80">github.com/ZYKuni/DSA5208_project3_submission</link>. This report is accompanied by a self-contained source package; repository migration is pending.','SmallReport')
+    para('Source code and run instructions: <link href="'+team['submission_repository']+'" color="#157C80">github.com/ZYKuni/DSA5208_project3_submission</link>.','SmallReport')
 
     page();heading('1. Algorithm and numerical contract')
     para('We solve -Δu = f on Ω = (0,1)<super>2</super> with u = 0 on the boundary. The grid has N x N interior points and spacing h=1/(N+1). A five-point finite difference stencil gives a sparse linear system. Jacobi updates each interior value using only the previous iterate, so the update is easy to parallelize locally but requires consistent neighbor values across MPI subdomains.')
@@ -208,7 +208,7 @@ def generate(measure, pilot, output):
     table([['Interior grid N','Maximum error in continuous-sine solution','Error ratio']]+[[n,f'{error:.6e}','-' if i==0 else f'{local["refinement_ratios"][i-1]:.4f}'] for i,(n,error) in enumerate(zip((7,15,31),local['refinement_max_errors']))],[100,260,123])
     para('Serial manufactured-solution refinement, recorded in the later Linux verification. Halving h reduces the maximum error by approximately four, consistent with the second-order spatial stencil. These error values are correctness evidence, not additional Vanda timing samples.','SmallReport')
     para('A subsequent portable verification expanded the mixed matrix to 390 cases plus five negative cases, including the missing OpenMP-kernel layouts 1 x 4, 2 x 1, and 3 x 1 under both exchange methods. Fresh Ubuntu builds and GitHub x86_64 CI passed all four configurations: serial (6 CTest groups), MPI (7), OpenMP (8), and hybrid (9). A source-package extraction was independently rebuilt and checked. The measured solver sources and CMake remain identical to the Vanda revision; later test counts must not be substituted for the historical 294 Vanda cases.')
-    para('Reproducibility records: docs/A/results/A_1104/local, package, and remote. The independent archive audit checks all 180 launches, 150 measured samples, 30 configurations, original evidence archive hashes, and the statistics used below.','SmallReport')
+    para('An independent audit of the Vanda job output checked all 180 launches, 150 measured samples, 30 configurations, evidence archive hashes, and the statistics used below.','SmallReport')
 
     page();heading('4. Experimental method')
     table([['Measurement environment','Recorded value'],['Platform / allocation',f'Vanda; 1 node; {cfg["assigned_physical_cores"]} assigned physical cores'],
@@ -269,8 +269,8 @@ def generate(measure, pilot, output):
     sub('AI usage')
     para('An OpenAI coding assistant supported implementation, code review, testing, command execution, evidence checking, figures, and drafting. Team members remain responsible for experimental design and interpretation. AI-generated prose and synthetic fixtures were not treated as measured evidence; performance claims trace to archived Vanda logs and validation output.','SmallReport')
 
-    page();heading('8. Reproduction and evidence index')
-    para('The root README describes the four executables and local build/test commands. The cluster scripts contain PBS requests, compute-node compilation, correctness validation, calibration, affinity checks, collection, and aggregation. Use a project allocation authorized for your own account; account-specific uploaded filenames are retained in submitted_script.pbs.')
+    page();heading('8. Reproduction')
+    para('The root README describes the four executables and local build/test commands. The cluster scripts contain PBS requests, compute-node compilation, correctness validation, calibration, affinity checks, collection, and aggregation. Use a project allocation authorized for your own account.')
     code=f"""cmake -S . -B build -DCMAKE_BUILD_TYPE=Release \\
   -DENABLE_MPI=ON -DENABLE_OPENMP=ON
 cmake --build build --parallel 2
@@ -281,21 +281,13 @@ OMP_NUM_THREADS=4 mpiexec --map-by slot:PE=4 \\
   --n 2048 --mode fixed --iterations {cfg['calibrated_iterations']} \\
   --check-every 10 --communication sendrecv"""
     story.append(Preformatted(code,styles['CodeBlock']))
-    para('Run from the submission directory. Install GCC, CMake, Python 3, and Open MPI development/runtime tools first. Backslashes above continue shell commands. Quick correctness runs on small machines should set OMP_WAIT_POLICY=PASSIVE and OMP_DYNAMIC=FALSE; do not reuse that setting as the formal ACTIVE timing environment. The archived collection/config.json is authoritative for the reported experiments.','SmallReport')
-    table([['Evidence item','Purpose'],['source_archive.json','Source revision and uploaded archive SHA256'],
-           ['submitted_script.pbs / preparation.py','Exact job and matrix generator used'],['job_sources.sha256','Hashes of experiment scripts'],
-           ['scheduler.txt / job.log','Actual scheduler resources, node, modules, exit status'],
-           ['collection/manifest.json','Compiler/runtime versions; source and executable hashes'],
-           ['collection/config.json','Workloads, repeats, placement, affinity probe evidence'],
-           ['collection/run-*/','Commands, stdout, stderr, result, and verdict for each launch'],
-           ['summary/summary.json and .csv','Median, min, max, speedup, efficiency'],
-           ['Pilot evidence archive','Validation matrices, residual checks, calibration and binding logs']],[210,273])
+    para('Run from the submission directory. Install GCC, CMake, Python 3, and Open MPI development/runtime tools first. Backslashes above continue shell commands. Quick correctness runs on small machines should set OMP_WAIT_POLICY=PASSIVE and OMP_DYNAMIC=FALSE; do not reuse that setting as the formal ACTIVE timing environment.','SmallReport')
     para('Fixed source archive SHA256:<br/>'+source['sha256'],'SmallReport')
     sub('References')
     para('[1] Open MPI 4.1.8, MPI_Init_thread documentation. <link href="https://www.open-mpi.org/doc/v4.1/man3/MPI_Init_thread.3.php" color="#174B78">Official reference</link>. Thread-support semantics; accessed 3 November 2026.','SmallReport')
     para('[2] OpenMP API 5.0, section 2.9.2, Worksharing-Loop Construct. <link href="https://www.openmp.org/spec-html/5.0/openmpsu41.html" color="#174B78">Official specification</link>. Cited for basic loop semantics, not as a claim of runtime version.','SmallReport')
     para('[3] Open MPI 4.1.8, mpirun documentation. <link href="https://www.open-mpi.org/doc/v4.1/man1/mpirun.1.php" color="#174B78">Official reference</link>. Rank mapping and core binding.','SmallReport')
-    para('[4] Project source: docs/A/algorithm.md, docs/B/mpi_design.md, src/solver_mpi.cpp, src/kernel_openmp.cpp, and the validation scripts at the fixed revision above. Numerical equations and implementation descriptions are derived directly from these sources.','SmallReport')
+    para('[4] Project source: src/solver_mpi.cpp, src/kernel_openmp.cpp, and the validation scripts in the submission repository. Numerical equations and implementation descriptions are derived directly from these sources.','SmallReport')
 
     def footer(canvas,doc):
         canvas.saveState();canvas.setStrokeColor(colors.HexColor('#D5E0EA'));canvas.line(48,41,547,41)
