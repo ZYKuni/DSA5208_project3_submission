@@ -1,0 +1,15 @@
+{
+  "started_utc": "2026-10-27T09:58:11.986528+00:00",
+  "python": "3.11.2 (main, Oct  7 2026, 12:35:07) [GCC 12.2.0]",
+  "executable": "/work/build-c/poisson_hybrid",
+  "executable_sha256": "9054591273244b9878bc6ebd4f35bba86c3968bdac33c28559e822c686e2503d",
+  "config_sha256": "6aad2fe6009a62e9a5b939ae786b378dbf2862a90491e6bfa1d611115afe95cd",
+  "validation_tools_sha256": {
+    "run_acceptance.py": "ca320a0844cbef1b3c5d0777c44af580ba66c03b0e0daf4960eeda679dbfaf40",
+    "compare_grids.py": "f472208a20a9bbda2348b0f2359063f88f74237fc96229c54e46fb2bc0133e33",
+    "validation_oracle.py": "4ea4eb23a8377a7ad6a5a026003b8406d8401e0f619b960d0a130f5baa90fbe5"
+  },
+  "git_commit": "a93b614de41faeceef732f25a34c5d3dc28a88c2",
+  "working_tree_dirty": true,
+  "scope": "correctness_only; platform and parallel execution are not certified by this runner"
+}

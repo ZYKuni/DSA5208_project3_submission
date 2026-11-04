@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "reference": "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/acceptance/single_cell/reference.csv",
+  "candidate": "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/acceptance/single_cell/candidate.csv",
+  "n": 1,
+  "boundary_atol": 0.0,
+  "status": "PASS",
+  "points": 9,
+  "mismatched_points": 0,
+  "max_abs_error": 2.220446049250313e-16,
+  "worst_coordinate": [
+    1,
+    1
+  ],
+  "absolute_l2_error": 2.220446049250313e-16,
+  "reference_l2": 1.23370055013617,
+  "relative_l2_error": 1.7998257753919546e-16,
+  "l2_error_kind": "relative",
+  "atol": 1e-10,
+  "rtol": 1e-10,
+  "pass_rule": "all points satisfy abs(candidate-reference) <= atol + rtol*abs(reference)"
+}

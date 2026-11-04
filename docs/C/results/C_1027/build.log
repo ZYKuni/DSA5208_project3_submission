@@ -1,0 +1,4 @@
+[1/4] Building CXX object CMakeFiles/poisson_openmp.dir/src/c_hybrid_main.cpp.o
+[2/4] Linking CXX executable poisson_openmp
+[3/4] Building CXX object CMakeFiles/poisson_hybrid.dir/src/c_hybrid_main.cpp.o
+[4/4] Linking CXX executable poisson_hybrid

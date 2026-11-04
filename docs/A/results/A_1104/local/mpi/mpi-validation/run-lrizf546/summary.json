@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "numerical_cases": 124,
+  "negative_cases": 4,
+  "failures": [],
+  "evidence": "/evidence/mpi/build/mpi-validation/run-lrizf546/evidence.json"
+}

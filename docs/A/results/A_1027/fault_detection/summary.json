@@ -1,0 +1,142 @@
+[
+  {
+    "fault": "transpose",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "status": "FAIL",
+    "max_abs_error": 1.0156538002961688,
+    "detected": true,
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/scripts/compare_grids.py",
+      "--reference",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/acceptance/mixed_k5/reference.csv",
+      "--candidate",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/transpose.csv",
+      "--n",
+      "7",
+      "--report",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/transpose.json"
+    ]
+  },
+  {
+    "fault": "flip_rows",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "status": "FAIL",
+    "max_abs_error": 1.278673976130537,
+    "detected": true,
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/scripts/compare_grids.py",
+      "--reference",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/acceptance/mixed_k5/reference.csv",
+      "--candidate",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/flip_rows.csv",
+      "--n",
+      "7",
+      "--report",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/flip_rows.json"
+    ]
+  },
+  {
+    "fault": "flip_columns",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "status": "FAIL",
+    "max_abs_error": 0.6663749778158707,
+    "detected": true,
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/scripts/compare_grids.py",
+      "--reference",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/acceptance/mixed_k5/reference.csv",
+      "--candidate",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/flip_columns.csv",
+      "--n",
+      "7",
+      "--report",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/flip_columns.json"
+    ]
+  },
+  {
+    "fault": "missing_point",
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "status": "ERROR",
+    "max_abs_error": null,
+    "detected": true,
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/scripts/compare_grids.py",
+      "--reference",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/acceptance/mixed_k5/reference.csv",
+      "--candidate",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/missing_point.csv",
+      "--n",
+      "7",
+      "--report",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/missing_point.json"
+    ]
+  },
+  {
+    "fault": "duplicate_point",
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "status": "ERROR",
+    "max_abs_error": null,
+    "detected": true,
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/scripts/compare_grids.py",
+      "--reference",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/acceptance/mixed_k5/reference.csv",
+      "--candidate",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/duplicate_point.csv",
+      "--n",
+      "7",
+      "--report",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/duplicate_point.json"
+    ]
+  },
+  {
+    "fault": "nan_value",
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "status": "ERROR",
+    "max_abs_error": null,
+    "detected": true,
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/scripts/compare_grids.py",
+      "--reference",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/acceptance/mixed_k5/reference.csv",
+      "--candidate",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/nan_value.csv",
+      "--n",
+      "7",
+      "--report",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/nan_value.json"
+    ]
+  },
+  {
+    "fault": "nonzero_boundary",
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "status": "ERROR",
+    "max_abs_error": null,
+    "detected": true,
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/scripts/compare_grids.py",
+      "--reference",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/acceptance/mixed_k5/reference.csv",
+      "--candidate",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/nonzero_boundary.csv",
+      "--n",
+      "7",
+      "--report",
+      "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/nonzero_boundary.json"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "/evidence/verification/build/poisson_serial",
+    "--n",
+    "15",
+    "--mode",
+    "converge",
+    "--problem",
+    "continuous-sine",
+    "--iterations",
+    "20000",
+    "--tol",
+    "1e-11",
+    "--check-every",
+    "5",
+    "--solution",
+    "/evidence/verification/acceptance/continuous_converged/candidate.csv"
+  ],
+  "cwd": "/",
+  "env_overrides": {},
+  "thread_environment": {
+    "OMP_NUM_THREADS": null,
+    "OMP_PLACES": null,
+    "OMP_PROC_BIND": null
+  },
+  "timeout_seconds": 30
+}

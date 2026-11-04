@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "commit": "4ddfc9103541576022767216a22f21598e33bde6",
+  "run_url": "https://github.com/ZYKuni/NUS_DSA5208_project3/actions/runs/41837165001",
+  "modes": {
+    "serial": {
+      "exit_code": 0,
+      "ctest_passed": 6,
+      "source_files_verified": 67
+    },
+    "mpi": {
+      "exit_code": 0,
+      "ctest_passed": 7,
+      "source_files_verified": 67
+    },
+    "openmp": {
+      "exit_code": 0,
+      "ctest_passed": 8,
+      "source_files_verified": 67
+    },
+    "hybrid": {
+      "exit_code": 0,
+      "ctest_passed": 9,
+      "source_files_verified": 67
+    }
+  },
+  "scope": "Downloaded artifacts checked against current runtime sources; compact per-case evidence excludes repeated full-grid CSVs."
+}

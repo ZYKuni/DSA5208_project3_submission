@@ -1,0 +1,22 @@
+Sat Oct 31 08:18:56 UTC 2026
+Linux 736ec8faeafa 6.10.14-linuxkit #1 SMP Thu Aug 14 19:26:13 UTC 2025 aarch64 aarch64 aarch64 GNU/Linux
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+cmake version 3.28.3
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Python 3.12.3
+MPICH Version:      4.2.0
+MPICH Release date: Fri Feb  9 12:29:21 CST 2024
+MPICH ABI:          16:0:4
+MPICH Device:       ch4:ucx
+MPICH configure:    --build=aarch64-linux-gnu --prefix=/usr --includedir=${prefix}/include --mandir=${prefix}/share/man --infodir=${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-option-checking --disable-silent-rules --libdir=${prefix}/lib/aarch64-linux-gnu --runstatedir=/run --disable-maintainer-mode --disable-dependency-tracking --with-pmix=/usr/lib/aarch64-linux-gnu/pmix2 --with-ucx=/usr --with-device=ch4:ucx --with-pm=hydra --with-hwloc-prefix=/usr --with-wrapper-dl-type=none --enable-shared --without-yaksa --prefix=/usr --enable-fortran=all --disable-rpath --disable-wrapper-rpath --sysconfdir=/etc/mpich --libdir=${prefix}/lib/aarch64-linux-gnu/mpich/lib --includedir=${prefix}/lib/aarch64-linux-gnu/mpich/include --docdir=/usr/share/doc/mpich CPPFLAGS= CFLAGS= CXXFLAGS= FFLAGS=-O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -mbranch-protection=standard -fdebug-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=/usr/src/mpich-4.2.0-5build3 -fallow-invalid-boz -fallow-argument-mismatch FCFLAGS=-O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -mbranch-protection=standard -fdebug-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=/usr/src/mpich-4.2.0-5build3 -fallow-invalid-boz -fallow-argument-mismatch BASH_SHELL=/bin/bash
+MPICH CC:           gcc  -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -mbranch-protection=standard -fdebug-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=/usr/src/mpich-4.2.0-5build3  -O2
+MPICH CXX:          g++  -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -mbranch-protection=standard -fdebug-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=/usr/src/mpich-4.2.0-5build3 -O2
+MPICH F77:          gfortran -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -mbranch-protection=standard -fdebug-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=/usr/src/mpich-4.2.0-5build3  -fallow-invalid-boz -fallow-argument-mismatch -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -mbranch-protection=standard -fdebug-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=/usr/src/mpich-4.2.0-5build3 -cpp  -fallow-invalid-boz -fallow-argument-mismatch -O2
+MPICH FC:           gfortran -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -mbranch-protection=standard -fdebug-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=/usr/src/mpich-4.2.0-5build3  -fallow-invalid-boz -fallow-argument-mismatch -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -mbranch-protection=standard -fdebug-prefix-map=/build/mpich-oZNZah/mpich-4.2.0=/usr/src/mpich-4.2.0-5build3 -cpp  -fallow-invalid-boz -fallow-argument-mismatch -O2
+MPICH features:     threadcomm
+

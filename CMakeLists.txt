@@ -1,0 +1,78 @@
+cmake_minimum_required(VERSION 3.16)
+project(project3_poisson LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+option(ENABLE_SANITIZERS "Enable address and undefined behavior checks" OFF)
+option(ENABLE_OPENMP "Build OpenMP kernels and hybrid solver" OFF)
+option(ENABLE_MPI "Build MPI-only Sendrecv and overlap solvers" OFF)
+add_library(poisson_core src/grid.cpp src/kernel_serial.cpp src/solver_serial.cpp src/cli.cpp src/decomposition.cpp)
+target_include_directories(poisson_core PUBLIC include)
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
+  target_compile_options(poisson_core PUBLIC -Wall -Wextra -Wpedantic)
+  if(ENABLE_SANITIZERS)
+    target_compile_options(poisson_core PUBLIC -fsanitize=address,undefined -fno-omit-frame-pointer)
+    target_link_options(poisson_core PUBLIC -fsanitize=address,undefined)
+  endif()
+endif()
+add_executable(poisson_serial src/serial_main.cpp)
+target_link_libraries(poisson_serial PRIVATE poisson_core)
+if(ENABLE_MPI)
+  find_package(MPI REQUIRED COMPONENTS CXX)
+  add_library(poisson_mpi_core src/halo.cpp src/solver_mpi.cpp)
+  target_link_libraries(poisson_mpi_core PUBLIC poisson_core MPI::MPI_CXX)
+  add_executable(poisson_mpi src/mpi_main.cpp)
+  target_link_libraries(poisson_mpi PRIVATE poisson_mpi_core)
+endif()
+if(ENABLE_OPENMP)
+  find_package(OpenMP REQUIRED COMPONENTS CXX)
+  add_library(poisson_openmp_core src/kernel_openmp.cpp)
+  target_link_libraries(poisson_openmp_core PUBLIC poisson_core OpenMP::OpenMP_CXX)
+  add_executable(poisson_openmp src/c_hybrid_main.cpp)
+  target_link_libraries(poisson_openmp PRIVATE poisson_openmp_core)
+  if(ENABLE_MPI)
+    add_executable(poisson_hybrid src/hybrid_main.cpp)
+    target_link_libraries(poisson_hybrid PRIVATE poisson_openmp_core poisson_mpi_core)
+  endif()
+endif()
+include(CTest)
+if(BUILD_TESTING)
+  add_executable(test_core tests/test_core.cpp)
+  target_link_libraries(test_core PRIVATE poisson_core)
+  add_test(NAME core_contract COMMAND test_core)
+  add_executable(test_decomposition tests/test_decomposition.cpp)
+  target_link_libraries(test_decomposition PRIVATE poisson_core)
+  add_test(NAME decomposition_contract COMMAND test_decomposition)
+  find_package(Python3 3.8 COMPONENTS Interpreter REQUIRED)
+  add_test(NAME serial_validation COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/validate_serial.py
+    --exe $<TARGET_FILE:poisson_serial>
+    --output ${CMAKE_CURRENT_BINARY_DIR}/validation)
+  add_test(NAME grid_comparison_contract COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_compare_grids.py)
+  add_test(NAME acceptance_contract COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_acceptance.py --exe $<TARGET_FILE:poisson_serial>)
+  set_tests_properties(core_contract serial_validation grid_comparison_contract acceptance_contract
+    PROPERTIES TIMEOUT 120)
+  add_test(NAME experiment_metrics COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_experiments.py)
+  if(ENABLE_OPENMP)
+    add_executable(test_openmp tests/test_openmp.cpp)
+    target_link_libraries(test_openmp PRIVATE poisson_openmp_core)
+    add_test(NAME openmp_contract COMMAND test_openmp)
+    add_test(NAME parallel_acceptance COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_parallel.py --bin-dir ${CMAKE_CURRENT_BINARY_DIR}
+      --output ${CMAKE_CURRENT_BINARY_DIR}/parallel-acceptance
+      --mpiexec "${MPIEXEC_EXECUTABLE}")
+    set_tests_properties(openmp_contract PROPERTIES TIMEOUT 120)
+    set_tests_properties(parallel_acceptance PROPERTIES TIMEOUT 600 PROCESSORS 4)
+  endif()
+  if(ENABLE_MPI)
+    add_test(NAME mpi_validation COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_CURRENT_SOURCE_DIR}/tests/validate_mpi.py
+      --exe $<TARGET_FILE:poisson_mpi> --serial $<TARGET_FILE:poisson_serial>
+      --mpiexec ${MPIEXEC_EXECUTABLE} --numproc-flag=${MPIEXEC_NUMPROC_FLAG}
+      --output ${CMAKE_CURRENT_BINARY_DIR}/mpi-validation)
+    set_tests_properties(mpi_validation PROPERTIES TIMEOUT 240 PROCESSORS 4)
+  endif()
+endif()

@@ -1,0 +1,4 @@
+# Versions used locally for the Vanda group report (Python 3.12).
+# Solver, validation, collection and aggregation do not need these packages.
+matplotlib==3.10.7
+reportlab==4.4.9

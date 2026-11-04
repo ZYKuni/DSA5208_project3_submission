@@ -1,0 +1,42 @@
+name: Linux GCC reproducibility
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  linux-gcc:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        mode: [serial, mpi, openmp, hybrid]
+    env:
+      # Correctness only: permit 4 ranks even on a small hosted runner.
+      OMPI_MCA_rmaps_base_oversubscribe: "1"
+      OMPI_MCA_hwloc_base_binding_policy: none
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install system build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y gcc g++ cmake make python3
+      - name: Install matching Open MPI development tools and launcher
+        if: matrix.mode == 'mpi' || matrix.mode == 'hybrid'
+        run: sudo apt-get install --no-install-recommends -y openmpi-bin libopenmpi-dev
+      - name: Build, CTest and independent acceptance
+        run: bash scripts/verify_linux.sh build-linux-evidence "${{ matrix.mode }}"
+      - name: Preserve evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-gcc-${{ matrix.mode }}-${{ github.sha }}
+          retention-days: 30
+          if-no-files-found: warn
+          path: |
+            build-linux-evidence/**
+            !build-linux-evidence/build/**

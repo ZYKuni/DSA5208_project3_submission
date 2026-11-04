@@ -1,0 +1,16 @@
+# Python dependencies — audited 2026-10-27 (A stages 1 and 2).
+# Python >= 3.8 is required only for validation tests; CMake enforces it.
+# There are currently NO third-party Python packages to install.
+# Validation, comparison and acceptance scripts use only the Python standard
+# library (including unittest/subprocess/hashlib/signal). Do not list these as pip packages.
+#
+# This comment-only file is intentional and valid for:
+#   python3 -m pip install -r requirements.txt
+# Running pip is optional for the current project.
+#
+# C++17, CMake and a native build tool are system/build requirements,
+# not Python dependencies. C's optional targets use MPI/OpenMP system runtimes.
+# Performance collection/statistics remain stdlib-only. Plot/PDF dependencies
+# are isolated in requirements-analysis.txt and the development Dockerfile.
+# See docs/A/dependencies.md for requirements, verification and update policy.
+# Add packages only when the corresponding scripts actually use them.

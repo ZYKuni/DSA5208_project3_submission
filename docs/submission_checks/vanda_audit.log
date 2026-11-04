@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "raw_files_verified": 943,
+  "archives_verified": 3,
+  "job_id": "1514382.stdct-mgmt-02",
+  "source_revision": "af45f5bd84103838cef7e9e5ecdf221585b9fad3",
+  "historical_source": "unavailable in exported source",
+  "measured_solver_matches_current": true,
+  "current_non_solver_changes": [
+    "scripts/build_report.py",
+    "scripts/cluster/.gitkeep",
+    "scripts/export_c_evidence.py",
+    "scripts/verify_linux.sh",
+    "tests/test_parallel.py"
+  ],
+  "launches": 180,
+  "measured_samples": 150,
+  "configurations": 30,
+  "binaries_match_pilot": true,
+  "limits": "Archive integrity and consistency, not a new Vanda run or team human sign-off."
+}

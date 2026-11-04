@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "mpi_exe": "build/poisson_mpi",
+  "serial_exe": "build/poisson_serial",
+  "launcher": [
+    "mpiexec",
+    "-n",
+    "{ranks}"
+  ],
+  "env": {
+    "OMP_NUM_THREADS": "1"
+  },
+  "warmups": 1,
+  "repeats": 3,
+  "timeout_seconds": 600,
+  "metadata": {
+    "cluster": "FILL Atlas or Vanda",
+    "job_id": "FILL actual job ID",
+    "node_count": 1,
+    "cpu_model": "FILL compute-node CPU",
+    "physical_cores_per_node": "FILL actual count",
+    "compiler": "FILL compiler/version",
+    "flags": "FILL actual Release flags",
+    "mpi_version": "FILL runtime/version",
+    "rank_binding": "FILL verified binding and placement",
+    "validation_evidence": "FILL successful target-cluster acceptance log path"
+  },
+  "cases": [
+    {
+      "n": 1024,
+      "iterations": 1000,
+      "check_every": 10,
+      "ranks": 2,
+      "ranks_per_node": 2,
+      "communication": "sendrecv"
+    },
+    {
+      "n": 1024,
+      "iterations": 1000,
+      "check_every": 10,
+      "ranks": 2,
+      "ranks_per_node": 2,
+      "communication": "overlap"
+    },
+    {
+      "n": 1024,
+      "iterations": 1000,
+      "check_every": 10,
+      "ranks": 4,
+      "ranks_per_node": 4,
+      "communication": "sendrecv"
+    },
+    {
+      "n": 1024,
+      "iterations": 1000,
+      "check_every": 10,
+      "ranks": 4,
+      "ranks_per_node": 4,
+      "communication": "overlap"
+    },
+    {
+      "n": 2048,
+      "iterations": 1000,
+      "check_every": 10,
+      "ranks": 2,
+      "ranks_per_node": 2,
+      "communication": "sendrecv"
+    },
+    {
+      "n": 2048,
+      "iterations": 1000,
+      "check_every": 10,
+      "ranks": 2,
+      "ranks_per_node": 2,
+      "communication": "overlap"
+    },
+    {
+      "n": 2048,
+      "iterations": 1000,
+      "check_every": 10,
+      "ranks": 4,
+      "ranks_per_node": 4,
+      "communication": "sendrecv"
+    },
+    {
+      "n": 2048,
+      "iterations": 1000,
+      "check_every": 10,
+      "ranks": 4,
+      "ranks_per_node": 4,
+      "communication": "overlap"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "total_count": 4,
+  "artifacts": [
+    {
+      "id": 13325897928,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMyNTg5NzkyOA==",
+      "name": "linux-gcc-mpi-4ddfc9103541576022767216a22f21598e33bde6",
+      "size_in_bytes": 4073089,
+      "url": "https://api.github.com/repos/ZYKuni/NUS_DSA5208_project3/actions/artifacts/13325897928",
+      "archive_download_url": "https://api.github.com/repos/ZYKuni/NUS_DSA5208_project3/actions/artifacts/13325897928/zip",
+      "expired": false,
+      "digest": "sha256:715e25c27d7eda69aecf3556a74f2a679cc80974412542289b92011a2a1da9a9",
+      "created_at": "2026-11-04T13:22:03Z",
+      "updated_at": "2026-11-04T13:22:03Z",
+      "expires_at": "2026-12-04T13:22:01Z",
+      "workflow_run": {
+        "id": 41837165001,
+        "repository_id": 1431868597,
+        "head_repository_id": 1431868597,
+        "head_branch": "A_1104",
+        "head_sha": "4ddfc9103541576022767216a22f21598e33bde6"
+      }
+    },
+    {
+      "id": 13325793509,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMyNTc5MzUwOQ==",
+      "name": "linux-gcc-hybrid-4ddfc9103541576022767216a22f21598e33bde6",
+      "size_in_bytes": 12143085,
+      "url": "https://api.github.com/repos/ZYKuni/NUS_DSA5208_project3/actions/artifacts/13325793509",
+      "archive_download_url": "https://api.github.com/repos/ZYKuni/NUS_DSA5208_project3/actions/artifacts/13325793509/zip",
+      "expired": false,
+      "digest": "sha256:eaf175efb1bdf4594e61e8eaceea43bb310674325105e9c2f09c00a0a59a3eb7",
+      "created_at": "2026-11-04T13:24:43Z",
+      "updated_at": "2026-11-04T13:24:43Z",
+      "expires_at": "2026-12-04T13:24:39Z",
+      "workflow_run": {
+        "id": 41837165001,
+        "repository_id": 1431868597,
+        "head_repository_id": 1431868597,
+        "head_branch": "A_1104",
+        "head_sha": "4ddfc9103541576022767216a22f21598e33bde6"
+      }
+    },
+    {
+      "id": 13325473225,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMyNTQ3MzIyNQ==",
+      "name": "linux-gcc-openmp-4ddfc9103541576022767216a22f21598e33bde6",
+      "size_in_bytes": 305878,
+      "url": "https://api.github.com/repos/ZYKuni/NUS_DSA5208_project3/actions/artifacts/13325473225",
+      "archive_download_url": "https://api.github.com/repos/ZYKuni/NUS_DSA5208_project3/actions/artifacts/13325473225/zip",
+      "expired": false,
+      "digest": "sha256:5c0ef4d9f795e077aa2a63466d44ffb6b901cce98c9a0bfad3308b639edaa0e1",
+      "created_at": "2026-11-04T13:21:02Z",
+      "updated_at": "2026-11-04T13:21:02Z",
+      "expires_at": "2026-12-04T13:21:01Z",
+      "workflow_run": {
+        "id": 41837165001,
+        "repository_id": 1431868597,
+        "head_repository_id": 1431868597,
+        "head_branch": "A_1104",
+        "head_sha": "4ddfc9103541576022767216a22f21598e33bde6"
+      }
+    },
+    {
+      "id": 13325458262,
+      "node_id": "MDg6QXJ0aWZhY3QxMzMyNTQ1ODI2Mg==",
+      "name": "linux-gcc-serial-4ddfc9103541576022767216a22f21598e33bde6",
+      "size_in_bytes": 74457,
+      "url": "https://api.github.com/repos/ZYKuni/NUS_DSA5208_project3/actions/artifacts/13325458262",
+      "archive_download_url": "https://api.github.com/repos/ZYKuni/NUS_DSA5208_project3/actions/artifacts/13325458262/zip",
+      "expired": false,
+      "digest": "sha256:e4c2b7d2bbd88e5b4ffb12fb01f879799be6baba94d0ee51a3795275c7de14f6",
+      "created_at": "2026-11-04T13:20:59Z",
+      "updated_at": "2026-11-04T13:20:59Z",
+      "expires_at": "2026-12-04T13:20:58Z",
+      "workflow_run": {
+        "id": 41837165001,
+        "repository_id": 1431868597,
+        "head_repository_id": 1431868597,
+        "head_branch": "A_1104",
+        "head_sha": "4ddfc9103541576022767216a22f21598e33bde6"
+      }
+    }
+  ]
+}

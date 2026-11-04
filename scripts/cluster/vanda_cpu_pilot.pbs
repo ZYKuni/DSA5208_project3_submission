@@ -1,0 +1,67 @@
+#!/bin/bash -l
+# Vanda CPU pilot; submit through the platform routing queue, not batch_cpu.
+# First observed accepted job: 1514292.stdct-mgmt-02 (CLI overrode queue/pool).
+# First Vanda CPU pilot. Pass the verified PBS project using qsub -P PROJECT.
+# Submit from the directory containing project3-source.manifest.json and its archive.
+#PBS -N p3-c-pilot
+#PBS -q auto
+#PBS -l select=1:ncpus=16:mpiprocs=4:ompthreads=4:mem=16gb:node_pool=cpu_node
+#PBS -l walltime=00:20:00
+#PBS -j oe
+set -euo pipefail
+cd "${PBS_O_WORKDIR:?Submit from the source archive directory}"
+mapfile -t source_meta < <(python3 -c 'import json; d=json.load(open("project3-source.manifest.json")); print(d["archive"]); print(d["sha256"]); print(d["revision"])')
+archive=${source_meta[0]}
+source_sha=${source_meta[1]}
+source_revision=${source_meta[2]}
+printf '%s  %s\n' "$source_sha" "$archive" | sha256sum -c -
+project_root="$PWD/project3-c-source-${source_revision:0:7}"
+if [ ! -d "$project_root/src" ]; then
+    mkdir -p "$project_root"
+    tar -xzf "$archive" -C "$project_root"
+fi
+cd "$project_root"
+evidence="$project_root/results/raw/vanda-pilot-${PBS_JOBID}"
+mkdir "$evidence"
+trap 'rc=$?; printf "%s\n" "$rc" > "$evidence/exit_code.txt"' EXIT
+exec > >(tee "$evidence/job.log") 2>&1
+printf '%s\n' "$source_revision" > "$evidence/source_revision.txt"
+printf '%s\n' "$PBS_JOBID" > "$evidence/job_id.txt"
+date -u +%Y-%m-%dT%H:%M:%SZ
+hostname
+uname -a
+lscpu
+cat "$PBS_NODEFILE"
+cat /proc/self/status | grep -E '^Cpus_allowed_list|^Mems_allowed_list'
+module load CMake/3.26.3-GCCcore-12.3.0 openmpi/gcc/64/4.1.8
+module list
+c++ --version
+mpicxx --showme
+mpiexec --version
+cmake --version
+python3 --version
+cmake -S . -B build-vanda -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DENABLE_MPI=ON -DENABLE_OPENMP=ON
+cmake --build build-vanda -j 4
+cp build-vanda/compile_commands.json "$evidence/compile_commands.json"
+sha256sum build-vanda/poisson_* > "$evidence/binaries.sha256"
+# Correctness matrix peaks at 12 threads, within the 16-core allocation.
+# Passive waiting keeps tiny correctness cases from spinning unnecessarily.
+env OMP_NUM_THREADS=2 OMP_WAIT_POLICY=PASSIVE OMPI_MCA_rmaps_base_oversubscribe=1 OMPI_MCA_hwloc_base_binding_policy=none ctest --test-dir build-vanda --output-on-failure | tee "$evidence/ctest.log"
+cp build-vanda/parallel-acceptance/latest.json "$evidence/parallel_summary.json"
+# Real CPU binding pilot, separate from the unbound correctness matrix.
+for communication in sendrecv overlap; do
+    env OMP_NUM_THREADS=2 OMP_DYNAMIC=FALSE OMP_PLACES=cores OMP_PROC_BIND=close \
+        mpiexec --map-by slot:PE=2 --bind-to core --report-bindings -n 2 \
+        ./build-vanda/poisson_hybrid --n 31 --mode fixed --iterations 100 --check-every 10 \
+        --communication "$communication" > "$evidence/bound-${communication}.json" 2> "$evidence/bound-${communication}.stderr"
+done
+# Calibration only, not a repeated scaling experiment.
+for n in 1024 2048; do
+    ./build-vanda/poisson_serial --n "$n" --iterations 1000 --check-every 10 > "$evidence/calibration-serial-n${n}.json"
+    env OMP_NUM_THREADS=2 OMP_DYNAMIC=FALSE OMP_PLACES=cores OMP_PROC_BIND=close \
+        mpiexec --map-by slot:PE=2 --bind-to core --report-bindings -n 2 \
+        ./build-vanda/poisson_hybrid --n "$n" --iterations 1000 --check-every 10 \
+        > "$evidence/calibration-hybrid-n${n}.json" 2> "$evidence/calibration-hybrid-n${n}.stderr"
+done
+date -u +%Y-%m-%dT%H:%M:%SZ
+printf 'Pilot complete: %s\n' "$evidence"

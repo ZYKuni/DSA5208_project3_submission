@@ -1,0 +1,960 @@
+{
+  "schema_version": 1,
+  "scope": "cluster",
+  "cluster": "Vanda",
+  "node_count": 1,
+  "cpu_model": "Intel(R) Xeon(R) Platinum 8452Y",
+  "physical_cores_per_node": 72,
+  "assigned_cpu_ids": [
+    25,
+    27,
+    29,
+    31,
+    33,
+    35,
+    37,
+    39,
+    41,
+    43,
+    45,
+    47,
+    49,
+    51,
+    53,
+    55
+  ],
+  "assigned_physical_cores": 16,
+  "maximum_test_cores": 16,
+  "binding_probes": [
+    {
+      "ranks": 1,
+      "threads": 1,
+      "argv": [
+        "mpiexec",
+        "--map-by",
+        "slot:PE=1",
+        "--bind-to",
+        "core",
+        "--report-bindings",
+        "-n",
+        "1",
+        "python3",
+        "-c",
+        "import os,json; print(json.dumps({\"rank\":int(os.environ[\"OMPI_COMM_WORLD_RANK\"]),\"cpus\":sorted(os.sched_getaffinity(0))}))"
+      ],
+      "members": [
+        {
+          "rank": 0,
+          "cpus": [
+            25
+          ]
+        }
+      ],
+      "stderr": "[CN-008:2078292] mca_base_component_repository_open: unable to open mca_plm_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078292] mca_base_component_repository_open: unable to open mca_ras_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078292] MCW rank 0 bound to socket 1[core 0[hwt 0]]: [][B/././././././././././././././.]\n"
+    },
+    {
+      "ranks": 1,
+      "threads": 16,
+      "argv": [
+        "mpiexec",
+        "--map-by",
+        "slot:PE=16",
+        "--bind-to",
+        "core",
+        "--report-bindings",
+        "-n",
+        "1",
+        "python3",
+        "-c",
+        "import os,json; print(json.dumps({\"rank\":int(os.environ[\"OMPI_COMM_WORLD_RANK\"]),\"cpus\":sorted(os.sched_getaffinity(0))}))"
+      ],
+      "members": [
+        {
+          "rank": 0,
+          "cpus": [
+            25,
+            27,
+            29,
+            31,
+            33,
+            35,
+            37,
+            39,
+            41,
+            43,
+            45,
+            47,
+            49,
+            51,
+            53,
+            55
+          ]
+        }
+      ],
+      "stderr": "[CN-008:2078319] mca_base_component_repository_open: unable to open mca_plm_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078319] mca_base_component_repository_open: unable to open mca_ras_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078319] MCW rank 0 is not bound (or bound to all available processors)\n"
+    },
+    {
+      "ranks": 2,
+      "threads": 1,
+      "argv": [
+        "mpiexec",
+        "--map-by",
+        "slot:PE=1",
+        "--bind-to",
+        "core",
+        "--report-bindings",
+        "-n",
+        "2",
+        "python3",
+        "-c",
+        "import os,json; print(json.dumps({\"rank\":int(os.environ[\"OMPI_COMM_WORLD_RANK\"]),\"cpus\":sorted(os.sched_getaffinity(0))}))"
+      ],
+      "members": [
+        {
+          "rank": 0,
+          "cpus": [
+            25
+          ]
+        },
+        {
+          "rank": 1,
+          "cpus": [
+            27
+          ]
+        }
+      ],
+      "stderr": "[CN-008:2078357] mca_base_component_repository_open: unable to open mca_plm_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078357] mca_base_component_repository_open: unable to open mca_ras_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078357] MCW rank 0 bound to socket 1[core 0[hwt 0]]: [][B/././././././././././././././.]\n[CN-008:2078357] MCW rank 1 bound to socket 1[core 1[hwt 0]]: [][./B/./././././././././././././.]\n"
+    },
+    {
+      "ranks": 2,
+      "threads": 2,
+      "argv": [
+        "mpiexec",
+        "--map-by",
+        "slot:PE=2",
+        "--bind-to",
+        "core",
+        "--report-bindings",
+        "-n",
+        "2",
+        "python3",
+        "-c",
+        "import os,json; print(json.dumps({\"rank\":int(os.environ[\"OMPI_COMM_WORLD_RANK\"]),\"cpus\":sorted(os.sched_getaffinity(0))}))"
+      ],
+      "members": [
+        {
+          "rank": 1,
+          "cpus": [
+            29,
+            31
+          ]
+        },
+        {
+          "rank": 0,
+          "cpus": [
+            25,
+            27
+          ]
+        }
+      ],
+      "stderr": "[CN-008:2078407] mca_base_component_repository_open: unable to open mca_plm_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078407] mca_base_component_repository_open: unable to open mca_ras_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078407] MCW rank 1 bound to socket 1[core 2[hwt 0]], socket 1[core 3[hwt 0]]: [][././B/B/./././././././././././.]\n[CN-008:2078407] MCW rank 0 bound to socket 1[core 0[hwt 0]], socket 1[core 1[hwt 0]]: [][B/B/./././././././././././././.]\n"
+    },
+    {
+      "ranks": 2,
+      "threads": 8,
+      "argv": [
+        "mpiexec",
+        "--map-by",
+        "slot:PE=8",
+        "--bind-to",
+        "core",
+        "--report-bindings",
+        "-n",
+        "2",
+        "python3",
+        "-c",
+        "import os,json; print(json.dumps({\"rank\":int(os.environ[\"OMPI_COMM_WORLD_RANK\"]),\"cpus\":sorted(os.sched_getaffinity(0))}))"
+      ],
+      "members": [
+        {
+          "rank": 0,
+          "cpus": [
+            25,
+            27,
+            29,
+            31,
+            33,
+            35,
+            37,
+            39
+          ]
+        },
+        {
+          "rank": 1,
+          "cpus": [
+            41,
+            43,
+            45,
+            47,
+            49,
+            51,
+            53,
+            55
+          ]
+        }
+      ],
+      "stderr": "[CN-008:2078481] mca_base_component_repository_open: unable to open mca_plm_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078481] mca_base_component_repository_open: unable to open mca_ras_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078481] MCW rank 1 bound to socket 1[core 8[hwt 0]], socket 1[core 9[hwt 0]], socket 1[core 10[hwt 0]], socket 1[core 11[hwt 0]], socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]]: [][././././././././B/B/B/B/B/B/B/B]\n[CN-008:2078481] MCW rank 0 bound to socket 1[core 0[hwt 0]], socket 1[core 1[hwt 0]], socket 1[core 2[hwt 0]], socket 1[core 3[hwt 0]], socket 1[core 4[hwt 0]], socket 1[core 5[hwt 0]], socket 1[core 6[hwt 0]], socket 1[core 7[hwt 0]]: [][B/B/B/B/B/B/B/B/./././././././.]\n"
+    },
+    {
+      "ranks": 4,
+      "threads": 1,
+      "argv": [
+        "mpiexec",
+        "--map-by",
+        "slot:PE=1",
+        "--bind-to",
+        "core",
+        "--report-bindings",
+        "-n",
+        "4",
+        "python3",
+        "-c",
+        "import os,json; print(json.dumps({\"rank\":int(os.environ[\"OMPI_COMM_WORLD_RANK\"]),\"cpus\":sorted(os.sched_getaffinity(0))}))"
+      ],
+      "members": [
+        {
+          "rank": 0,
+          "cpus": [
+            25
+          ]
+        },
+        {
+          "rank": 1,
+          "cpus": [
+            27
+          ]
+        },
+        {
+          "rank": 2,
+          "cpus": [
+            29
+          ]
+        },
+        {
+          "rank": 3,
+          "cpus": [
+            31
+          ]
+        }
+      ],
+      "stderr": "[CN-008:2078523] mca_base_component_repository_open: unable to open mca_plm_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078523] mca_base_component_repository_open: unable to open mca_ras_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078523] MCW rank 0 bound to socket 1[core 0[hwt 0]]: [][B/././././././././././././././.]\n[CN-008:2078523] MCW rank 1 bound to socket 1[core 1[hwt 0]]: [][./B/./././././././././././././.]\n[CN-008:2078523] MCW rank 2 bound to socket 1[core 2[hwt 0]]: [][././B/././././././././././././.]\n[CN-008:2078523] MCW rank 3 bound to socket 1[core 3[hwt 0]]: [][./././B/./././././././././././.]\n"
+    },
+    {
+      "ranks": 4,
+      "threads": 2,
+      "argv": [
+        "mpiexec",
+        "--map-by",
+        "slot:PE=2",
+        "--bind-to",
+        "core",
+        "--report-bindings",
+        "-n",
+        "4",
+        "python3",
+        "-c",
+        "import os,json; print(json.dumps({\"rank\":int(os.environ[\"OMPI_COMM_WORLD_RANK\"]),\"cpus\":sorted(os.sched_getaffinity(0))}))"
+      ],
+      "members": [
+        {
+          "rank": 0,
+          "cpus": [
+            25,
+            27
+          ]
+        },
+        {
+          "rank": 1,
+          "cpus": [
+            29,
+            31
+          ]
+        },
+        {
+          "rank": 2,
+          "cpus": [
+            33,
+            35
+          ]
+        },
+        {
+          "rank": 3,
+          "cpus": [
+            37,
+            39
+          ]
+        }
+      ],
+      "stderr": "[CN-008:2078575] mca_base_component_repository_open: unable to open mca_plm_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078575] mca_base_component_repository_open: unable to open mca_ras_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078575] MCW rank 2 bound to socket 1[core 4[hwt 0]], socket 1[core 5[hwt 0]]: [][././././B/B/./././././././././.]\n[CN-008:2078575] MCW rank 3 bound to socket 1[core 6[hwt 0]], socket 1[core 7[hwt 0]]: [][././././././B/B/./././././././.]\n[CN-008:2078575] MCW rank 0 bound to socket 1[core 0[hwt 0]], socket 1[core 1[hwt 0]]: [][B/B/./././././././././././././.]\n[CN-008:2078575] MCW rank 1 bound to socket 1[core 2[hwt 0]], socket 1[core 3[hwt 0]]: [][././B/B/./././././././././././.]\n"
+    },
+    {
+      "ranks": 4,
+      "threads": 4,
+      "argv": [
+        "mpiexec",
+        "--map-by",
+        "slot:PE=4",
+        "--bind-to",
+        "core",
+        "--report-bindings",
+        "-n",
+        "4",
+        "python3",
+        "-c",
+        "import os,json; print(json.dumps({\"rank\":int(os.environ[\"OMPI_COMM_WORLD_RANK\"]),\"cpus\":sorted(os.sched_getaffinity(0))}))"
+      ],
+      "members": [
+        {
+          "rank": 0,
+          "cpus": [
+            25,
+            27,
+            29,
+            31
+          ]
+        },
+        {
+          "rank": 1,
+          "cpus": [
+            33,
+            35,
+            37,
+            39
+          ]
+        },
+        {
+          "rank": 2,
+          "cpus": [
+            41,
+            43,
+            45,
+            47
+          ]
+        },
+        {
+          "rank": 3,
+          "cpus": [
+            49,
+            51,
+            53,
+            55
+          ]
+        }
+      ],
+      "stderr": "[CN-008:2078616] mca_base_component_repository_open: unable to open mca_plm_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078616] mca_base_component_repository_open: unable to open mca_ras_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078616] MCW rank 0 bound to socket 1[core 0[hwt 0]], socket 1[core 1[hwt 0]], socket 1[core 2[hwt 0]], socket 1[core 3[hwt 0]]: [][B/B/B/B/./././././././././././.]\n[CN-008:2078616] MCW rank 1 bound to socket 1[core 4[hwt 0]], socket 1[core 5[hwt 0]], socket 1[core 6[hwt 0]], socket 1[core 7[hwt 0]]: [][././././B/B/B/B/./././././././.]\n[CN-008:2078616] MCW rank 2 bound to socket 1[core 8[hwt 0]], socket 1[core 9[hwt 0]], socket 1[core 10[hwt 0]], socket 1[core 11[hwt 0]]: [][././././././././B/B/B/B/./././.]\n[CN-008:2078616] MCW rank 3 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]], socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]]: [][././././././././././././B/B/B/B]\n"
+    },
+    {
+      "ranks": 8,
+      "threads": 1,
+      "argv": [
+        "mpiexec",
+        "--map-by",
+        "slot:PE=1",
+        "--bind-to",
+        "core",
+        "--report-bindings",
+        "-n",
+        "8",
+        "python3",
+        "-c",
+        "import os,json; print(json.dumps({\"rank\":int(os.environ[\"OMPI_COMM_WORLD_RANK\"]),\"cpus\":sorted(os.sched_getaffinity(0))}))"
+      ],
+      "members": [
+        {
+          "rank": 0,
+          "cpus": [
+            25
+          ]
+        },
+        {
+          "rank": 1,
+          "cpus": [
+            27
+          ]
+        },
+        {
+          "rank": 2,
+          "cpus": [
+            29
+          ]
+        },
+        {
+          "rank": 3,
+          "cpus": [
+            31
+          ]
+        },
+        {
+          "rank": 4,
+          "cpus": [
+            33
+          ]
+        },
+        {
+          "rank": 5,
+          "cpus": [
+            35
+          ]
+        },
+        {
+          "rank": 6,
+          "cpus": [
+            37
+          ]
+        },
+        {
+          "rank": 7,
+          "cpus": [
+            39
+          ]
+        }
+      ],
+      "stderr": "[CN-008:2078668] mca_base_component_repository_open: unable to open mca_plm_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078668] mca_base_component_repository_open: unable to open mca_ras_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078668] MCW rank 6 bound to socket 1[core 6[hwt 0]]: [][././././././B/././././././././.]\n[CN-008:2078668] MCW rank 7 bound to socket 1[core 7[hwt 0]]: [][./././././././B/./././././././.]\n[CN-008:2078668] MCW rank 0 bound to socket 1[core 0[hwt 0]]: [][B/././././././././././././././.]\n[CN-008:2078668] MCW rank 1 bound to socket 1[core 1[hwt 0]]: [][./B/./././././././././././././.]\n[CN-008:2078668] MCW rank 2 bound to socket 1[core 2[hwt 0]]: [][././B/././././././././././././.]\n[CN-008:2078668] MCW rank 3 bound to socket 1[core 3[hwt 0]]: [][./././B/./././././././././././.]\n[CN-008:2078668] MCW rank 4 bound to socket 1[core 4[hwt 0]]: [][././././B/././././././././././.]\n[CN-008:2078668] MCW rank 5 bound to socket 1[core 5[hwt 0]]: [][./././././B/./././././././././.]\n"
+    },
+    {
+      "ranks": 8,
+      "threads": 2,
+      "argv": [
+        "mpiexec",
+        "--map-by",
+        "slot:PE=2",
+        "--bind-to",
+        "core",
+        "--report-bindings",
+        "-n",
+        "8",
+        "python3",
+        "-c",
+        "import os,json; print(json.dumps({\"rank\":int(os.environ[\"OMPI_COMM_WORLD_RANK\"]),\"cpus\":sorted(os.sched_getaffinity(0))}))"
+      ],
+      "members": [
+        {
+          "rank": 0,
+          "cpus": [
+            25,
+            27
+          ]
+        },
+        {
+          "rank": 1,
+          "cpus": [
+            29,
+            31
+          ]
+        },
+        {
+          "rank": 2,
+          "cpus": [
+            33,
+            35
+          ]
+        },
+        {
+          "rank": 3,
+          "cpus": [
+            37,
+            39
+          ]
+        },
+        {
+          "rank": 4,
+          "cpus": [
+            41,
+            43
+          ]
+        },
+        {
+          "rank": 5,
+          "cpus": [
+            45,
+            47
+          ]
+        },
+        {
+          "rank": 6,
+          "cpus": [
+            49,
+            51
+          ]
+        },
+        {
+          "rank": 7,
+          "cpus": [
+            53,
+            55
+          ]
+        }
+      ],
+      "stderr": "[CN-008:2078735] mca_base_component_repository_open: unable to open mca_plm_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078735] mca_base_component_repository_open: unable to open mca_ras_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078735] MCW rank 6 bound to socket 1[core 12[hwt 0]], socket 1[core 13[hwt 0]]: [][././././././././././././B/B/./.]\n[CN-008:2078735] MCW rank 7 bound to socket 1[core 14[hwt 0]], socket 1[core 15[hwt 0]]: [][././././././././././././././B/B]\n[CN-008:2078735] MCW rank 0 bound to socket 1[core 0[hwt 0]], socket 1[core 1[hwt 0]]: [][B/B/./././././././././././././.]\n[CN-008:2078735] MCW rank 1 bound to socket 1[core 2[hwt 0]], socket 1[core 3[hwt 0]]: [][././B/B/./././././././././././.]\n[CN-008:2078735] MCW rank 2 bound to socket 1[core 4[hwt 0]], socket 1[core 5[hwt 0]]: [][././././B/B/./././././././././.]\n[CN-008:2078735] MCW rank 3 bound to socket 1[core 6[hwt 0]], socket 1[core 7[hwt 0]]: [][././././././B/B/./././././././.]\n[CN-008:2078735] MCW rank 4 bound to socket 1[core 8[hwt 0]], socket 1[core 9[hwt 0]]: [][././././././././B/B/./././././.]\n[CN-008:2078735] MCW rank 5 bound to socket 1[core 10[hwt 0]], socket 1[core 11[hwt 0]]: [][././././././././././B/B/./././.]\n"
+    },
+    {
+      "ranks": 16,
+      "threads": 1,
+      "argv": [
+        "mpiexec",
+        "--map-by",
+        "slot:PE=1",
+        "--bind-to",
+        "core",
+        "--report-bindings",
+        "-n",
+        "16",
+        "python3",
+        "-c",
+        "import os,json; print(json.dumps({\"rank\":int(os.environ[\"OMPI_COMM_WORLD_RANK\"]),\"cpus\":sorted(os.sched_getaffinity(0))}))"
+      ],
+      "members": [
+        {
+          "rank": 0,
+          "cpus": [
+            25
+          ]
+        },
+        {
+          "rank": 1,
+          "cpus": [
+            27
+          ]
+        },
+        {
+          "rank": 2,
+          "cpus": [
+            29
+          ]
+        },
+        {
+          "rank": 3,
+          "cpus": [
+            31
+          ]
+        },
+        {
+          "rank": 4,
+          "cpus": [
+            33
+          ]
+        },
+        {
+          "rank": 5,
+          "cpus": [
+            35
+          ]
+        },
+        {
+          "rank": 6,
+          "cpus": [
+            37
+          ]
+        },
+        {
+          "rank": 7,
+          "cpus": [
+            39
+          ]
+        },
+        {
+          "rank": 8,
+          "cpus": [
+            41
+          ]
+        },
+        {
+          "rank": 9,
+          "cpus": [
+            43
+          ]
+        },
+        {
+          "rank": 10,
+          "cpus": [
+            45
+          ]
+        },
+        {
+          "rank": 11,
+          "cpus": [
+            47
+          ]
+        },
+        {
+          "rank": 12,
+          "cpus": [
+            49
+          ]
+        },
+        {
+          "rank": 13,
+          "cpus": [
+            51
+          ]
+        },
+        {
+          "rank": 14,
+          "cpus": [
+            53
+          ]
+        },
+        {
+          "rank": 15,
+          "cpus": [
+            55
+          ]
+        }
+      ],
+      "stderr": "[CN-008:2078824] mca_base_component_repository_open: unable to open mca_plm_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078824] mca_base_component_repository_open: unable to open mca_ras_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)\n[CN-008:2078824] MCW rank 15 bound to socket 1[core 15[hwt 0]]: [][./././././././././././././././B]\n[CN-008:2078824] MCW rank 0 bound to socket 1[core 0[hwt 0]]: [][B/././././././././././././././.]\n[CN-008:2078824] MCW rank 1 bound to socket 1[core 1[hwt 0]]: [][./B/./././././././././././././.]\n[CN-008:2078824] MCW rank 2 bound to socket 1[core 2[hwt 0]]: [][././B/././././././././././././.]\n[CN-008:2078824] MCW rank 3 bound to socket 1[core 3[hwt 0]]: [][./././B/./././././././././././.]\n[CN-008:2078824] MCW rank 4 bound to socket 1[core 4[hwt 0]]: [][././././B/././././././././././.]\n[CN-008:2078824] MCW rank 5 bound to socket 1[core 5[hwt 0]]: [][./././././B/./././././././././.]\n[CN-008:2078824] MCW rank 6 bound to socket 1[core 6[hwt 0]]: [][././././././B/././././././././.]\n[CN-008:2078824] MCW rank 7 bound to socket 1[core 7[hwt 0]]: [][./././././././B/./././././././.]\n[CN-008:2078824] MCW rank 8 bound to socket 1[core 8[hwt 0]]: [][././././././././B/././././././.]\n[CN-008:2078824] MCW rank 9 bound to socket 1[core 9[hwt 0]]: [][./././././././././B/./././././.]\n[CN-008:2078824] MCW rank 10 bound to socket 1[core 10[hwt 0]]: [][././././././././././B/././././.]\n[CN-008:2078824] MCW rank 11 bound to socket 1[core 11[hwt 0]]: [][./././././././././././B/./././.]\n[CN-008:2078824] MCW rank 12 bound to socket 1[core 12[hwt 0]]: [][././././././././././././B/././.]\n[CN-008:2078824] MCW rank 13 bound to socket 1[core 13[hwt 0]]: [][./././././././././././././B/./.]\n[CN-008:2078824] MCW rank 14 bound to socket 1[core 14[hwt 0]]: [][././././././././././././././B/.]\n"
+    }
+  ],
+  "ranks_per_node": 16,
+  "rank_binding": "OpenMPI slot:PE=threads, bind-to core; standalone baseline within PBS cpuset",
+  "platform_verified": true,
+  "binding_verified": true,
+  "launcher_verified": true,
+  "workload_calibrated": true,
+  "validation_evidence": "/nfs/home/svu/zheke.chen/project3-c-source-af45f5b/results/raw/vanda-pilot-1514325.stdct-mgmt-02",
+  "calibration_seconds": 5.77904227,
+  "calibrated_iterations": 2600,
+  "warmups": 1,
+  "repeats": 5,
+  "timeout_seconds": 300,
+  "launcher": [
+    "mpiexec",
+    "--map-by",
+    "slot:PE={threads}",
+    "--bind-to",
+    "core",
+    "--report-bindings",
+    "-n",
+    "{ranks}"
+  ],
+  "env": {
+    "OMP_DYNAMIC": "FALSE",
+    "OMP_PLACES": "cores",
+    "OMP_PROC_BIND": "close",
+    "OMP_WAIT_POLICY": "ACTIVE"
+  },
+  "studies": [
+    {
+      "id": "strong_vanda",
+      "kind": "strong",
+      "baseline": "serial",
+      "iterations": 2600,
+      "check_every": 10,
+      "cases": [
+        {
+          "label": "serial",
+          "variant": "serial",
+          "n": 2048,
+          "ranks": 1,
+          "threads": 1,
+          "ranks_per_node": 1
+        },
+        {
+          "label": "mpi1",
+          "variant": "mpi",
+          "n": 2048,
+          "ranks": 1,
+          "threads": 1,
+          "ranks_per_node": 1,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "mpi2",
+          "variant": "mpi",
+          "n": 2048,
+          "ranks": 2,
+          "threads": 1,
+          "ranks_per_node": 2,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "mpi4",
+          "variant": "mpi",
+          "n": 2048,
+          "ranks": 4,
+          "threads": 1,
+          "ranks_per_node": 4,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "mpi8",
+          "variant": "mpi",
+          "n": 2048,
+          "ranks": 8,
+          "threads": 1,
+          "ranks_per_node": 8,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "mpi16",
+          "variant": "mpi",
+          "n": 2048,
+          "ranks": 16,
+          "threads": 1,
+          "ranks_per_node": 16,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "r8t2",
+          "variant": "mpi_openmp",
+          "n": 2048,
+          "ranks": 8,
+          "threads": 2,
+          "ranks_per_node": 8,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "r4t4",
+          "variant": "mpi_openmp",
+          "n": 2048,
+          "ranks": 4,
+          "threads": 4,
+          "ranks_per_node": 4,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "r2t8",
+          "variant": "mpi_openmp",
+          "n": 2048,
+          "ranks": 2,
+          "threads": 8,
+          "ranks_per_node": 2,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "r1t16",
+          "variant": "mpi_openmp",
+          "n": 2048,
+          "ranks": 1,
+          "threads": 16,
+          "ranks_per_node": 1,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "openmp16",
+          "variant": "openmp",
+          "n": 2048,
+          "ranks": 1,
+          "threads": 16,
+          "ranks_per_node": 1
+        }
+      ]
+    },
+    {
+      "id": "weak_vanda",
+      "kind": "weak",
+      "baseline": "mpi1",
+      "iterations": 2600,
+      "check_every": 10,
+      "cases": [
+        {
+          "label": "mpi1",
+          "variant": "mpi",
+          "n": 512,
+          "ranks": 1,
+          "threads": 1,
+          "ranks_per_node": 1,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "mpi2",
+          "variant": "mpi",
+          "n": 724,
+          "ranks": 2,
+          "threads": 1,
+          "ranks_per_node": 2,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "mpi4",
+          "variant": "mpi",
+          "n": 1024,
+          "ranks": 4,
+          "threads": 1,
+          "ranks_per_node": 4,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "mpi8",
+          "variant": "mpi",
+          "n": 1448,
+          "ranks": 8,
+          "threads": 1,
+          "ranks_per_node": 8,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "mpi16",
+          "variant": "mpi",
+          "n": 2048,
+          "ranks": 16,
+          "threads": 1,
+          "ranks_per_node": 16,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "hybrid4",
+          "variant": "mpi_openmp",
+          "n": 1024,
+          "ranks": 2,
+          "threads": 2,
+          "ranks_per_node": 2,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "hybrid8",
+          "variant": "mpi_openmp",
+          "n": 1448,
+          "ranks": 4,
+          "threads": 2,
+          "ranks_per_node": 4,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "hybrid16",
+          "variant": "mpi_openmp",
+          "n": 2048,
+          "ranks": 8,
+          "threads": 2,
+          "ranks_per_node": 8,
+          "communication": "sendrecv"
+        }
+      ]
+    },
+    {
+      "id": "ratio_vanda",
+      "kind": "ratio",
+      "baseline": "r16t1",
+      "iterations": 2600,
+      "check_every": 10,
+      "cases": [
+        {
+          "label": "r16t1",
+          "variant": "mpi",
+          "n": 2048,
+          "ranks": 16,
+          "threads": 1,
+          "ranks_per_node": 16,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "r8t2",
+          "variant": "mpi_openmp",
+          "n": 2048,
+          "ranks": 8,
+          "threads": 2,
+          "ranks_per_node": 8,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "r4t4",
+          "variant": "mpi_openmp",
+          "n": 2048,
+          "ranks": 4,
+          "threads": 4,
+          "ranks_per_node": 4,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "r2t8",
+          "variant": "mpi_openmp",
+          "n": 2048,
+          "ranks": 2,
+          "threads": 8,
+          "ranks_per_node": 2,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "r1t16",
+          "variant": "mpi_openmp",
+          "n": 2048,
+          "ranks": 1,
+          "threads": 16,
+          "ranks_per_node": 1,
+          "communication": "sendrecv"
+        }
+      ]
+    },
+    {
+      "id": "communication_vanda",
+      "kind": "ratio",
+      "baseline": "sendrecv",
+      "iterations": 2600,
+      "check_every": 10,
+      "cases": [
+        {
+          "label": "sendrecv",
+          "variant": "mpi_openmp",
+          "n": 2048,
+          "ranks": 4,
+          "threads": 4,
+          "ranks_per_node": 4,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "overlap",
+          "variant": "mpi_openmp",
+          "n": 2048,
+          "ranks": 4,
+          "threads": 4,
+          "ranks_per_node": 4,
+          "communication": "overlap"
+        }
+      ]
+    },
+    {
+      "id": "solution_vanda",
+      "kind": "solution",
+      "baseline": "serial",
+      "mode": "converge",
+      "iterations": 200000,
+      "tol": 1e-08,
+      "check_every": 20,
+      "cases": [
+        {
+          "label": "serial",
+          "variant": "serial",
+          "n": 127,
+          "ranks": 1,
+          "threads": 1,
+          "ranks_per_node": 1
+        },
+        {
+          "label": "mpi16",
+          "variant": "mpi",
+          "n": 127,
+          "ranks": 16,
+          "threads": 1,
+          "ranks_per_node": 16,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "r4t4",
+          "variant": "mpi_openmp",
+          "n": 127,
+          "ranks": 4,
+          "threads": 4,
+          "ranks_per_node": 4,
+          "communication": "sendrecv"
+        },
+        {
+          "label": "openmp16",
+          "variant": "openmp",
+          "n": 127,
+          "ranks": 1,
+          "threads": 16,
+          "ranks_per_node": 1
+        }
+      ]
+    }
+  ]
+}

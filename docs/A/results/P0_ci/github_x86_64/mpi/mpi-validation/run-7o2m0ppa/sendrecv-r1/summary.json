@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "cases": 17,
+  "passed": 17,
+  "failed": 0,
+  "results": [
+    {
+      "name": "single_cell",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 2,
+      "max_abs_error": 2.220446049250313e-16,
+      "relative_l2_error": 1.7998257753919546e-16,
+      "independent_relative_residual": 0.0
+    },
+    {
+      "name": "two_rows",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 5,
+      "max_abs_error": 3.3306690738754696e-16,
+      "relative_l2_error": 3.1927114271482137e-16,
+      "independent_relative_residual": 0.03125000000000013
+    },
+    {
+      "name": "initial_state",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 0,
+      "max_abs_error": 0.0,
+      "relative_l2_error": null,
+      "independent_relative_residual": 1.0
+    },
+    {
+      "name": "original_odd",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 5,
+      "max_abs_error": 8.326672684688674e-17,
+      "relative_l2_error": 1.816240473650931e-16,
+      "independent_relative_residual": 0.6730955659108263
+    },
+    {
+      "name": "mixed_k0",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 0,
+      "max_abs_error": 0.0,
+      "relative_l2_error": null,
+      "independent_relative_residual": 1.0
+    },
+    {
+      "name": "mixed_k1",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 1,
+      "max_abs_error": 1.1102230246251565e-16,
+      "relative_l2_error": 3.542686637262007e-16,
+      "independent_relative_residual": 0.7126218487467432
+    },
+    {
+      "name": "mixed_k2",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 2,
+      "max_abs_error": 1.6653345369377348e-16,
+      "relative_l2_error": 3.6100291034639367e-16,
+      "independent_relative_residual": 0.5394882180201588
+    },
+    {
+      "name": "mixed_k5",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 5,
+      "max_abs_error": 2.220446049250313e-16,
+      "relative_l2_error": 2.6620560354721043e-16,
+      "independent_relative_residual": 0.2748007913438744
+    },
+    {
+      "name": "mixed_k16",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 16,
+      "max_abs_error": 2.220446049250313e-16,
+      "relative_l2_error": 1.7026268591433866e-16,
+      "independent_relative_residual": 0.02895941940473658
+    },
+    {
+      "name": "mixed_smallest",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 5,
+      "max_abs_error": 2.220446049250313e-16,
+      "relative_l2_error": 1.7051617476335347e-16,
+      "independent_relative_residual": 0.0055242717280198795
+    },
+    {
+      "name": "mixed_converged",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 518,
+      "max_abs_error": 6.106226635438361e-16,
+      "relative_l2_error": 3.4811534844571848e-16,
+      "independent_relative_residual": 7.656741357248561e-12
+    },
+    {
+      "name": "continuous_converged",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 1310,
+      "max_abs_error": 6.661338147750939e-16,
+      "relative_l2_error": 3.984835584728578e-16,
+      "independent_relative_residual": 9.159203181950553e-12
+    },
+    {
+      "name": "zero_initial_converged",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 0,
+      "max_abs_error": 0.0,
+      "relative_l2_error": null,
+      "independent_relative_residual": 0.0
+    },
+    {
+      "name": "max_iterations",
+      "status": "PASS",
+      "exit_code": 2,
+      "expected_exit": 2,
+      "actual_iterations": 1,
+      "max_abs_error": 1.3877787807814457e-17,
+      "relative_l2_error": 2.0496491475925354e-16,
+      "independent_relative_residual": 0.9238795325112866
+    },
+    {
+      "name": "slab_n1",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 5,
+      "max_abs_error": 2.220446049250313e-16,
+      "relative_l2_error": 2.220446049250313e-16,
+      "independent_relative_residual": 2.220446049250313e-16
+    },
+    {
+      "name": "slab_n2",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 5,
+      "max_abs_error": 3.3306690738754696e-16,
+      "relative_l2_error": 3.895775564389626e-16,
+      "independent_relative_residual": 0.0312500000000003
+    },
+    {
+      "name": "slab_n127",
+      "status": "PASS",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "actual_iterations": 5,
+      "max_abs_error": 1.8735013540549517e-16,
+      "relative_l2_error": 1.243440607947535e-13,
+      "independent_relative_residual": 0.9984950003096367
+    }
+  ]
+}

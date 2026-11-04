@@ -1,0 +1,129 @@
+Start testing: Oct 31 15:41 +08
+----------------------------------------------------------
+1/5 Testing: core_contract
+1/5 Test: core_contract
+Command: "/Users/arlo/.codex/.chatgpt-projects/g-p-6a8abc5cf380819198315d8e9c0d8b45/NUS_DSA5208_project3/build/test_core"
+Directory: /Users/arlo/.codex/.chatgpt-projects/g-p-6a8abc5cf380819198315d8e9c0d8b45/NUS_DSA5208_project3/build
+"core_contract" start time: Oct 31 15:41 +08
+Output:
+----------------------------------------------------------
+PASS: hand steps, boundaries, alias/range checks, uneven slabs, analytic residual
+<end of output>
+Test time =   0.45 sec
+----------------------------------------------------------
+Test Passed.
+"core_contract" end time: Oct 31 15:41 +08
+"core_contract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/5 Testing: decomposition_contract
+2/5 Test: decomposition_contract
+Command: "/Users/arlo/.codex/.chatgpt-projects/g-p-6a8abc5cf380819198315d8e9c0d8b45/NUS_DSA5208_project3/build/test_decomposition"
+Directory: /Users/arlo/.codex/.chatgpt-projects/g-p-6a8abc5cf380819198315d8e9c0d8b45/NUS_DSA5208_project3/build
+"decomposition_contract" start time: Oct 31 15:41 +08
+Output:
+----------------------------------------------------------
+decomposition coverage, balance and rejection checks passed
+<end of output>
+Test time =   0.40 sec
+----------------------------------------------------------
+Test Passed.
+"decomposition_contract" end time: Oct 31 15:41 +08
+"decomposition_contract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/5 Testing: serial_validation
+3/5 Test: serial_validation
+Command: "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9" "/Users/arlo/.codex/.chatgpt-projects/g-p-6a8abc5cf380819198315d8e9c0d8b45/NUS_DSA5208_project3/tests/validate_serial.py" "--exe" "/Users/arlo/.codex/.chatgpt-projects/g-p-6a8abc5cf380819198315d8e9c0d8b45/NUS_DSA5208_project3/build/poisson_serial" "--output" "/Users/arlo/.codex/.chatgpt-projects/g-p-6a8abc5cf380819198315d8e9c0d8b45/NUS_DSA5208_project3/build/validation"
+Directory: /Users/arlo/.codex/.chatgpt-projects/g-p-6a8abc5cf380819198315d8e9c0d8b45/NUS_DSA5208_project3/build
+"serial_validation" start time: Oct 31 15:41 +08
+Output:
+----------------------------------------------------------
+{
+  "scope": "local_serial_validation_only",
+  "numerical_cases": 37,
+  "invalid_cli_cases": 16,
+  "refinement_max_errors": [
+    0.012950746711821504,
+    0.0032189644308904253,
+    0.0008035776694919061
+  ],
+  "refinement_ratios": [
+    4.023264931895842,
+    4.00579129199265
+  ],
+  "status": "PASS"
+}
+<end of output>
+Test time =   0.64 sec
+----------------------------------------------------------
+Test Passed.
+"serial_validation" end time: Oct 31 15:41 +08
+"serial_validation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/5 Testing: grid_comparison_contract
+4/5 Test: grid_comparison_contract
+Command: "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9" "/Users/arlo/.codex/.chatgpt-projects/g-p-6a8abc5cf380819198315d8e9c0d8b45/NUS_DSA5208_project3/tests/test_compare_grids.py"
+Directory: /Users/arlo/.codex/.chatgpt-projects/g-p-6a8abc5cf380819198315d8e9c0d8b45/NUS_DSA5208_project3/build
+"grid_comparison_contract" start time: Oct 31 15:41 +08
+Output:
+----------------------------------------------------------
+test_bad_coordinates (__main__.GridComparisonTests) ... ok
+test_bad_csv (__main__.GridComparisonTests) ... ok
+test_boundary (__main__.GridComparisonTests) ... ok
+test_cli (__main__.GridComparisonTests) ... ok
+test_cli_invalid_tolerance (__main__.GridComparisonTests) ... ok
+test_equal_reordered (__main__.GridComparisonTests) ... ok
+test_invalid_options_and_missing_file (__main__.GridComparisonTests) ... ok
+test_metrics_and_tolerance (__main__.GridComparisonTests) ... ok
+test_missing_and_duplicate (__main__.GridComparisonTests) ... ok
+test_nonfinite_values (__main__.GridComparisonTests) ... ok
+test_overflow (__main__.GridComparisonTests) ... ok
+test_relative_tolerance (__main__.GridComparisonTests) ... ok
+test_transpose_and_reflections (__main__.GridComparisonTests) ... ok
+test_zero_reference (__main__.GridComparisonTests) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.104s
+
+OK
+<end of output>
+Test time =   0.15 sec
+----------------------------------------------------------
+Test Passed.
+"grid_comparison_contract" end time: Oct 31 15:41 +08
+"grid_comparison_contract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/5 Testing: acceptance_contract
+5/5 Test: acceptance_contract
+Command: "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9" "/Users/arlo/.codex/.chatgpt-projects/g-p-6a8abc5cf380819198315d8e9c0d8b45/NUS_DSA5208_project3/tests/test_acceptance.py" "--exe" "/Users/arlo/.codex/.chatgpt-projects/g-p-6a8abc5cf380819198315d8e9c0d8b45/NUS_DSA5208_project3/build/poisson_serial"
+Directory: /Users/arlo/.codex/.chatgpt-projects/g-p-6a8abc5cf380819198315d8e9c0d8b45/NUS_DSA5208_project3/build
+"acceptance_contract" start time: Oct 31 15:41 +08
+Output:
+----------------------------------------------------------
+test_cli (__main__.AcceptanceTests) ... ok
+test_continues_after_failure (__main__.AcceptanceTests) ... ok
+test_faults_and_logs (__main__.AcceptanceTests) ... ok
+test_full_serial_suite (__main__.AcceptanceTests) ... ok
+test_invalid_config (__main__.AcceptanceTests) ... ok
+test_launcher_and_environment (__main__.AcceptanceTests) ... ok
+test_missing_launcher (__main__.AcceptanceTests) ... ok
+test_reported_resources_must_match (__main__.AcceptanceTests) ... ok
+test_stale_output_refused (__main__.AcceptanceTests) ... ok
+test_timeout (__main__.AcceptanceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.943s
+
+OK
+<end of output>
+Test time =   1.00 sec
+----------------------------------------------------------
+Test Passed.
+"acceptance_contract" end time: Oct 31 15:41 +08
+"acceptance_contract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 31 15:41 +08

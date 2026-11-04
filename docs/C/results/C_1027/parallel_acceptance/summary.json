@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "scope": "local real parallel correctness; not cluster performance",
+  "configurations": [
+    {
+      "configuration": "openmp-r1-t1-openmp",
+      "schema_version": 1,
+      "status": "PASS",
+      "cases": 14,
+      "passed": 14,
+      "failed": 0
+    },
+    {
+      "configuration": "openmp-r1-t2-openmp",
+      "schema_version": 1,
+      "status": "PASS",
+      "cases": 14,
+      "passed": 14,
+      "failed": 0
+    },
+    {
+      "configuration": "openmp-r1-t4-openmp",
+      "schema_version": 1,
+      "status": "PASS",
+      "cases": 14,
+      "passed": 14,
+      "failed": 0
+    },
+    {
+      "configuration": "hybrid-r1-t1-serial",
+      "schema_version": 1,
+      "status": "PASS",
+      "cases": 14,
+      "passed": 14,
+      "failed": 0
+    },
+    {
+      "configuration": "hybrid-r3-t1-serial",
+      "schema_version": 1,
+      "status": "PASS",
+      "cases": 12,
+      "passed": 12,
+      "failed": 0
+    },
+    {
+      "configuration": "hybrid-r1-t2-openmp",
+      "schema_version": 1,
+      "status": "PASS",
+      "cases": 14,
+      "passed": 14,
+      "failed": 0
+    },
+    {
+      "configuration": "hybrid-r3-t2-openmp",
+      "schema_version": 1,
+      "status": "PASS",
+      "cases": 12,
+      "passed": 12,
+      "failed": 0
+    },
+    {
+      "configuration": "hybrid-r3-t4-openmp",
+      "schema_version": 1,
+      "status": "PASS",
+      "cases": 12,
+      "passed": 12,
+      "failed": 0
+    }
+  ],
+  "oracle_cases": 106,
+  "passed": 106
+}

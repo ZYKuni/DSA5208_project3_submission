@@ -1,0 +1,19 @@
+#!/bin/bash
+# Generic PBS CPU pilot template, NOT YET VERIFIED ON VANDA.
+# Review queue/account/resource rules against the current course guide first.
+#PBS -N project3-c-pilot
+#PBS -l select=1:ncpus=4:mpiprocs=2:ompthreads=2
+#PBS -l walltime=00:10:00
+#PBS -j oe
+set -euo pipefail
+cd "${PBS_O_WORKDIR:?Submit from the repository root}"
+# Supply a reviewed file containing the real module/compiler setup commands.
+source "${PROJECT3_ENV_SCRIPT:?Set PROJECT3_ENV_SCRIPT to verified cluster environment setup}"
+cmake -S . -B build-cluster -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DENABLE_OPENMP=ON -DENABLE_MPI=ON
+cmake --build build-cluster -j 4
+python3 scripts/run_acceptance.py --exe build-cluster/poisson_hybrid --config configs/acceptance_hybrid_r2t2.json --output "results/raw/cluster-validation-${PBS_JOBID}"
+# Performance requires an independently reviewed configuration; the supplied
+# cluster template intentionally refuses to run until metadata are verified.
+if [ -n "${PROJECT3_CONFIG:-}" ]; then
+    sh scripts/cluster/run_job.sh "$PROJECT3_CONFIG" build-cluster "results/raw/cluster-${PBS_JOBID}"
+fi

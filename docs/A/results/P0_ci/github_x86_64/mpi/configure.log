@@ -1,0 +1,12 @@
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found MPI_CXX: /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so (found version "3.1")
+-- Found MPI: TRUE (found version "3.1") found components: CXX
+-- Found Python3: /usr/bin/python3 (found suitable version "3.12.3", minimum required is "3.8") found components: Interpreter
+-- Configuring done (3.8s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build

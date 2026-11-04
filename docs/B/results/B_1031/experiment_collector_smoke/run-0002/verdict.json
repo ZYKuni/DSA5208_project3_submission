@@ -1,0 +1,16 @@
+{
+  "run_id": "run-0002",
+  "variant": "serial",
+  "n": 31,
+  "iterations": 10,
+  "check_every": 3,
+  "ranks": 1,
+  "ranks_per_node": 1,
+  "communication": "sendrecv",
+  "repeat": 1,
+  "warmup": false,
+  "status": "PASS",
+  "exit_code": 0,
+  "solve_seconds_max": 7.291e-06,
+  "final_relative_residual": 0.9528773894229159
+}

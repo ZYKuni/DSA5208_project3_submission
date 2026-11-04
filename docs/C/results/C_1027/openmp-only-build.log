@@ -1,0 +1,26 @@
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5") found components: CXX 
+-- Found Python3: /usr/bin/python3 (found suitable version "3.11.2", minimum required is "3.8") found components: Interpreter 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /work/build-c-omp-only
+[1/14] Building CXX object CMakeFiles/poisson_core.dir/src/kernel_serial.cpp.o
+[2/14] Building CXX object CMakeFiles/poisson_core.dir/src/grid.cpp.o
+[3/14] Building CXX object CMakeFiles/poisson_core.dir/src/solver_serial.cpp.o
+[4/14] Linking CXX static library libpoisson_core.a
+[5/14] Building CXX object CMakeFiles/poisson_serial.dir/src/serial_main.cpp.o
+[6/14] Building CXX object CMakeFiles/poisson_openmp_core.dir/src/kernel_openmp.cpp.o
+[7/14] Linking CXX static library libpoisson_openmp_core.a
+[8/14] Linking CXX executable poisson_serial
+[9/14] Building CXX object CMakeFiles/test_core.dir/tests/test_core.cpp.o
+[10/14] Linking CXX executable test_core
+[11/14] Building CXX object CMakeFiles/poisson_openmp.dir/src/c_hybrid_main.cpp.o
+[12/14] Linking CXX executable poisson_openmp
+[13/14] Building CXX object CMakeFiles/test_openmp.dir/tests/test_openmp.cpp.o
+[14/14] Linking CXX executable test_openmp

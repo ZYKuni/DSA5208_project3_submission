@@ -1,0 +1,327 @@
+UpdateCTestConfiguration  from :/evidence/build/DartConfiguration.tcl
+Parse Config file:/evidence/build/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/evidence/build/DartConfiguration.tcl
+Parse Config file:/evidence/build/DartConfiguration.tcl
+Test project /evidence/build
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: core_contract
+
+1: Test command: /evidence/build/test_core
+1: Working Directory: /evidence/build
+1: Test timeout computed to be: 120
+1: PASS: hand steps, boundaries, alias/range checks, uneven slabs, analytic residual
+1/6 Test #1: core_contract ....................   Passed    0.01 sec
+test 2
+    Start 2: decomposition_contract
+
+2: Test command: /evidence/build/test_decomposition
+2: Working Directory: /evidence/build
+2: Test timeout computed to be: 1500
+2: decomposition coverage, balance and rejection checks passed
+2/6 Test #2: decomposition_contract ...........   Passed    0.01 sec
+test 3
+    Start 3: serial_validation
+
+3: Test command: /usr/bin/python3 "/src/tests/validate_serial.py" "--exe" "/evidence/build/poisson_serial" "--output" "/evidence/build/validation"
+3: Working Directory: /evidence/build
+3: Test timeout computed to be: 120
+3: {
+3:   "scope": "local_serial_validation_only",
+3:   "numerical_cases": 37,
+3:   "invalid_cli_cases": 16,
+3:   "refinement_max_errors": [
+3:     0.012950746711821504,
+3:     0.0032189644308904253,
+3:     0.0008035776694919061
+3:   ],
+3:   "refinement_ratios": [
+3:     4.023264931895842,
+3:     4.00579129199265
+3:   ],
+3:   "status": "PASS"
+3: }
+3/6 Test #3: serial_validation ................   Passed    0.41 sec
+test 4
+    Start 4: grid_comparison_contract
+
+4: Test command: /usr/bin/python3 "/src/tests/test_compare_grids.py"
+4: Working Directory: /evidence/build
+4: Test timeout computed to be: 120
+4: test_bad_coordinates (__main__.GridComparisonTests.test_bad_coordinates) ... ok
+4: test_bad_csv (__main__.GridComparisonTests.test_bad_csv) ... ok
+4: test_boundary (__main__.GridComparisonTests.test_boundary) ... ok
+4: test_cli (__main__.GridComparisonTests.test_cli) ... ok
+4: test_cli_invalid_tolerance (__main__.GridComparisonTests.test_cli_invalid_tolerance) ... ok
+4: test_equal_reordered (__main__.GridComparisonTests.test_equal_reordered) ... ok
+4: test_invalid_options_and_missing_file (__main__.GridComparisonTests.test_invalid_options_and_missing_file) ... ok
+4: test_metrics_and_tolerance (__main__.GridComparisonTests.test_metrics_and_tolerance) ... ok
+4: test_missing_and_duplicate (__main__.GridComparisonTests.test_missing_and_duplicate) ... ok
+4: test_nonfinite_values (__main__.GridComparisonTests.test_nonfinite_values) ... ok
+4: test_overflow (__main__.GridComparisonTests.test_overflow) ... ok
+4: test_relative_tolerance (__main__.GridComparisonTests.test_relative_tolerance) ... ok
+4: test_transpose_and_reflections (__main__.GridComparisonTests.test_transpose_and_reflections) ... ok
+4: test_zero_reference (__main__.GridComparisonTests.test_zero_reference) ... ok
+4: 
+4: ----------------------------------------------------------------------
+4: Ran 14 tests in 0.233s
+4: 
+4: OK
+4/6 Test #4: grid_comparison_contract .........   Passed    0.35 sec
+test 5
+    Start 5: acceptance_contract
+
+5: Test command: /usr/bin/python3 "/src/tests/test_acceptance.py" "--exe" "/evidence/build/poisson_serial"
+5: Working Directory: /evidence/build
+5: Test timeout computed to be: 120
+5: test_cli (__main__.AcceptanceTests.test_cli) ... ok
+5: test_continues_after_failure (__main__.AcceptanceTests.test_continues_after_failure) ... ok
+5: test_faults_and_logs (__main__.AcceptanceTests.test_faults_and_logs) ... ok
+5: test_full_serial_suite (__main__.AcceptanceTests.test_full_serial_suite) ... ok
+5: test_invalid_config (__main__.AcceptanceTests.test_invalid_config) ... ok
+5: test_launcher_and_environment (__main__.AcceptanceTests.test_launcher_and_environment) ... ok
+5: test_missing_launcher (__main__.AcceptanceTests.test_missing_launcher) ... ok
+5: test_reported_resources_must_match (__main__.AcceptanceTests.test_reported_resources_must_match) ... ok
+5: test_stale_output_refused (__main__.AcceptanceTests.test_stale_output_refused) ... ok
+5: test_timeout (__main__.AcceptanceTests.test_timeout) ... ok
+5: 
+5: ----------------------------------------------------------------------
+5: Ran 10 tests in 1.001s
+5: 
+5: OK
+5/6 Test #5: acceptance_contract ..............   Passed    1.14 sec
+test 6
+    Start 6: mpi_validation
+
+6: Test command: /usr/bin/python3 "/src/tests/validate_mpi.py" "--exe" "/evidence/build/poisson_mpi" "--serial" "/evidence/build/poisson_serial" "--mpiexec" "/usr/bin/mpiexec" "--numproc-flag=-n" "--output" "/evidence/build/mpi-validation"
+6: Working Directory: /evidence/build
+6: Test timeout computed to be: 240
+6: sendrecv-r1 PASS 17 / 17
+6: overlap-r1 PASS 17 / 17
+6: sendrecv-r2 FAIL 0 / 16
+6: overlap-r2 FAIL 0 / 16
+6: sendrecv-r3 FAIL 0 / 15
+6: overlap-r3 FAIL 0 / 15
+6: sendrecv-r4 FAIL 0 / 14
+6: overlap-r4 FAIL 0 / 14
+6: {
+6:   "status": "FAIL",
+6:   "numerical_cases": 124,
+6:   "negative_cases": 4,
+6:   "failures": [
+6:     "sendrecv-r2/two_rows: oracle failed",
+6:     "sendrecv-r2/initial_state: oracle failed",
+6:     "sendrecv-r2/original_odd: oracle failed",
+6:     "sendrecv-r2/mixed_k0: oracle failed",
+6:     "sendrecv-r2/mixed_k1: oracle failed",
+6:     "sendrecv-r2/mixed_k2: oracle failed",
+6:     "sendrecv-r2/mixed_k5: oracle failed",
+6:     "sendrecv-r2/mixed_k16: oracle failed",
+6:     "sendrecv-r2/mixed_smallest: oracle failed",
+6:     "sendrecv-r2/mixed_converged: oracle failed",
+6:     "sendrecv-r2/continuous_converged: oracle failed",
+6:     "sendrecv-r2/zero_initial_converged: oracle failed",
+6:     "sendrecv-r2/max_iterations: oracle failed",
+6:     "sendrecv-r2/slab_n2: oracle failed",
+6:     "sendrecv-r2/slab_n4: oracle failed",
+6:     "sendrecv-r2/slab_n127: oracle failed",
+6:     "overlap-r2/two_rows: oracle failed",
+6:     "overlap-r2/initial_state: oracle failed",
+6:     "overlap-r2/original_odd: oracle failed",
+6:     "overlap-r2/mixed_k0: oracle failed",
+6:     "overlap-r2/mixed_k1: oracle failed",
+6:     "overlap-r2/mixed_k2: oracle failed",
+6:     "overlap-r2/mixed_k5: oracle failed",
+6:     "overlap-r2/mixed_k16: oracle failed",
+6:     "overlap-r2/mixed_smallest: oracle failed",
+6:     "overlap-r2/mixed_converged: oracle failed",
+6:     "overlap-r2/continuous_converged: oracle failed",
+6:     "overlap-r2/zero_initial_converged: oracle failed",
+6:     "overlap-r2/max_iterations: oracle failed",
+6:     "overlap-r2/slab_n2: oracle failed",
+6:     "overlap-r2/slab_n4: oracle failed",
+6:     "overlap-r2/slab_n127: oracle failed",
+6:     "sendrecv-r3/initial_state: oracle failed",
+6:     "sendrecv-r3/original_odd: oracle failed",
+6:     "sendrecv-r3/mixed_k0: oracle failed",
+6:     "sendrecv-r3/mixed_k1: oracle failed",
+6:     "sendrecv-r3/mixed_k2: oracle failed",
+6:     "sendrecv-r3/mixed_k5: oracle failed",
+6:     "sendrecv-r3/mixed_k16: oracle failed",
+6:     "sendrecv-r3/mixed_smallest: oracle failed",
+6:     "sendrecv-r3/mixed_converged: oracle failed",
+6:     "sendrecv-r3/continuous_converged: oracle failed",
+6:     "sendrecv-r3/zero_initial_converged: oracle failed",
+6:     "sendrecv-r3/max_iterations: oracle failed",
+6:     "sendrecv-r3/slab_n3: oracle failed",
+6:     "sendrecv-r3/slab_n6: oracle failed",
+6:     "sendrecv-r3/slab_n127: oracle failed",
+6:     "overlap-r3/initial_state: oracle failed",
+6:     "overlap-r3/original_odd: oracle failed",
+6:     "overlap-r3/mixed_k0: oracle failed",
+6:     "overlap-r3/mixed_k1: oracle failed",
+6:     "overlap-r3/mixed_k2: oracle failed",
+6:     "overlap-r3/mixed_k5: oracle failed",
+6:     "overlap-r3/mixed_k16: oracle failed",
+6:     "overlap-r3/mixed_smallest: oracle failed",
+6:     "overlap-r3/mixed_converged: oracle failed",
+6:     "overlap-r3/continuous_converged: oracle failed",
+6:     "overlap-r3/zero_initial_converged: oracle failed",
+6:     "overlap-r3/max_iterations: oracle failed",
+6:     "overlap-r3/slab_n3: oracle failed",
+6:     "overlap-r3/slab_n6: oracle failed",
+6:     "overlap-r3/slab_n127: oracle failed",
+6:     "sendrecv-r4/initial_state: oracle failed",
+6:     "sendrecv-r4/original_odd: oracle failed",
+6:     "sendrecv-r4/mixed_k0: oracle failed",
+6:     "sendrecv-r4/mixed_k1: oracle failed",
+6:     "sendrecv-r4/mixed_k2: oracle failed",
+6:     "sendrecv-r4/mixed_k5: oracle failed",
+6:     "sendrecv-r4/mixed_k16: oracle failed",
+6:     "sendrecv-r4/mixed_converged: oracle failed",
+6:     "sendrecv-r4/continuous_converged: oracle failed",
+6:     "sendrecv-r4/zero_initial_converged: oracle failed",
+6:     "sendrecv-r4/max_iterations: oracle failed",
+6:     "sendrecv-r4/slab_n4: oracle failed",
+6:     "sendrecv-r4/slab_n8: oracle failed",
+6:     "sendrecv-r4/slab_n127: oracle failed",
+6:     "overlap-r4/initial_state: oracle failed",
+6:     "overlap-r4/original_odd: oracle failed",
+6:     "overlap-r4/mixed_k0: oracle failed",
+6:     "overlap-r4/mixed_k1: oracle failed",
+6:     "overlap-r4/mixed_k2: oracle failed",
+6:     "overlap-r4/mixed_k5: oracle failed",
+6:     "overlap-r4/mixed_k16: oracle failed",
+6:     "overlap-r4/mixed_converged: oracle failed",
+6:     "overlap-r4/continuous_converged: oracle failed",
+6:     "overlap-r4/zero_initial_converged: oracle failed",
+6:     "overlap-r4/max_iterations: oracle failed",
+6:     "overlap-r4/slab_n4: oracle failed",
+6:     "overlap-r4/slab_n8: oracle failed",
+6:     "overlap-r4/slab_n127: oracle failed",
+6:     "negative test: ranks <= n"
+6:   ],
+6:   "evidence": "/evidence/build/mpi-validation/run-cknqpnvh/evidence.json"
+6: }
+6/6 Test #6: mpi_validation ...................***Failed   18.66 sec
+sendrecv-r1 PASS 17 / 17
+overlap-r1 PASS 17 / 17
+sendrecv-r2 FAIL 0 / 16
+overlap-r2 FAIL 0 / 16
+sendrecv-r3 FAIL 0 / 15
+overlap-r3 FAIL 0 / 15
+sendrecv-r4 FAIL 0 / 14
+overlap-r4 FAIL 0 / 14
+{
+  "status": "FAIL",
+  "numerical_cases": 124,
+  "negative_cases": 4,
+  "failures": [
+    "sendrecv-r2/two_rows: oracle failed",
+    "sendrecv-r2/initial_state: oracle failed",
+    "sendrecv-r2/original_odd: oracle failed",
+    "sendrecv-r2/mixed_k0: oracle failed",
+    "sendrecv-r2/mixed_k1: oracle failed",
+    "sendrecv-r2/mixed_k2: oracle failed",
+    "sendrecv-r2/mixed_k5: oracle failed",
+    "sendrecv-r2/mixed_k16: oracle failed",
+    "sendrecv-r2/mixed_smallest: oracle failed",
+    "sendrecv-r2/mixed_converged: oracle failed",
+    "sendrecv-r2/continuous_converged: oracle failed",
+    "sendrecv-r2/zero_initial_converged: oracle failed",
+    "sendrecv-r2/max_iterations: oracle failed",
+    "sendrecv-r2/slab_n2: oracle failed",
+    "sendrecv-r2/slab_n4: oracle failed",
+    "sendrecv-r2/slab_n127: oracle failed",
+    "overlap-r2/two_rows: oracle failed",
+    "overlap-r2/initial_state: oracle failed",
+    "overlap-r2/original_odd: oracle failed",
+    "overlap-r2/mixed_k0: oracle failed",
+    "overlap-r2/mixed_k1: oracle failed",
+    "overlap-r2/mixed_k2: oracle failed",
+    "overlap-r2/mixed_k5: oracle failed",
+    "overlap-r2/mixed_k16: oracle failed",
+    "overlap-r2/mixed_smallest: oracle failed",
+    "overlap-r2/mixed_converged: oracle failed",
+    "overlap-r2/continuous_converged: oracle failed",
+    "overlap-r2/zero_initial_converged: oracle failed",
+    "overlap-r2/max_iterations: oracle failed",
+    "overlap-r2/slab_n2: oracle failed",
+    "overlap-r2/slab_n4: oracle failed",
+    "overlap-r2/slab_n127: oracle failed",
+    "sendrecv-r3/initial_state: oracle failed",
+    "sendrecv-r3/original_odd: oracle failed",
+    "sendrecv-r3/mixed_k0: oracle failed",
+    "sendrecv-r3/mixed_k1: oracle failed",
+    "sendrecv-r3/mixed_k2: oracle failed",
+    "sendrecv-r3/mixed_k5: oracle failed",
+    "sendrecv-r3/mixed_k16: oracle failed",
+    "sendrecv-r3/mixed_smallest: oracle failed",
+    "sendrecv-r3/mixed_converged: oracle failed",
+    "sendrecv-r3/continuous_converged: oracle failed",
+    "sendrecv-r3/zero_initial_converged: oracle failed",
+    "sendrecv-r3/max_iterations: oracle failed",
+    "sendrecv-r3/slab_n3: oracle failed",
+    "sendrecv-r3/slab_n6: oracle failed",
+    "sendrecv-r3/slab_n127: oracle failed",
+    "overlap-r3/initial_state: oracle failed",
+    "overlap-r3/original_odd: oracle failed",
+    "overlap-r3/mixed_k0: oracle failed",
+    "overlap-r3/mixed_k1: oracle failed",
+    "overlap-r3/mixed_k2: oracle failed",
+    "overlap-r3/mixed_k5: oracle failed",
+    "overlap-r3/mixed_k16: oracle failed",
+    "overlap-r3/mixed_smallest: oracle failed",
+    "overlap-r3/mixed_converged: oracle failed",
+    "overlap-r3/continuous_converged: oracle failed",
+    "overlap-r3/zero_initial_converged: oracle failed",
+    "overlap-r3/max_iterations: oracle failed",
+    "overlap-r3/slab_n3: oracle failed",
+    "overlap-r3/slab_n6: oracle failed",
+    "overlap-r3/slab_n127: oracle failed",
+    "sendrecv-r4/initial_state: oracle failed",
+    "sendrecv-r4/original_odd: oracle failed",
+    "sendrecv-r4/mixed_k0: oracle failed",
+    "sendrecv-r4/mixed_k1: oracle failed",
+    "sendrecv-r4/mixed_k2: oracle failed",
+    "sendrecv-r4/mixed_k5: oracle failed",
+    "sendrecv-r4/mixed_k16: oracle failed",
+    "sendrecv-r4/mixed_converged: oracle failed",
+    "sendrecv-r4/continuous_converged: oracle failed",
+    "sendrecv-r4/zero_initial_converged: oracle failed",
+    "sendrecv-r4/max_iterations: oracle failed",
+    "sendrecv-r4/slab_n4: oracle failed",
+    "sendrecv-r4/slab_n8: oracle failed",
+    "sendrecv-r4/slab_n127: oracle failed",
+    "overlap-r4/initial_state: oracle failed",
+    "overlap-r4/original_odd: oracle failed",
+    "overlap-r4/mixed_k0: oracle failed",
+    "overlap-r4/mixed_k1: oracle failed",
+    "overlap-r4/mixed_k2: oracle failed",
+    "overlap-r4/mixed_k5: oracle failed",
+    "overlap-r4/mixed_k16: oracle failed",
+    "overlap-r4/mixed_converged: oracle failed",
+    "overlap-r4/continuous_converged: oracle failed",
+    "overlap-r4/zero_initial_converged: oracle failed",
+    "overlap-r4/max_iterations: oracle failed",
+    "overlap-r4/slab_n4: oracle failed",
+    "overlap-r4/slab_n8: oracle failed",
+    "overlap-r4/slab_n127: oracle failed",
+    "negative test: ranks <= n"
+  ],
+  "evidence": "/evidence/build/mpi-validation/run-cknqpnvh/evidence.json"
+}
+
+
+83% tests passed, 1 tests failed out of 6
+
+Total Test time (real) =  20.61 sec
+
+The following tests FAILED:
+	  6 - mpi_validation (Failed)
+Errors while running CTest

@@ -1,0 +1,149 @@
+Start testing: Oct 31 08:21 UTC
+----------------------------------------------------------
+1/6 Testing: core_contract
+1/6 Test: core_contract
+Command: "/work/build-c-default-1031/test_core"
+Directory: /work/build-c-default-1031
+"core_contract" start time: Oct 31 08:21 UTC
+Output:
+----------------------------------------------------------
+PASS: hand steps, boundaries, alias/range checks, uneven slabs, analytic residual
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"core_contract" end time: Oct 31 08:21 UTC
+"core_contract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/6 Testing: decomposition_contract
+2/6 Test: decomposition_contract
+Command: "/work/build-c-default-1031/test_decomposition"
+Directory: /work/build-c-default-1031
+"decomposition_contract" start time: Oct 31 08:21 UTC
+Output:
+----------------------------------------------------------
+decomposition coverage, balance and rejection checks passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"decomposition_contract" end time: Oct 31 08:21 UTC
+"decomposition_contract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/6 Testing: serial_validation
+3/6 Test: serial_validation
+Command: "/usr/bin/python3" "/work/tests/validate_serial.py" "--exe" "/work/build-c-default-1031/poisson_serial" "--output" "/work/build-c-default-1031/validation"
+Directory: /work/build-c-default-1031
+"serial_validation" start time: Oct 31 08:21 UTC
+Output:
+----------------------------------------------------------
+{
+  "scope": "local_serial_validation_only",
+  "numerical_cases": 37,
+  "invalid_cli_cases": 16,
+  "refinement_max_errors": [
+    0.012950746711821504,
+    0.0032189644308904253,
+    0.0008035776694919061
+  ],
+  "refinement_ratios": [
+    4.023264931895842,
+    4.00579129199265
+  ],
+  "status": "PASS"
+}
+<end of output>
+Test time =   0.09 sec
+----------------------------------------------------------
+Test Passed.
+"serial_validation" end time: Oct 31 08:21 UTC
+"serial_validation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/6 Testing: grid_comparison_contract
+4/6 Test: grid_comparison_contract
+Command: "/usr/bin/python3" "/work/tests/test_compare_grids.py"
+Directory: /work/build-c-default-1031
+"grid_comparison_contract" start time: Oct 31 08:21 UTC
+Output:
+----------------------------------------------------------
+test_bad_coordinates (__main__.GridComparisonTests.test_bad_coordinates) ... ok
+test_bad_csv (__main__.GridComparisonTests.test_bad_csv) ... ok
+test_boundary (__main__.GridComparisonTests.test_boundary) ... ok
+test_cli (__main__.GridComparisonTests.test_cli) ... ok
+test_cli_invalid_tolerance (__main__.GridComparisonTests.test_cli_invalid_tolerance) ... ok
+test_equal_reordered (__main__.GridComparisonTests.test_equal_reordered) ... ok
+test_invalid_options_and_missing_file (__main__.GridComparisonTests.test_invalid_options_and_missing_file) ... ok
+test_metrics_and_tolerance (__main__.GridComparisonTests.test_metrics_and_tolerance) ... ok
+test_missing_and_duplicate (__main__.GridComparisonTests.test_missing_and_duplicate) ... ok
+test_nonfinite_values (__main__.GridComparisonTests.test_nonfinite_values) ... ok
+test_overflow (__main__.GridComparisonTests.test_overflow) ... ok
+test_relative_tolerance (__main__.GridComparisonTests.test_relative_tolerance) ... ok
+test_transpose_and_reflections (__main__.GridComparisonTests.test_transpose_and_reflections) ... ok
+test_zero_reference (__main__.GridComparisonTests.test_zero_reference) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.090s
+
+OK
+<end of output>
+Test time =   0.12 sec
+----------------------------------------------------------
+Test Passed.
+"grid_comparison_contract" end time: Oct 31 08:21 UTC
+"grid_comparison_contract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/6 Testing: acceptance_contract
+5/6 Test: acceptance_contract
+Command: "/usr/bin/python3" "/work/tests/test_acceptance.py" "--exe" "/work/build-c-default-1031/poisson_serial"
+Directory: /work/build-c-default-1031
+"acceptance_contract" start time: Oct 31 08:21 UTC
+Output:
+----------------------------------------------------------
+test_cli (__main__.AcceptanceTests.test_cli) ... ok
+test_continues_after_failure (__main__.AcceptanceTests.test_continues_after_failure) ... ok
+test_faults_and_logs (__main__.AcceptanceTests.test_faults_and_logs) ... ok
+test_full_serial_suite (__main__.AcceptanceTests.test_full_serial_suite) ... ok
+test_invalid_config (__main__.AcceptanceTests.test_invalid_config) ... ok
+test_launcher_and_environment (__main__.AcceptanceTests.test_launcher_and_environment) ... ok
+test_missing_launcher (__main__.AcceptanceTests.test_missing_launcher) ... ok
+test_reported_resources_must_match (__main__.AcceptanceTests.test_reported_resources_must_match) ... ok
+test_stale_output_refused (__main__.AcceptanceTests.test_stale_output_refused) ... ok
+test_timeout (__main__.AcceptanceTests.test_timeout) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.485s
+
+OK
+<end of output>
+Test time =   1.52 sec
+----------------------------------------------------------
+Test Passed.
+"acceptance_contract" end time: Oct 31 08:21 UTC
+"acceptance_contract" time elapsed: 00:00:01
+----------------------------------------------------------
+
+6/6 Testing: experiment_metrics
+6/6 Test: experiment_metrics
+Command: "/usr/bin/python3" "/work/tests/test_experiments.py"
+Directory: /work/build-c-default-1031
+"experiment_metrics" start time: Oct 31 08:21 UTC
+Output:
+----------------------------------------------------------
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+OK
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"experiment_metrics" end time: Oct 31 08:21 UTC
+"experiment_metrics" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 31 08:21 UTC

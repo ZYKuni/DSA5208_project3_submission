@@ -1,0 +1,786 @@
+[
+  {
+    "case": "dense_n1_k0",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "1",
+      "--iterations",
+      "0",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n1_k0.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":1,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":0,\"actual_iterations\":0,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":8.3999999999999998e-08,\"seconds_per_iteration\":0,\"timed_residual_checks\":0,\"rhs_l2\":19.739208802178716,\"final_absolute_residual\":19.739208802178716,\"final_relative_residual\":1,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":1,\"exact_relative_l2_error\":1,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "dense_n1_k1",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "1",
+      "--iterations",
+      "1",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n1_k1.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":1,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":1,\"actual_iterations\":1,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":5.4199999999999996e-07,\"seconds_per_iteration\":5.4199999999999996e-07,\"timed_residual_checks\":1,\"rhs_l2\":19.739208802178716,\"final_absolute_residual\":0,\"final_relative_residual\":0,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.23370055013616975,\"exact_relative_l2_error\":0.23370055013616975,\"converged\":true,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "dense_n1_k2",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "1",
+      "--iterations",
+      "2",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n1_k2.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":1,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":2,\"actual_iterations\":2,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":4.1600000000000002e-07,\"seconds_per_iteration\":2.0800000000000001e-07,\"timed_residual_checks\":2,\"rhs_l2\":19.739208802178716,\"final_absolute_residual\":0,\"final_relative_residual\":0,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.23370055013616975,\"exact_relative_l2_error\":0.23370055013616975,\"converged\":true,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "dense_n1_k5",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "1",
+      "--iterations",
+      "5",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n1_k5.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":1,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":5,\"actual_iterations\":5,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":4.1699999999999999e-07,\"seconds_per_iteration\":8.3399999999999992e-08,\"timed_residual_checks\":5,\"rhs_l2\":19.739208802178716,\"final_absolute_residual\":0,\"final_relative_residual\":0,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.23370055013616975,\"exact_relative_l2_error\":0.23370055013616975,\"converged\":true,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "dense_n2_k0",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "2",
+      "--iterations",
+      "0",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n2_k0.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":2,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":0,\"actual_iterations\":0,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":1.66e-07,\"seconds_per_iteration\":0,\"timed_residual_checks\":0,\"rhs_l2\":29.608813203268074,\"final_absolute_residual\":29.608813203268074,\"final_relative_residual\":1,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.75000000000000011,\"exact_relative_l2_error\":1,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "dense_n2_k1",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "2",
+      "--iterations",
+      "1",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n2_k1.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":2,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":1,\"actual_iterations\":1,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":3.34e-07,\"seconds_per_iteration\":3.34e-07,\"timed_residual_checks\":1,\"rhs_l2\":29.608813203268074,\"final_absolute_residual\":14.804406601634039,\"final_relative_residual\":0.50000000000000011,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.33876648328794351,\"exact_relative_l2_error\":0.45168864438392459,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "dense_n2_k2",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "2",
+      "--iterations",
+      "2",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n2_k2.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":2,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":2,\"actual_iterations\":2,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":5.4099999999999999e-07,\"seconds_per_iteration\":2.7049999999999999e-07,\"timed_residual_checks\":2,\"rhs_l2\":29.608813203268074,\"final_absolute_residual\":7.4022033008170194,\"final_relative_residual\":0.25000000000000006,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.13314972493191524,\"exact_relative_l2_error\":0.17753296657588688,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "dense_n2_k5",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "2",
+      "--iterations",
+      "5",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n2_k5.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":2,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":5,\"actual_iterations\":5,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":1.333e-06,\"seconds_per_iteration\":2.6660000000000002e-07,\"timed_residual_checks\":5,\"rhs_l2\":29.608813203268074,\"final_absolute_residual\":0.92527541260212964,\"final_relative_residual\":0.031250000000000076,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.04676493862960962,\"exact_relative_l2_error\":0.062353251506146123,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "dense_n3_k0",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "3",
+      "--iterations",
+      "0",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n3_k0.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":3,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":0,\"actual_iterations\":0,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":1.2499999999999999e-07,\"seconds_per_iteration\":0,\"timed_residual_checks\":0,\"rhs_l2\":39.478417604357432,\"final_absolute_residual\":39.478417604357432,\"final_relative_residual\":1,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":1,\"exact_relative_l2_error\":1,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "dense_n3_k1",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "3",
+      "--iterations",
+      "1",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n3_k1.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":3,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":1,\"actual_iterations\":1,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":4.1600000000000002e-07,\"seconds_per_iteration\":4.1600000000000002e-07,\"timed_residual_checks\":1,\"rhs_l2\":39.478417604357432,\"final_absolute_residual\":27.915456798555514,\"final_relative_residual\":0.70710678118654746,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.69157486246595756,\"exact_relative_l2_error\":0.69157486246595756,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "dense_n3_k2",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "3",
+      "--iterations",
+      "2",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n3_k2.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":3,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":2,\"actual_iterations\":2,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":9.5799999999999998e-07,\"seconds_per_iteration\":4.7899999999999999e-07,\"timed_residual_checks\":2,\"rhs_l2\":39.478417604357432,\"final_absolute_residual\":19.739208802178716,\"final_relative_residual\":0.5,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.47348535622724253,\"exact_relative_l2_error\":0.47348535622724258,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "dense_n3_k5",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "3",
+      "--iterations",
+      "5",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n3_k5.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":3,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":5,\"actual_iterations\":5,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":9.1699999999999997e-07,\"seconds_per_iteration\":1.8339999999999999e-07,\"timed_residual_checks\":5,\"rhs_l2\":39.478417604357432,\"final_absolute_residual\":6.978864199638882,\"final_relative_residual\":0.17677669529663695,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.13312174995735326,\"exact_relative_l2_error\":0.13312174995735329,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "dense_n7_k0",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--iterations",
+      "0",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n7_k0.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":0,\"actual_iterations\":0,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":1.2499999999999999e-07,\"seconds_per_iteration\":0,\"timed_residual_checks\":0,\"rhs_l2\":78.95683520871485,\"final_absolute_residual\":78.956835208714864,\"final_relative_residual\":1.0000000000000002,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":1,\"exact_relative_l2_error\":1,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "dense_n7_k1",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--iterations",
+      "1",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n7_k1.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":1,\"actual_iterations\":1,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":5.4099999999999999e-07,\"seconds_per_iteration\":5.4099999999999999e-07,\"timed_residual_checks\":1,\"rhs_l2\":78.95683520871485,\"final_absolute_residual\":72.946604001198196,\"final_relative_residual\":0.92387953251128696,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.92289371561648936,\"exact_relative_l2_error\":0.92289371561648914,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "dense_n7_k2",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--iterations",
+      "2",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n7_k2.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":2,\"actual_iterations\":2,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":1.3340000000000001e-06,\"seconds_per_iteration\":6.6700000000000003e-07,\"timed_residual_checks\":2,\"rhs_l2\":78.95683520871485,\"final_absolute_residual\":67.393874402912957,\"final_relative_residual\":0.85355339059327406,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.85165679764656921,\"exact_relative_l2_error\":0.85165679764656943,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "dense_n7_k5",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--iterations",
+      "5",
+      "--solution",
+      "/evidence/verification/build/validation/dense_n7_k5.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":5,\"actual_iterations\":5,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":1.6249999999999999e-06,\"seconds_per_iteration\":3.2499999999999996e-07,\"timed_residual_checks\":5,\"rhs_l2\":78.95683520871485,\"final_absolute_residual\":53.145495677337813,\"final_relative_residual\":0.67309556591082675,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.66886190938267853,\"exact_relative_l2_error\":0.66886190938267853,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "eigenmode_k1",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--iterations",
+      "1",
+      "--problem",
+      "discrete-sine",
+      "--solution",
+      "/evidence/verification/build/validation/eigenmode_k1.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"fixed\",\"problem\":\"discrete-sine\",\"requested_iterations\":1,\"actual_iterations\":1,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":5.8299999999999997e-07,\"seconds_per_iteration\":5.8299999999999997e-07,\"timed_residual_checks\":1,\"rhs_l2\":77.947358708442351,\"final_absolute_residual\":72.013969324045306,\"final_relative_residual\":0.92387953251128685,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.92387953251128674,\"exact_relative_l2_error\":0.92387953251128685,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "eigenmode_k2",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--iterations",
+      "2",
+      "--problem",
+      "discrete-sine",
+      "--solution",
+      "/evidence/verification/build/validation/eigenmode_k2.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"fixed\",\"problem\":\"discrete-sine\",\"requested_iterations\":2,\"actual_iterations\":2,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":1.125e-06,\"seconds_per_iteration\":5.6250000000000001e-07,\"timed_residual_checks\":2,\"rhs_l2\":77.947358708442351,\"final_absolute_residual\":66.532232313381101,\"final_relative_residual\":0.85355339059327362,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.85355339059327373,\"exact_relative_l2_error\":0.85355339059327395,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "eigenmode_k5",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--iterations",
+      "5",
+      "--problem",
+      "discrete-sine",
+      "--solution",
+      "/evidence/verification/build/validation/eigenmode_k5.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"fixed\",\"problem\":\"discrete-sine\",\"requested_iterations\":5,\"actual_iterations\":5,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":1.4169999999999999e-06,\"seconds_per_iteration\":2.8340000000000001e-07,\"timed_residual_checks\":5,\"rhs_l2\":77.947358708442351,\"final_absolute_residual\":52.466021521113213,\"final_relative_residual\":0.67309556591082675,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.67309556591082664,\"exact_relative_l2_error\":0.67309556591082687,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "eigenmode_k16",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--iterations",
+      "16",
+      "--problem",
+      "discrete-sine",
+      "--solution",
+      "/evidence/verification/build/validation/eigenmode_k16.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"fixed\",\"problem\":\"discrete-sine\",\"requested_iterations\":16,\"actual_iterations\":16,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":3.1250000000000001e-06,\"seconds_per_iteration\":1.9531250000000001e-07,\"timed_residual_checks\":16,\"rhs_l2\":77.947358708442351,\"final_absolute_residual\":21.960738379912151,\"final_relative_residual\":0.28173806968950726,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.28173806968950754,\"exact_relative_l2_error\":0.28173806968950754,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "fixed_check_interval",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--iterations",
+      "5",
+      "--check-every",
+      "3",
+      "--solution",
+      "/evidence/verification/build/validation/fixed_check_interval.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"fixed\",\"problem\":\"continuous-sine\",\"requested_iterations\":5,\"actual_iterations\":5,\"tolerance\":1e-10,\"check_every\":3,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":2.041e-06,\"seconds_per_iteration\":4.0820000000000002e-07,\"timed_residual_checks\":2,\"rhs_l2\":78.95683520871485,\"final_absolute_residual\":53.145495677337813,\"final_relative_residual\":0.67309556591082675,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.66886190938267853,\"exact_relative_l2_error\":0.66886190938267853,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "fixed_no_early_stop",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "1",
+      "--iterations",
+      "5",
+      "--problem",
+      "discrete-sine",
+      "--solution",
+      "/evidence/verification/build/validation/fixed_no_early_stop.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":1,\"mode\":\"fixed\",\"problem\":\"discrete-sine\",\"requested_iterations\":5,\"actual_iterations\":5,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":1.3340000000000001e-06,\"seconds_per_iteration\":2.6680000000000003e-07,\"timed_residual_checks\":5,\"rhs_l2\":15.999999999999996,\"final_absolute_residual\":0,\"final_relative_residual\":0,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":2.2204460492503131e-16,\"exact_relative_l2_error\":2.2204460492503131e-16,\"converged\":true,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "zero_initial_converged",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--mode",
+      "converge",
+      "--problem",
+      "zero",
+      "--solution",
+      "/evidence/verification/build/validation/zero_initial_converged.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"converge\",\"problem\":\"zero\",\"requested_iterations\":1000,\"actual_iterations\":0,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":4.58e-07,\"seconds_per_iteration\":0,\"timed_residual_checks\":1,\"rhs_l2\":0,\"final_absolute_residual\":0,\"final_relative_residual\":0,\"residual_kind\":\"absolute_l2\",\"exact_max_abs_error\":0,\"exact_relative_l2_error\":0,\"converged\":true,\"stop_reason\":\"tolerance\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "zero_fixed",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--iterations",
+      "5",
+      "--problem",
+      "zero",
+      "--solution",
+      "/evidence/verification/build/validation/zero_fixed.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"fixed\",\"problem\":\"zero\",\"requested_iterations\":5,\"actual_iterations\":5,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":1.4169999999999999e-06,\"seconds_per_iteration\":2.8340000000000001e-07,\"timed_residual_checks\":5,\"rhs_l2\":0,\"final_absolute_residual\":0,\"final_relative_residual\":0,\"residual_kind\":\"absolute_l2\",\"exact_max_abs_error\":0,\"exact_relative_l2_error\":0,\"converged\":true,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "nonconverged_exit",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--mode",
+      "converge",
+      "--iterations",
+      "1",
+      "--solution",
+      "/evidence/verification/build/validation/nonconverged_exit.csv"
+    ],
+    "exit_code": 2,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"converge\",\"problem\":\"continuous-sine\",\"requested_iterations\":1,\"actual_iterations\":1,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":8.3300000000000001e-07,\"seconds_per_iteration\":8.3300000000000001e-07,\"timed_residual_checks\":2,\"rhs_l2\":78.95683520871485,\"final_absolute_residual\":72.946604001198196,\"final_relative_residual\":0.92387953251128696,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.92289371561648936,\"exact_relative_l2_error\":0.92289371561648914,\"converged\":false,\"stop_reason\":\"max_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "discrete_converged",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "15",
+      "--mode",
+      "converge",
+      "--problem",
+      "discrete-sine",
+      "--iterations",
+      "20000",
+      "--tol",
+      "1e-11",
+      "--check-every",
+      "7",
+      "--solution",
+      "/evidence/verification/build/validation/discrete_converged.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":15,\"mode\":\"converge\",\"problem\":\"discrete-sine\",\"requested_iterations\":20000,\"actual_iterations\":1309,\"tolerance\":9.9999999999999994e-12,\"check_every\":7,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":0.000317833,\"seconds_per_iteration\":2.428059587471352e-07,\"timed_residual_checks\":188,\"rhs_l2\":157.40698293673614,\"final_absolute_residual\":1.4699890997594579e-09,\"final_relative_residual\":9.3387794641249491e-12,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":9.3385299493320417e-12,\"exact_relative_l2_error\":9.338500343931965e-12,\"converged\":true,\"stop_reason\":\"tolerance\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "mixed_dense_n3_k1",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "3",
+      "--problem",
+      "discrete-mixed",
+      "--iterations",
+      "1",
+      "--solution",
+      "/evidence/verification/build/validation/mixed_dense_n3_k1.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":3,\"mode\":\"fixed\",\"problem\":\"discrete-mixed\",\"requested_iterations\":1,\"actual_iterations\":1,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":1.9999999999999999e-06,\"seconds_per_iteration\":1.9999999999999999e-06,\"timed_residual_checks\":1,\"rhs_l2\":102.58593515269162,\"final_absolute_residual\":36.269605200415832,\"final_relative_residual\":0.35355339059327373,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.35355339059327384,\"exact_relative_l2_error\":0.3535533905932739,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "mixed_dense_n3_k2",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "3",
+      "--problem",
+      "discrete-mixed",
+      "--iterations",
+      "2",
+      "--solution",
+      "/evidence/verification/build/validation/mixed_dense_n3_k2.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":3,\"mode\":\"fixed\",\"problem\":\"discrete-mixed\",\"requested_iterations\":2,\"actual_iterations\":2,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":9.1699999999999997e-07,\"seconds_per_iteration\":4.5849999999999998e-07,\"timed_residual_checks\":2,\"rhs_l2\":102.58593515269162,\"final_absolute_residual\":12.823241894086456,\"final_relative_residual\":0.12500000000000003,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.12500000000000011,\"exact_relative_l2_error\":0.12500000000000011,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "mixed_dense_n3_k5",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "3",
+      "--problem",
+      "discrete-mixed",
+      "--iterations",
+      "5",
+      "--solution",
+      "/evidence/verification/build/validation/mixed_dense_n3_k5.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":3,\"mode\":\"fixed\",\"problem\":\"discrete-mixed\",\"requested_iterations\":5,\"actual_iterations\":5,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":1.167e-06,\"seconds_per_iteration\":2.3340000000000001e-07,\"timed_residual_checks\":5,\"rhs_l2\":102.58593515269162,\"final_absolute_residual\":0.56671258125650181,\"final_relative_residual\":0.0055242717280199454,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.0055242717280200582,\"exact_relative_l2_error\":0.0055242717280200469,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "mixed_dense_n7_k1",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--problem",
+      "discrete-mixed",
+      "--iterations",
+      "1",
+      "--solution",
+      "/evidence/verification/build/validation/mixed_dense_n7_k1.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"fixed\",\"problem\":\"discrete-mixed\",\"requested_iterations\":1,\"actual_iterations\":1,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":2.959e-06,\"seconds_per_iteration\":2.959e-06,\"timed_residual_checks\":1,\"rhs_l2\":249.602036416945,\"final_absolute_residual\":177.87186464239528,\"final_relative_residual\":0.71262184874674328,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.84877408020149936,\"exact_relative_l2_error\":0.79047821608764468,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "mixed_dense_n7_k2",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--problem",
+      "discrete-mixed",
+      "--iterations",
+      "2",
+      "--solution",
+      "/evidence/verification/build/validation/mixed_dense_n7_k2.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"fixed\",\"problem\":\"discrete-mixed\",\"requested_iterations\":2,\"actual_iterations\":2,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":7.5000000000000002e-07,\"seconds_per_iteration\":3.7500000000000001e-07,\"timed_residual_checks\":2,\"rhs_l2\":249.602036416945,\"final_absolute_residual\":134.65735784078043,\"final_relative_residual\":0.53948821802015878,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.66636613227217256,\"exact_relative_l2_error\":0.63531048681832114,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "mixed_dense_n7_k5",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--problem",
+      "discrete-mixed",
+      "--iterations",
+      "5",
+      "--solution",
+      "/evidence/verification/build/validation/mixed_dense_n7_k5.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"fixed\",\"problem\":\"discrete-mixed\",\"requested_iterations\":5,\"actual_iterations\":5,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":1.5829999999999999e-06,\"seconds_per_iteration\":3.1659999999999996e-07,\"timed_residual_checks\":5,\"rhs_l2\":249.602036416945,\"final_absolute_residual\":68.590837128419025,\"final_relative_residual\":0.27480079134387431,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.36066301193473138,\"exact_relative_l2_error\":0.34078445951352732,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "mixed_modal_k16",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--problem",
+      "discrete-mixed",
+      "--iterations",
+      "16",
+      "--solution",
+      "/evidence/verification/build/validation/mixed_modal_k16.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"fixed\",\"problem\":\"discrete-mixed\",\"requested_iterations\":16,\"actual_iterations\":16,\"tolerance\":1e-10,\"check_every\":1,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":2.875e-06,\"seconds_per_iteration\":1.796875e-07,\"timed_residual_checks\":16,\"rhs_l2\":249.602036416945,\"final_absolute_residual\":7.2283300568746132,\"final_relative_residual\":0.02895941940473646,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.038258253163590328,\"exact_relative_l2_error\":0.036110377460314667,\"converged\":false,\"stop_reason\":\"fixed_iterations\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "mixed_converged",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "15",
+      "--mode",
+      "converge",
+      "--problem",
+      "discrete-mixed",
+      "--iterations",
+      "20000",
+      "--tol",
+      "1e-11",
+      "--check-every",
+      "7",
+      "--solution",
+      "/evidence/verification/build/validation/mixed_converged.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":15,\"mode\":\"converge\",\"problem\":\"discrete-mixed\",\"requested_iterations\":20000,\"actual_iterations\":518,\"tolerance\":9.9999999999999994e-12,\"check_every\":7,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":0.000126,\"seconds_per_iteration\":2.4324324324324326e-07,\"timed_residual_checks\":75,\"rhs_l2\":524.87835422212981,\"final_absolute_residual\":4.0187282047804841e-09,\"final_relative_residual\":7.6564944476253793e-12,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":1.0291656415972739e-11,\"exact_relative_l2_error\":9.7138114726132982e-12,\"converged\":true,\"stop_reason\":\"tolerance\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "refinement_n7",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "7",
+      "--mode",
+      "converge",
+      "--iterations",
+      "20000",
+      "--tol",
+      "1e-11",
+      "--check-every",
+      "5",
+      "--solution",
+      "/evidence/verification/build/validation/refinement_n7.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":7,\"mode\":\"converge\",\"problem\":\"continuous-sine\",\"requested_iterations\":20000,\"actual_iterations\":320,\"tolerance\":9.9999999999999994e-12,\"check_every\":5,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":2.8208000000000002e-05,\"seconds_per_iteration\":8.8150000000000005e-08,\"timed_residual_checks\":65,\"rhs_l2\":78.95683520871485,\"final_absolute_residual\":7.8398552417070245e-10,\"final_relative_residual\":9.9292926584292745e-12,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.012950746711821504,\"exact_relative_l2_error\":0.012950746711821554,\"converged\":true,\"stop_reason\":\"tolerance\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "refinement_n15",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "15",
+      "--mode",
+      "converge",
+      "--iterations",
+      "20000",
+      "--tol",
+      "1e-11",
+      "--check-every",
+      "5",
+      "--solution",
+      "/evidence/verification/build/validation/refinement_n15.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":15,\"mode\":\"converge\",\"problem\":\"continuous-sine\",\"requested_iterations\":20000,\"actual_iterations\":1310,\"tolerance\":9.9999999999999994e-12,\"check_every\":5,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":0.00058533299999999995,\"seconds_per_iteration\":4.4681908396946561e-07,\"timed_residual_checks\":263,\"rhs_l2\":157.91367041742973,\"final_absolute_residual\":1.446363392560814e-09,\"final_relative_residual\":9.1592031819505582e-12,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.0032189644308904253,\"exact_relative_l2_error\":0.0032189644308905298,\"converged\":true,\"stop_reason\":\"tolerance\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "refinement_n31",
+    "command": [
+      "/evidence/verification/build/poisson_serial",
+      "--n",
+      "31",
+      "--mode",
+      "converge",
+      "--iterations",
+      "20000",
+      "--tol",
+      "1e-11",
+      "--check-every",
+      "5",
+      "--solution",
+      "/evidence/verification/build/validation/refinement_n31.csv"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":1,\"variant\":\"serial\",\"n\":31,\"mode\":\"converge\",\"problem\":\"continuous-sine\",\"requested_iterations\":20000,\"actual_iterations\":5250,\"tolerance\":9.9999999999999994e-12,\"check_every\":5,\"ranks\":1,\"threads_per_rank\":1,\"solve_seconds_max\":0.0065559590000000001,\"seconds_per_iteration\":1.2487540952380953e-06,\"timed_residual_checks\":1051,\"rhs_l2\":315.82734083485929,\"final_absolute_residual\":3.1181644405742042e-09,\"final_relative_residual\":9.8730034972008297e-12,\"residual_kind\":\"relative_l2\",\"exact_max_abs_error\":0.00080357766949190612,\"exact_relative_l2_error\":0.00080357766949152177,\"converged\":true,\"stop_reason\":\"tolerance\"}\n",
+    "stderr": ""
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--n",
+      "0"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: n/check-every must be positive; tolerance must be finite and positive\n"
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--n",
+      "-1"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: expected unsigned integer: -1\n"
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--n",
+      "2.5"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: expected unsigned integer: 2.5\n"
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--n",
+      "18446744073709551615"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: grid dimensions overflow\n"
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--tol",
+      "nan"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: n/check-every must be positive; tolerance must be finite and positive\n"
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--tol",
+      "inf"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: n/check-every must be positive; tolerance must be finite and positive\n"
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--tol",
+      "0"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: n/check-every must be positive; tolerance must be finite and positive\n"
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--tol",
+      "1e-5junk"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: invalid tolerance\n"
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--check-every",
+      "0"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: n/check-every must be positive; tolerance must be finite and positive\n"
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--mode",
+      "bad"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: unknown mode: bad\n"
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--problem",
+      "bad"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: unknown problem: bad\n"
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--iterations",
+      "-1"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: expected unsigned integer: -1\n"
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--mode",
+      "converge",
+      "--iterations",
+      "0"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: converge mode requires a positive iteration limit\n"
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--unknown",
+      "x"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: unknown option: --unknown\n"
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--n"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: missing value for --n\n"
+  },
+  {
+    "case": "invalid_cli",
+    "options": [
+      "--n",
+      "2",
+      "--problem",
+      "discrete-mixed"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "error: discrete-mixed requires n >= 3 to resolve both modes\n"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "/nfs/home/svu/zheke.chen/project3-c-source-af45f5b/build-vanda/poisson_openmp",
+    "--kernel",
+    "openmp",
+    "--n",
+    "127",
+    "--mode",
+    "converge",
+    "--problem",
+    "continuous-sine",
+    "--iterations",
+    "200000",
+    "--check-every",
+    "20",
+    "--tol",
+    "1e-08"
+  ],
+  "env_overrides": {
+    "OMP_DYNAMIC": "FALSE",
+    "OMP_PLACES": "cores",
+    "OMP_PROC_BIND": "close",
+    "OMP_WAIT_POLICY": "ACTIVE",
+    "OMP_NUM_THREADS": "16"
+  }
+}

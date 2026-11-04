@@ -1,0 +1,22 @@
+Title:           DSA5208 Project 3: MPI + OpenMP Poisson Solver
+Subject:         (unspecified)
+Keywords:        
+Author:          Yikun Zhao; Jiahao Zhou; Zheke Chen
+Creator:         (unspecified)
+Producer:        ReportLab PDF Library - (opensource)
+CreationDate:    Wed Nov  4 22:20:08 2026 +08
+ModDate:         Wed Nov  4 22:20:08 2026 +08
+Custom Metadata: no
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           9
+Encrypted:       no
+Page size:       595.28 x 841.89 pts (A4)
+Page rot:        0
+File size:       282631 bytes
+Optimized:       no
+PDF version:     1.4

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "file": "serial_n3_k1.csv",
+      "n": 3,
+      "mode": "fixed",
+      "iterations": 1,
+      "problem": "continuous-sine",
+      "command": "./build/poisson_serial --n 3 --mode fixed --iterations 1 --problem continuous-sine --solution serial_n3_k1.csv",
+      "validated_against": "independent Python dense matrix Jacobi reference"
+    },
+    {
+      "file": "serial_n3_k2.csv",
+      "n": 3,
+      "mode": "fixed",
+      "iterations": 2,
+      "problem": "continuous-sine",
+      "command": "./build/poisson_serial --n 3 --mode fixed --iterations 2 --problem continuous-sine --solution serial_n3_k2.csv",
+      "validated_against": "independent Python dense matrix Jacobi reference"
+    },
+    {
+      "file": "serial_n7_k5.csv",
+      "n": 7,
+      "mode": "fixed",
+      "iterations": 5,
+      "problem": "continuous-sine",
+      "command": "./build/poisson_serial --n 7 --mode fixed --iterations 5 --problem continuous-sine --solution serial_n7_k5.csv",
+      "validated_against": "independent Python dense matrix Jacobi reference"
+    },
+    {
+      "file": "serial_mixed_n3_k1.csv",
+      "n": 3,
+      "mode": "fixed",
+      "iterations": 1,
+      "problem": "discrete-mixed",
+      "command": "./build/poisson_serial --n 3 --mode fixed --iterations 1 --problem discrete-mixed --solution serial_mixed_n3_k1.csv",
+      "validated_against": "independent dense matrix and modal evolution; see docs/A/results/A_1027"
+    },
+    {
+      "file": "serial_mixed_n7_k5.csv",
+      "n": 7,
+      "mode": "fixed",
+      "iterations": 5,
+      "problem": "discrete-mixed",
+      "command": "./build/poisson_serial --n 7 --mode fixed --iterations 5 --problem discrete-mixed --solution serial_mixed_n7_k5.csv",
+      "validated_against": "independent dense matrix and modal evolution; see docs/A/results/A_1027"
+    }
+  ]
+}

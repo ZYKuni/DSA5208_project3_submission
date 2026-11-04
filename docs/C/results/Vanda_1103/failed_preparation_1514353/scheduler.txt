@@ -1,0 +1,70 @@
+Job Id: 1514353.stdct-mgmt-02
+    Job_Name = p3-c-measure
+    Job_Owner = zheke.chen@vanda.nus.edu.sg
+    resources_used.cpupercent = 33
+    resources_used.cput = 00:00:01
+    resources_used.mem = 9924kb
+    resources_used.ncpus = 16
+    resources_used.ngpus = 0
+    resources_used.vmem = 119576kb
+    resources_used.walltime = 00:00:05
+    job_state = F
+    queue = batch_cpu
+    server = stdct-mgmt-02
+    Checkpoint = u
+    ctime = Tue Nov  3 17:50:12 2026
+    Error_Path = vanda.nus.edu.sg:/nfs/home/svu/zheke.chen/p3-c-measure.e151435
+	3
+    exec_host = CN-008/1*16
+    exec_vnode = (CN-008[1]:ncpus=16:mem=111gb)
+    Hold_Types = n
+    Join_Path = oe
+    Keep_Files = oed
+    Mail_Points = a
+    mtime = Tue Nov  3 17:50:21 2026
+    Output_Path = vanda.nus.edu.sg:/nfs/home/svu/zheke.chen/p3-c-measure.o15143
+	53
+    Priority = 0
+    qtime = Tue Nov  3 17:50:12 2026
+    Rerunable = True
+    Resource_List.am_job_cache = {"job.queue_charge_rate": 1.0,
+	 "job.walltime": 2700, "job.ncpus": 16.0, "job.ngpus": 0,
+	 "am_cloud_enabled": false}
+    Resource_List.mem = 111gb
+    Resource_List.mpiprocs = 16
+    Resource_List.ncpus = 16
+    Resource_List.ngpus = 0
+    Resource_List.nodect = 1
+    Resource_List.place = free
+    Resource_List.queue_charge_rate = 1
+    Resource_List.select = 1:ncpus=16:mpiprocs=16:ompthreads=1:mem=111GB:node_p
+	ool=cpu_node
+    Resource_List.walltime = 00:45:00
+    stime = Tue Nov  3 17:50:15 2026
+    obittime = Tue Nov  3 17:50:21 2026
+    session_id = 2020290
+    jobdir = /home/svu/zheke.chen
+    substate = 93
+    Variable_List = PBS_O_HOME=/home/svu/zheke.chen,PBS_O_LANG=en_US.UTF-8,
+	PBS_O_LOGNAME=zheke.chen,
+	PBS_O_PATH=/home/svu/zheke.chen/.local/bin:/home/svu/zheke.chen/bin:/c
+	m/shared/apps/apptainer/1.4.1/bin:/cm/local/apps/environment-modules/4.
+	5.3//bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/am/pyth
+	on/bin:/sbin:/usr/sbin:/cm/local/apps/environment-modules/4.5.3/bin:/op
+	t/pbs/bin,PBS_O_MAIL=/var/spool/mail/zheke.chen,PBS_O_SHELL=/bin/bash,
+	PBS_O_INTERACTIVE_AUTH_METHOD=resvport,
+	PBS_O_HOST=stdct-login-01.stdct.loc,
+	PBS_O_WORKDIR=/nfs/home/svu/zheke.chen,PBS_O_SYSTEM=Linux,
+	PBS_O_QUEUE=auto
+    comment = Job run at Tue Nov 03 at 17:50 on (CN-008[1]:ncpus=16:mem=111gb) 
+	and failed
+    etime = Tue Nov  3 17:50:12 2026
+    run_count = 1
+    Stageout_status = 1
+    Exit_status = 1
+    Submit_arguments = -P personal-zheke.chen -W depend=afterok:1514325.stdct-m
+	gmt-02 vanda_cpu_measure_v2.pbs
+    history_timestamp = 1793699421
+    project = personal-zheke.chen
+    Submit_Host = vanda.nus.edu.sg
+

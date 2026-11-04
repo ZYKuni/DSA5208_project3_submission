@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "reference": "/work/build-c/parallel-acceptance/run-aparet9z/openmp-r1-t2-openmp/two_rows/reference.csv",
+  "candidate": "/work/build-c/parallel-acceptance/run-aparet9z/openmp-r1-t2-openmp/two_rows/candidate.csv",
+  "n": 2,
+  "boundary_atol": 0.0,
+  "status": "PASS",
+  "points": 16,
+  "mismatched_points": 0,
+  "max_abs_error": 3.3306690738754696e-16,
+  "worst_coordinate": [
+    2,
+    2
+  ],
+  "absolute_l2_error": 5.087681048627601e-16,
+  "reference_l2": 1.5935298772592197,
+  "relative_l2_error": 3.1927114271482137e-16,
+  "l2_error_kind": "relative",
+  "atol": 1e-10,
+  "rtol": 1e-10,
+  "pass_rule": "all points satisfy abs(candidate-reference) <= atol + rtol*abs(reference)"
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "scope": "local-container",
+  "cluster": null,
+  "cpu_model": "Docker Desktop ARM64 VM on Apple Silicon; see manifest lscpu",
+  "node_count": 1,
+  "rank_binding": "OpenMPI slot:PE=threads, bind-to core; inspect per-run stderr",
+  "warmups": 1,
+  "repeats": 3,
+  "timeout_seconds": 180,
+  "launcher": ["mpiexec", "--map-by", "slot:PE={threads}", "--bind-to", "core", "--report-bindings"],
+  "env": {"OMP_DYNAMIC": "FALSE", "OMP_PLACES": "cores", "OMP_PROC_BIND": "close"},
+  "studies": [
+    {
+      "id": "strong_local", "kind": "strong", "baseline": "serial", "iterations": 100, "check_every": 10,
+      "cases": [
+        {"label": "serial", "variant": "serial", "n": 1024, "ranks": 1, "threads": 1},
+        {"label": "mpi1", "variant": "mpi", "n": 1024, "ranks": 1, "threads": 1},
+        {"label": "mpi2", "variant": "mpi", "n": 1024, "ranks": 2, "threads": 1},
+        {"label": "mpi4", "variant": "mpi", "n": 1024, "ranks": 4, "threads": 1},
+        {"label": "r2t2", "variant": "mpi_openmp", "n": 1024, "ranks": 2, "threads": 2},
+        {"label": "omp4", "variant": "openmp", "n": 1024, "ranks": 1, "threads": 4}
+      ]
+    },
+    {
+      "id": "weak_local", "kind": "weak", "baseline": "mpi1", "iterations": 100, "check_every": 10,
+      "cases": [
+        {"label": "mpi1", "variant": "mpi", "n": 512, "ranks": 1, "threads": 1},
+        {"label": "mpi2", "variant": "mpi", "n": 724, "ranks": 2, "threads": 1},
+        {"label": "mpi4", "variant": "mpi", "n": 1024, "ranks": 4, "threads": 1},
+        {"label": "r2t2", "variant": "mpi_openmp", "n": 1024, "ranks": 2, "threads": 2}
+      ]
+    },
+    {
+      "id": "ratio_local", "kind": "ratio", "baseline": "r4t1", "iterations": 100, "check_every": 10,
+      "cases": [
+        {"label": "r4t1", "variant": "mpi", "n": 1024, "ranks": 4, "threads": 1},
+        {"label": "r2t2", "variant": "mpi_openmp", "n": 1024, "ranks": 2, "threads": 2},
+        {"label": "r1t4", "variant": "mpi_openmp", "n": 1024, "ranks": 1, "threads": 4}
+      ]
+    },
+    {
+      "id": "solution_local", "kind": "solution", "baseline": "serial", "mode": "converge",
+      "iterations": 20000, "tol": 1e-10, "check_every": 10,
+      "cases": [
+        {"label": "serial", "variant": "serial", "n": 31, "ranks": 1, "threads": 1},
+        {"label": "r2t2", "variant": "mpi_openmp", "n": 31, "ranks": 2, "threads": 2}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "started_utc": "2026-10-31T07:43:19.704070+00:00",
+  "host": "macOS-26.6.2-arm64-arm-64bit",
+  "commit": "a93b614de41faeceef732f25a34c5d3dc28a88c2",
+  "dirty": true,
+  "sources_sha256": {
+    "src/solver_serial.cpp": "739aef612ff8db406079eace9c6ccbea40d3423c2c7fc73e9078ca9375bd6036",
+    "src/mpi_main.cpp": "17cd8e5530f57584091cbd13d84b3fd85d43e69a52970ae879d7f50aa59a9efa",
+    "src/kernel_serial.cpp": "97c3f3e083e8ce7d273899de128f221943dc01de4ab67bcab1b33573e869c3b7",
+    "src/solver_mpi.cpp": "04ef5d73525d322b7c30a19905a2ec6ebfed49850d71ee75731bad8055c5dac9",
+    "src/grid.cpp": "7ede6fb50e1b1682fffd558689c32516e758d03cf0b6f7a67eb4e7edbfe2a0b3",
+    "src/decomposition.cpp": "ad5a7ef78e18d58268aab7399e34eb025dd6667ef6f7215ca4703f27e6216a76",
+    "src/cli.cpp": "6e60e4caeeb8ee0a27f6166046c28c66c69a390dbfd9a0f54a1335c5c029e6e4",
+    "src/halo.cpp": "3c937d9ea5eb89163a30848b64e7b597b71a7c91ce1af94decf7283b88bafb7e",
+    "src/serial_main.cpp": "04a31b0c55144f8ec523a3700da2a826abd5945aff38b16f8db4136a870c5d6f",
+    "include/solver.hpp": "21bbd5a8b8935977ba2309e34268f12503f0b2831e2290b5acb0bf1617f77d91",
+    "include/grid.hpp": "be5d3d9e652cf8c6200292a7847130aebb7ca53f4d2e3e879ebc9ec08d74dd91",
+    "include/config.hpp": "af29ea2466f6bb06866f1dd52801a90c0172f8ef6a3d70ed2258d61bd30d0565",
+    "include/decomposition.hpp": "6701b8e51101e8d152386bdacfb8385760c2fbd74d14a79bccb9c6975d9e514a",
+    "include/cli.hpp": "0683f74882071943cd0b870e014dbd2a7d425cf6fc470eced8d9a043a4204ec0",
+    "include/mpi_solver.hpp": "34d2b8d00997def9235611bc37ddbb66122ec279ff212b5a59d6075b4ebfcba4",
+    "include/kernel.hpp": "678428da8ffd698edfc7ce6c2ce99837008701c7d348b04bdf9a2be5e03c2478",
+    "CMakeLists.txt": "5df097921aa9627d842bd6047eccc81912b897efca580033e1ac9157b699dcd8",
+    "scripts/run_mpi_experiments.py": "461f8958072a9dee0d69b9990998398b3db7a9ebaa7c56fb2d831abebc22de49"
+  },
+  "executables_sha256": {
+    "mpi_exe": "afea5ba93ed7f295097535849a86f6265d3be5fd1b1a764c9354ce050c94ff40",
+    "serial_exe": "df819d6082888e4ffed4f0f7ecedb1d9fd58d0d1182b22dcc9333c4886276772"
+  },
+  "scheduler_environment": {}
+}

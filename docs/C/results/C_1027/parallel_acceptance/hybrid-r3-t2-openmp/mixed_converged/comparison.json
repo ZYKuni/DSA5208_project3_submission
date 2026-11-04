@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "reference": "/work/build-c/parallel-acceptance/run-aparet9z/hybrid-r3-t2-openmp/mixed_converged/reference.csv",
+  "candidate": "/work/build-c/parallel-acceptance/run-aparet9z/hybrid-r3-t2-openmp/mixed_converged/candidate.csv",
+  "n": 15,
+  "boundary_atol": 0.0,
+  "status": "PASS",
+  "points": 289,
+  "mismatched_points": 0,
+  "max_abs_error": 6.106226635438361e-16,
+  "worst_coordinate": [
+    15,
+    8
+  ],
+  "absolute_l2_error": 2.7013074078038524e-15,
+  "reference_l2": 8.475848040089128,
+  "relative_l2_error": 3.187064462490584e-16,
+  "l2_error_kind": "relative",
+  "atol": 1e-10,
+  "rtol": 1e-10,
+  "pass_rule": "all points satisfy abs(candidate-reference) <= atol + rtol*abs(reference)"
+}

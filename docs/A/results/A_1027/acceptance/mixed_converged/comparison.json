@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "reference": "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/acceptance/mixed_converged/reference.csv",
+  "candidate": "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/acceptance/mixed_converged/candidate.csv",
+  "n": 15,
+  "boundary_atol": 0.0,
+  "status": "PASS",
+  "points": 289,
+  "mismatched_points": 0,
+  "max_abs_error": 6.106226635438361e-16,
+  "worst_coordinate": [
+    15,
+    8
+  ],
+  "absolute_l2_error": 2.6278722850923494e-15,
+  "reference_l2": 8.475848040089122,
+  "relative_l2_error": 3.1004240197122714e-16,
+  "l2_error_kind": "relative",
+  "atol": 1e-10,
+  "rtol": 1e-10,
+  "pass_rule": "all points satisfy abs(candidate-reference) <= atol + rtol*abs(reference)"
+}

@@ -1,0 +1,135 @@
+UpdateCTestConfiguration  from :/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build/DartConfiguration.tcl
+Parse Config file:/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build/DartConfiguration.tcl
+Parse Config file:/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build/DartConfiguration.tcl
+Test project /home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: core_contract
+
+1: Test command: /home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build/test_core
+1: Working Directory: /home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build
+1: Test timeout computed to be: 120
+1: PASS: hand steps, boundaries, alias/range checks, uneven slabs, analytic residual
+1/7 Test #1: core_contract ....................   Passed    0.00 sec
+test 2
+    Start 2: decomposition_contract
+
+2: Test command: /home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build/test_decomposition
+2: Working Directory: /home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build
+2: Test timeout computed to be: 1500
+2: decomposition coverage, balance and rejection checks passed
+2/7 Test #2: decomposition_contract ...........   Passed    0.00 sec
+test 3
+    Start 3: serial_validation
+
+3: Test command: /usr/bin/python3 "/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/tests/validate_serial.py" "--exe" "/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build/poisson_serial" "--output" "/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build/validation"
+3: Working Directory: /home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build
+3: Test timeout computed to be: 120
+3: {
+3:   "scope": "local_serial_validation_only",
+3:   "numerical_cases": 37,
+3:   "invalid_cli_cases": 16,
+3:   "refinement_max_errors": [
+3:     0.012950746711821504,
+3:     0.0032189644308904253,
+3:     0.0008035776694919061
+3:   ],
+3:   "refinement_ratios": [
+3:     4.023264931895842,
+3:     4.00579129199265
+3:   ],
+3:   "status": "PASS"
+3: }
+3/7 Test #3: serial_validation ................   Passed    0.13 sec
+test 4
+    Start 4: grid_comparison_contract
+
+4: Test command: /usr/bin/python3 "/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/tests/test_compare_grids.py"
+4: Working Directory: /home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build
+4: Test timeout computed to be: 120
+4: test_bad_coordinates (__main__.GridComparisonTests.test_bad_coordinates) ... ok
+4: test_bad_csv (__main__.GridComparisonTests.test_bad_csv) ... ok
+4: test_boundary (__main__.GridComparisonTests.test_boundary) ... ok
+4: test_cli (__main__.GridComparisonTests.test_cli) ... ok
+4: test_cli_invalid_tolerance (__main__.GridComparisonTests.test_cli_invalid_tolerance) ... ok
+4: test_equal_reordered (__main__.GridComparisonTests.test_equal_reordered) ... ok
+4: test_invalid_options_and_missing_file (__main__.GridComparisonTests.test_invalid_options_and_missing_file) ... ok
+4: test_metrics_and_tolerance (__main__.GridComparisonTests.test_metrics_and_tolerance) ... ok
+4: test_missing_and_duplicate (__main__.GridComparisonTests.test_missing_and_duplicate) ... ok
+4: test_nonfinite_values (__main__.GridComparisonTests.test_nonfinite_values) ... ok
+4: test_overflow (__main__.GridComparisonTests.test_overflow) ... ok
+4: test_relative_tolerance (__main__.GridComparisonTests.test_relative_tolerance) ... ok
+4: test_transpose_and_reflections (__main__.GridComparisonTests.test_transpose_and_reflections) ... ok
+4: test_zero_reference (__main__.GridComparisonTests.test_zero_reference) ... ok
+4: 
+4: ----------------------------------------------------------------------
+4: Ran 14 tests in 0.180s
+4: 
+4: OK
+4/7 Test #4: grid_comparison_contract .........   Passed    0.24 sec
+test 5
+    Start 5: acceptance_contract
+
+5: Test command: /usr/bin/python3 "/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/tests/test_acceptance.py" "--exe" "/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build/poisson_serial"
+5: Working Directory: /home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build
+5: Test timeout computed to be: 120
+5: test_cli (__main__.AcceptanceTests.test_cli) ... ok
+5: test_continues_after_failure (__main__.AcceptanceTests.test_continues_after_failure) ... ok
+5: test_faults_and_logs (__main__.AcceptanceTests.test_faults_and_logs) ... ok
+5: test_full_serial_suite (__main__.AcceptanceTests.test_full_serial_suite) ... ok
+5: test_invalid_config (__main__.AcceptanceTests.test_invalid_config) ... ok
+5: test_launcher_and_environment (__main__.AcceptanceTests.test_launcher_and_environment) ... ok
+5: test_missing_launcher (__main__.AcceptanceTests.test_missing_launcher) ... ok
+5: test_reported_resources_must_match (__main__.AcceptanceTests.test_reported_resources_must_match) ... ok
+5: test_stale_output_refused (__main__.AcceptanceTests.test_stale_output_refused) ... ok
+5: test_timeout (__main__.AcceptanceTests.test_timeout) ... ok
+5: 
+5: ----------------------------------------------------------------------
+5: Ran 10 tests in 1.015s
+5: 
+5: OK
+5/7 Test #5: acceptance_contract ..............   Passed    1.08 sec
+test 6
+    Start 6: experiment_metrics
+
+6: Test command: /usr/bin/python3 "/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/tests/test_experiments.py"
+6: Working Directory: /home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build
+6: Test timeout computed to be: 1500
+6: ......
+6: ----------------------------------------------------------------------
+6: Ran 6 tests in 0.002s
+6: 
+6: OK
+6/7 Test #6: experiment_metrics ...............   Passed    0.07 sec
+test 7
+    Start 7: mpi_validation
+
+7: Test command: /usr/bin/python3 "/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/tests/validate_mpi.py" "--exe" "/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build/poisson_mpi" "--serial" "/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build/poisson_serial" "--mpiexec" "/usr/bin/mpiexec" "--numproc-flag=-n" "--output" "/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build/mpi-validation"
+7: Working Directory: /home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build
+7: Test timeout computed to be: 240
+7: sendrecv-r1 PASS 17 / 17
+7: overlap-r1 PASS 17 / 17
+7: sendrecv-r2 PASS 16 / 16
+7: overlap-r2 PASS 16 / 16
+7: sendrecv-r3 PASS 15 / 15
+7: overlap-r3 PASS 15 / 15
+7: sendrecv-r4 PASS 14 / 14
+7: overlap-r4 PASS 14 / 14
+7: {
+7:   "status": "PASS",
+7:   "numerical_cases": 124,
+7:   "negative_cases": 4,
+7:   "failures": [],
+7:   "evidence": "/home/runner/work/NUS_DSA5208_project3/NUS_DSA5208_project3/build-linux-evidence/build/mpi-validation/run-8kwwmetv/evidence.json"
+7: }
+7/7 Test #7: mpi_validation ...................   Passed   56.22 sec
+
+100% tests passed, 0 tests failed out of 7
+
+Total Test time (real) =  57.84 sec

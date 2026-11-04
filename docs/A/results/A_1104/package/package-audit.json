@@ -1,0 +1,590 @@
+{
+  "status": "PASS",
+  "raw_files_verified": 943,
+  "archives_verified": 3,
+  "job_id": "1514382.stdct-mgmt-02",
+  "source_revision": "af45f5bd84103838cef7e9e5ecdf221585b9fad3",
+  "historical_source": "unavailable in exported source",
+  "measured_solver_matches_current": true,
+  "current_non_solver_changes": [
+    "scripts/verify_linux.sh",
+    "tests/test_parallel.py"
+  ],
+  "launches": 180,
+  "measured_samples": 150,
+  "configurations": 30,
+  "binaries_match_pilot": true,
+  "rows": [
+    {
+      "study": "strong_vanda",
+      "label": "serial",
+      "cores": 1,
+      "median_seconds": 14.276117281,
+      "min_seconds": 14.118552679,
+      "max_seconds": 15.012831716,
+      "work_per_core": 4194304.0,
+      "sample_run_ids": [
+        "run-0001",
+        "run-0002",
+        "run-0003",
+        "run-0004",
+        "run-0005"
+      ],
+      "speedup": 1.0,
+      "efficiency": 1.0,
+      "work_per_core_ratio": 1.0
+    },
+    {
+      "study": "strong_vanda",
+      "label": "mpi1",
+      "cores": 1,
+      "median_seconds": 50.829785661,
+      "min_seconds": 14.362999662,
+      "max_seconds": 51.067769406,
+      "work_per_core": 4194304.0,
+      "sample_run_ids": [
+        "run-0007",
+        "run-0008",
+        "run-0009",
+        "run-0010",
+        "run-0011"
+      ],
+      "speedup": 0.280861252813694,
+      "efficiency": 0.280861252813694,
+      "work_per_core_ratio": 1.0
+    },
+    {
+      "study": "strong_vanda",
+      "label": "mpi2",
+      "cores": 2,
+      "median_seconds": 7.333725557,
+      "min_seconds": 7.323543102,
+      "max_seconds": 7.425930023,
+      "work_per_core": 2097152.0,
+      "sample_run_ids": [
+        "run-0013",
+        "run-0014",
+        "run-0015",
+        "run-0016",
+        "run-0017"
+      ],
+      "speedup": 1.946639149507514,
+      "efficiency": 0.973319574753757,
+      "work_per_core_ratio": 0.5
+    },
+    {
+      "study": "strong_vanda",
+      "label": "mpi4",
+      "cores": 4,
+      "median_seconds": 3.942675295,
+      "min_seconds": 3.85221468,
+      "max_seconds": 4.018502082,
+      "work_per_core": 1048576.0,
+      "sample_run_ids": [
+        "run-0019",
+        "run-0020",
+        "run-0021",
+        "run-0022",
+        "run-0023"
+      ],
+      "speedup": 3.620921382773927,
+      "efficiency": 0.9052303456934817,
+      "work_per_core_ratio": 0.25
+    },
+    {
+      "study": "strong_vanda",
+      "label": "mpi8",
+      "cores": 8,
+      "median_seconds": 2.29393709,
+      "min_seconds": 2.198543296,
+      "max_seconds": 2.325949383,
+      "work_per_core": 524288.0,
+      "sample_run_ids": [
+        "run-0025",
+        "run-0026",
+        "run-0027",
+        "run-0028",
+        "run-0029"
+      ],
+      "speedup": 6.223412727068291,
+      "efficiency": 0.7779265908835363,
+      "work_per_core_ratio": 0.125
+    },
+    {
+      "study": "strong_vanda",
+      "label": "mpi16",
+      "cores": 16,
+      "median_seconds": 1.339125438,
+      "min_seconds": 1.285007667,
+      "max_seconds": 1.36096645,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0031",
+        "run-0032",
+        "run-0033",
+        "run-0034",
+        "run-0035"
+      ],
+      "speedup": 10.660776709851433,
+      "efficiency": 0.6662985443657146,
+      "work_per_core_ratio": 0.0625
+    },
+    {
+      "study": "strong_vanda",
+      "label": "r8t2",
+      "cores": 16,
+      "median_seconds": 1.247033726,
+      "min_seconds": 1.233813556,
+      "max_seconds": 1.2693803510000001,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0037",
+        "run-0038",
+        "run-0039",
+        "run-0040",
+        "run-0041"
+      ],
+      "speedup": 11.448060291674903,
+      "efficiency": 0.7155037682296814,
+      "work_per_core_ratio": 0.0625
+    },
+    {
+      "study": "strong_vanda",
+      "label": "r4t4",
+      "cores": 16,
+      "median_seconds": 1.124940862,
+      "min_seconds": 1.101074688,
+      "max_seconds": 1.183156748,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0043",
+        "run-0044",
+        "run-0045",
+        "run-0046",
+        "run-0047"
+      ],
+      "speedup": 12.690549133061893,
+      "efficiency": 0.7931593208163683,
+      "work_per_core_ratio": 0.0625
+    },
+    {
+      "study": "strong_vanda",
+      "label": "r2t8",
+      "cores": 16,
+      "median_seconds": 1.072880771,
+      "min_seconds": 1.050479577,
+      "max_seconds": 1.117224586,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0049",
+        "run-0050",
+        "run-0051",
+        "run-0052",
+        "run-0053"
+      ],
+      "speedup": 13.306340897221656,
+      "efficiency": 0.8316463060763535,
+      "work_per_core_ratio": 0.0625
+    },
+    {
+      "study": "strong_vanda",
+      "label": "r1t16",
+      "cores": 16,
+      "median_seconds": 1.149329212,
+      "min_seconds": 1.006996854,
+      "max_seconds": 3.259847516,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0055",
+        "run-0056",
+        "run-0057",
+        "run-0058",
+        "run-0059"
+      ],
+      "speedup": 12.421260272465778,
+      "efficiency": 0.7763287670291111,
+      "work_per_core_ratio": 0.0625
+    },
+    {
+      "study": "strong_vanda",
+      "label": "openmp16",
+      "cores": 16,
+      "median_seconds": 1.1098579259996768,
+      "min_seconds": 1.0910369569901377,
+      "max_seconds": 1.1486200270010158,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0061",
+        "run-0062",
+        "run-0063",
+        "run-0064",
+        "run-0065"
+      ],
+      "speedup": 12.863013315998211,
+      "efficiency": 0.8039383322498882,
+      "work_per_core_ratio": 0.0625
+    },
+    {
+      "study": "weak_vanda",
+      "label": "mpi1",
+      "cores": 1,
+      "median_seconds": 0.620383588,
+      "min_seconds": 0.6111939399999999,
+      "max_seconds": 0.627752816,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0067",
+        "run-0068",
+        "run-0069",
+        "run-0070",
+        "run-0071"
+      ],
+      "speedup": null,
+      "efficiency": 1.0,
+      "work_per_core_ratio": 1.0
+    },
+    {
+      "study": "weak_vanda",
+      "label": "mpi2",
+      "cores": 2,
+      "median_seconds": 0.636497554,
+      "min_seconds": 0.631483513,
+      "max_seconds": 0.64082076,
+      "work_per_core": 262088.0,
+      "sample_run_ids": [
+        "run-0073",
+        "run-0074",
+        "run-0075",
+        "run-0076",
+        "run-0077"
+      ],
+      "speedup": null,
+      "efficiency": 0.9746833811084843,
+      "work_per_core_ratio": 0.999786376953125
+    },
+    {
+      "study": "weak_vanda",
+      "label": "mpi4",
+      "cores": 4,
+      "median_seconds": 0.970484715,
+      "min_seconds": 0.960688982,
+      "max_seconds": 0.979030372,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0079",
+        "run-0080",
+        "run-0081",
+        "run-0082",
+        "run-0083"
+      ],
+      "speedup": null,
+      "efficiency": 0.6392512714638685,
+      "work_per_core_ratio": 1.0
+    },
+    {
+      "study": "weak_vanda",
+      "label": "mpi8",
+      "cores": 8,
+      "median_seconds": 1.011467096,
+      "min_seconds": 1.000759687,
+      "max_seconds": 1.044379009,
+      "work_per_core": 262088.0,
+      "sample_run_ids": [
+        "run-0085",
+        "run-0086",
+        "run-0087",
+        "run-0088",
+        "run-0089"
+      ],
+      "speedup": null,
+      "efficiency": 0.6133502418945718,
+      "work_per_core_ratio": 0.999786376953125
+    },
+    {
+      "study": "weak_vanda",
+      "label": "mpi16",
+      "cores": 16,
+      "median_seconds": 1.2465926550000002,
+      "min_seconds": 1.241113917,
+      "max_seconds": 1.25162361,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0091",
+        "run-0092",
+        "run-0093",
+        "run-0094",
+        "run-0095"
+      ],
+      "speedup": null,
+      "efficiency": 0.497663439225061,
+      "work_per_core_ratio": 1.0
+    },
+    {
+      "study": "weak_vanda",
+      "label": "hybrid4",
+      "cores": 4,
+      "median_seconds": 0.924609011,
+      "min_seconds": 0.9237678,
+      "max_seconds": 0.926177681,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0097",
+        "run-0098",
+        "run-0099",
+        "run-0100",
+        "run-0101"
+      ],
+      "speedup": null,
+      "efficiency": 0.6709685722498329,
+      "work_per_core_ratio": 1.0
+    },
+    {
+      "study": "weak_vanda",
+      "label": "hybrid8",
+      "cores": 8,
+      "median_seconds": 0.980747957,
+      "min_seconds": 0.698675197,
+      "max_seconds": 1.001330631,
+      "work_per_core": 262088.0,
+      "sample_run_ids": [
+        "run-0103",
+        "run-0104",
+        "run-0105",
+        "run-0106",
+        "run-0107"
+      ],
+      "speedup": null,
+      "efficiency": 0.6325616929120965,
+      "work_per_core_ratio": 0.999786376953125
+    },
+    {
+      "study": "weak_vanda",
+      "label": "hybrid16",
+      "cores": 16,
+      "median_seconds": 1.069301852,
+      "min_seconds": 1.061683504,
+      "max_seconds": 1.095420278,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0109",
+        "run-0110",
+        "run-0111",
+        "run-0112",
+        "run-0113"
+      ],
+      "speedup": null,
+      "efficiency": 0.5801762961876924,
+      "work_per_core_ratio": 1.0
+    },
+    {
+      "study": "ratio_vanda",
+      "label": "r16t1",
+      "cores": 16,
+      "median_seconds": 1.09551943,
+      "min_seconds": 1.089514729,
+      "max_seconds": 1.100543693,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0115",
+        "run-0116",
+        "run-0117",
+        "run-0118",
+        "run-0119"
+      ],
+      "speedup": 1.0,
+      "efficiency": 1.0,
+      "work_per_core_ratio": 1.0
+    },
+    {
+      "study": "ratio_vanda",
+      "label": "r8t2",
+      "cores": 16,
+      "median_seconds": 1.065492795,
+      "min_seconds": 1.059943404,
+      "max_seconds": 1.073578154,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0121",
+        "run-0122",
+        "run-0123",
+        "run-0124",
+        "run-0125"
+      ],
+      "speedup": 1.028180983617069,
+      "efficiency": 1.028180983617069,
+      "work_per_core_ratio": 1.0
+    },
+    {
+      "study": "ratio_vanda",
+      "label": "r4t4",
+      "cores": 16,
+      "median_seconds": 1.054935849,
+      "min_seconds": 1.034100549,
+      "max_seconds": 1.090456628,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0127",
+        "run-0128",
+        "run-0129",
+        "run-0130",
+        "run-0131"
+      ],
+      "speedup": 1.0384701885318146,
+      "efficiency": 1.0384701885318146,
+      "work_per_core_ratio": 1.0
+    },
+    {
+      "study": "ratio_vanda",
+      "label": "r2t8",
+      "cores": 16,
+      "median_seconds": 1.058265555,
+      "min_seconds": 1.040889724,
+      "max_seconds": 1.0649765389999999,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0133",
+        "run-0134",
+        "run-0135",
+        "run-0136",
+        "run-0137"
+      ],
+      "speedup": 1.0352027662848764,
+      "efficiency": 1.0352027662848764,
+      "work_per_core_ratio": 1.0
+    },
+    {
+      "study": "ratio_vanda",
+      "label": "r1t16",
+      "cores": 16,
+      "median_seconds": 1.009458433,
+      "min_seconds": 0.992824419,
+      "max_seconds": 3.24173233,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0139",
+        "run-0140",
+        "run-0141",
+        "run-0142",
+        "run-0143"
+      ],
+      "speedup": 1.085254621871092,
+      "efficiency": 1.085254621871092,
+      "work_per_core_ratio": 1.0
+    },
+    {
+      "study": "communication_vanda",
+      "label": "sendrecv",
+      "cores": 16,
+      "median_seconds": 1.065071734,
+      "min_seconds": 1.04088087,
+      "max_seconds": 1.083953091,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0145",
+        "run-0146",
+        "run-0147",
+        "run-0148",
+        "run-0149"
+      ],
+      "speedup": 1.0,
+      "efficiency": 1.0,
+      "work_per_core_ratio": 1.0
+    },
+    {
+      "study": "communication_vanda",
+      "label": "overlap",
+      "cores": 16,
+      "median_seconds": 1.083063544,
+      "min_seconds": 1.068820489,
+      "max_seconds": 1.088850226,
+      "work_per_core": 262144.0,
+      "sample_run_ids": [
+        "run-0151",
+        "run-0152",
+        "run-0153",
+        "run-0154",
+        "run-0155"
+      ],
+      "speedup": 0.9833880384030357,
+      "efficiency": 0.9833880384030357,
+      "work_per_core_ratio": 1.0
+    },
+    {
+      "study": "solution_vanda",
+      "label": "serial",
+      "cores": 1,
+      "median_seconds": 0.568620268,
+      "min_seconds": 0.566303858,
+      "max_seconds": 0.686603618,
+      "work_per_core": 16129.0,
+      "sample_run_ids": [
+        "run-0157",
+        "run-0158",
+        "run-0159",
+        "run-0160",
+        "run-0161"
+      ],
+      "speedup": 1.0,
+      "efficiency": 1.0,
+      "work_per_core_ratio": 1.0
+    },
+    {
+      "study": "solution_vanda",
+      "label": "mpi16",
+      "cores": 16,
+      "median_seconds": 0.213279175,
+      "min_seconds": 0.209890468,
+      "max_seconds": 0.2143847,
+      "work_per_core": 1008.0625,
+      "sample_run_ids": [
+        "run-0163",
+        "run-0164",
+        "run-0165",
+        "run-0166",
+        "run-0167"
+      ],
+      "speedup": 2.66608433758242,
+      "efficiency": 0.16663027109890124,
+      "work_per_core_ratio": 0.0625
+    },
+    {
+      "study": "solution_vanda",
+      "label": "r4t4",
+      "cores": 16,
+      "median_seconds": 0.411961625,
+      "min_seconds": 0.37920890399999996,
+      "max_seconds": 0.41912032,
+      "work_per_core": 1008.0625,
+      "sample_run_ids": [
+        "run-0169",
+        "run-0170",
+        "run-0171",
+        "run-0172",
+        "run-0173"
+      ],
+      "speedup": 1.3802748447746802,
+      "efficiency": 0.08626717779841751,
+      "work_per_core_ratio": 0.0625
+    },
+    {
+      "study": "solution_vanda",
+      "label": "openmp16",
+      "cores": 16,
+      "median_seconds": 0.3248828340001637,
+      "min_seconds": 0.32024971699866,
+      "max_seconds": 0.3895991570025217,
+      "work_per_core": 1008.0625,
+      "sample_run_ids": [
+        "run-0175",
+        "run-0176",
+        "run-0177",
+        "run-0178",
+        "run-0179"
+      ],
+      "speedup": 1.750231802027784,
+      "efficiency": 0.1093894876267365,
+      "work_per_core_ratio": 0.0625
+    }
+  ],
+  "limits": "Archive integrity and consistency, not a new Vanda run or team human sign-off."
+}

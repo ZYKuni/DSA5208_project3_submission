@@ -1,0 +1,113 @@
+Start testing: Oct 27 16:54 +08
+----------------------------------------------------------
+1/4 Testing: core_contract
+1/4 Test: core_contract
+Command: "/Users/yikun_zhao/Documents/DSA5208/project3/build/test_core"
+Directory: /Users/yikun_zhao/Documents/DSA5208/project3/build
+"core_contract" start time: Oct 27 16:54 +08
+Output:
+----------------------------------------------------------
+PASS: hand steps, boundaries, alias/range checks, uneven slabs, analytic residual
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"core_contract" end time: Oct 27 16:54 +08
+"core_contract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/4 Testing: serial_validation
+2/4 Test: serial_validation
+Command: "/Users/yikun_zhao/miniforge3/bin/python3.12" "/Users/yikun_zhao/Documents/DSA5208/project3/tests/validate_serial.py" "--exe" "/Users/yikun_zhao/Documents/DSA5208/project3/build/poisson_serial" "--output" "/Users/yikun_zhao/Documents/DSA5208/project3/build/validation"
+Directory: /Users/yikun_zhao/Documents/DSA5208/project3/build
+"serial_validation" start time: Oct 27 16:54 +08
+Output:
+----------------------------------------------------------
+{
+  "scope": "local_serial_validation_only",
+  "numerical_cases": 37,
+  "invalid_cli_cases": 16,
+  "refinement_max_errors": [
+    0.012950746711821504,
+    0.0032189644308904253,
+    0.0008035776694919061
+  ],
+  "refinement_ratios": [
+    4.023264931895842,
+    4.00579129199265
+  ],
+  "status": "PASS"
+}
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Passed.
+"serial_validation" end time: Oct 27 16:54 +08
+"serial_validation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/4 Testing: grid_comparison_contract
+3/4 Test: grid_comparison_contract
+Command: "/Users/yikun_zhao/miniforge3/bin/python3.12" "/Users/yikun_zhao/Documents/DSA5208/project3/tests/test_compare_grids.py"
+Directory: /Users/yikun_zhao/Documents/DSA5208/project3/build
+"grid_comparison_contract" start time: Oct 27 16:54 +08
+Output:
+----------------------------------------------------------
+test_bad_coordinates (__main__.GridComparisonTests.test_bad_coordinates) ... ok
+test_bad_csv (__main__.GridComparisonTests.test_bad_csv) ... ok
+test_boundary (__main__.GridComparisonTests.test_boundary) ... ok
+test_cli (__main__.GridComparisonTests.test_cli) ... ok
+test_cli_invalid_tolerance (__main__.GridComparisonTests.test_cli_invalid_tolerance) ... ok
+test_equal_reordered (__main__.GridComparisonTests.test_equal_reordered) ... ok
+test_invalid_options_and_missing_file (__main__.GridComparisonTests.test_invalid_options_and_missing_file) ... ok
+test_metrics_and_tolerance (__main__.GridComparisonTests.test_metrics_and_tolerance) ... ok
+test_missing_and_duplicate (__main__.GridComparisonTests.test_missing_and_duplicate) ... ok
+test_nonfinite_values (__main__.GridComparisonTests.test_nonfinite_values) ... ok
+test_overflow (__main__.GridComparisonTests.test_overflow) ... ok
+test_relative_tolerance (__main__.GridComparisonTests.test_relative_tolerance) ... ok
+test_transpose_and_reflections (__main__.GridComparisonTests.test_transpose_and_reflections) ... ok
+test_zero_reference (__main__.GridComparisonTests.test_zero_reference) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.110s
+
+OK
+<end of output>
+Test time =   0.16 sec
+----------------------------------------------------------
+Test Passed.
+"grid_comparison_contract" end time: Oct 27 16:54 +08
+"grid_comparison_contract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/4 Testing: acceptance_contract
+4/4 Test: acceptance_contract
+Command: "/Users/yikun_zhao/miniforge3/bin/python3.12" "/Users/yikun_zhao/Documents/DSA5208/project3/tests/test_acceptance.py" "--exe" "/Users/yikun_zhao/Documents/DSA5208/project3/build/poisson_serial"
+Directory: /Users/yikun_zhao/Documents/DSA5208/project3/build
+"acceptance_contract" start time: Oct 27 16:54 +08
+Output:
+----------------------------------------------------------
+test_cli (__main__.AcceptanceTests.test_cli) ... ok
+test_continues_after_failure (__main__.AcceptanceTests.test_continues_after_failure) ... ok
+test_faults_and_logs (__main__.AcceptanceTests.test_faults_and_logs) ... ok
+test_full_serial_suite (__main__.AcceptanceTests.test_full_serial_suite) ... ok
+test_invalid_config (__main__.AcceptanceTests.test_invalid_config) ... ok
+test_launcher_and_environment (__main__.AcceptanceTests.test_launcher_and_environment) ... ok
+test_missing_launcher (__main__.AcceptanceTests.test_missing_launcher) ... ok
+test_reported_resources_must_match (__main__.AcceptanceTests.test_reported_resources_must_match) ... ok
+test_stale_output_refused (__main__.AcceptanceTests.test_stale_output_refused) ... ok
+test_timeout (__main__.AcceptanceTests.test_timeout) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.107s
+
+OK
+<end of output>
+Test time =   1.16 sec
+----------------------------------------------------------
+Test Passed.
+"acceptance_contract" end time: Oct 27 16:54 +08
+"acceptance_contract" time elapsed: 00:00:01
+----------------------------------------------------------
+
+End testing: Oct 27 16:54 +08

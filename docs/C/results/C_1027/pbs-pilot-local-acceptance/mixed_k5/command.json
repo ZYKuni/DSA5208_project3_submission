@@ -1,0 +1,42 @@
+{
+  "argv": [
+    "mpiexec",
+    "--map-by",
+    "slot:PE=2",
+    "--bind-to",
+    "core",
+    "--report-bindings",
+    "-n",
+    "2",
+    "/work/build-c/poisson_hybrid",
+    "--kernel",
+    "openmp",
+    "--n",
+    "7",
+    "--mode",
+    "fixed",
+    "--problem",
+    "discrete-mixed",
+    "--iterations",
+    "5",
+    "--tol",
+    "1e-10",
+    "--check-every",
+    "3",
+    "--solution",
+    "/work/docs/C/results/C_1027/pbs-pilot-local-acceptance/mixed_k5/candidate.csv"
+  ],
+  "cwd": "/work",
+  "env_overrides": {
+    "OMP_NUM_THREADS": "2",
+    "OMP_DYNAMIC": "FALSE",
+    "OMP_PLACES": "cores",
+    "OMP_PROC_BIND": "close"
+  },
+  "thread_environment": {
+    "OMP_NUM_THREADS": "2",
+    "OMP_PLACES": "cores",
+    "OMP_PROC_BIND": "close"
+  },
+  "timeout_seconds": 30
+}

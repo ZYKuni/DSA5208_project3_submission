@@ -1,0 +1,46 @@
+[
+  {
+    "artifact_id": 13037390291,
+    "name": "linux-gcc-mpi-44388a4e29fb9a6650644dfe513be52a3c557c71",
+    "sha256": "098bd5a221f59446d60995fb08b899a32176beb6d135146c917db7247448739a",
+    "selected_files": [
+      "acceptance/summary.json",
+      "build.log",
+      "compiler_flags.txt",
+      "configure.log",
+      "ctest.log",
+      "environment.txt",
+      "executable.sha256",
+      "exit_code.txt",
+      "mpi-validation/run-7o2m0ppa/evidence.json",
+      "mpi-validation/run-7o2m0ppa/overlap-r1/summary.json",
+      "mpi-validation/run-7o2m0ppa/overlap-r2/summary.json",
+      "mpi-validation/run-7o2m0ppa/overlap-r3/summary.json",
+      "mpi-validation/run-7o2m0ppa/overlap-r4/summary.json",
+      "mpi-validation/run-7o2m0ppa/sendrecv-r1/summary.json",
+      "mpi-validation/run-7o2m0ppa/sendrecv-r2/summary.json",
+      "mpi-validation/run-7o2m0ppa/sendrecv-r3/summary.json",
+      "mpi-validation/run-7o2m0ppa/sendrecv-r4/summary.json",
+      "mpi-validation/run-7o2m0ppa/summary.json",
+      "serial_validation_summary.json",
+      "source_manifest.json"
+    ]
+  },
+  {
+    "artifact_id": 13037380130,
+    "name": "linux-gcc-serial-44388a4e29fb9a6650644dfe513be52a3c557c71",
+    "sha256": "d52885d4179c13fcdc22102c1441f25052fe2fdbae905a61a18ab2a90e98fd11",
+    "selected_files": [
+      "acceptance/summary.json",
+      "build.log",
+      "compiler_flags.txt",
+      "configure.log",
+      "ctest.log",
+      "environment.txt",
+      "executable.sha256",
+      "exit_code.txt",
+      "serial_validation_summary.json",
+      "source_manifest.json"
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "argv": [
+    "/work/build-c/poisson_openmp",
+    "--kernel",
+    "openmp",
+    "--n",
+    "7",
+    "--mode",
+    "fixed",
+    "--problem",
+    "discrete-mixed",
+    "--iterations",
+    "1",
+    "--tol",
+    "1e-10",
+    "--check-every",
+    "3",
+    "--solution",
+    "/work/build-c/parallel-acceptance/run-aparet9z/openmp-r1-t1-openmp/mixed_k1/candidate.csv"
+  ],
+  "cwd": "/work/build-c",
+  "env_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "OMP_DYNAMIC": "FALSE",
+    "OMPI_MCA_rmaps_base_oversubscribe": "1",
+    "OMPI_MCA_hwloc_base_binding_policy": "none"
+  },
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OMP_PLACES": null,
+    "OMP_PROC_BIND": null
+  },
+  "timeout_seconds": 30
+}

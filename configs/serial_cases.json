@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "description": "CLI argument arrays for documented serial smoke cases; the executable does not parse JSON config files.",
+  "cases": [
+    {"name": "handoff", "args": ["--n", "7", "--mode", "fixed", "--iterations", "5", "--problem", "continuous-sine"]},
+    {"name": "discrete_validation", "args": ["--n", "15", "--mode", "converge", "--iterations", "20000", "--tol", "1e-11", "--problem", "discrete-sine"]},
+    {"name": "continuous_validation", "args": ["--n", "31", "--mode", "converge", "--iterations", "20000", "--tol", "1e-11", "--problem", "continuous-sine"]}
+  ]
+}

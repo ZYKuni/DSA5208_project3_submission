@@ -1,0 +1,16 @@
+{
+  "run_id": "run-0008",
+  "variant": "mpi-overlap",
+  "n": 31,
+  "iterations": 10,
+  "check_every": 3,
+  "ranks": 2,
+  "ranks_per_node": 2,
+  "communication": "overlap",
+  "repeat": -1,
+  "warmup": true,
+  "status": "PASS",
+  "exit_code": 0,
+  "solve_seconds_max": 0.0005649999998240673,
+  "final_relative_residual": 0.9528773894229144
+}

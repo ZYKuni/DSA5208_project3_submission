@@ -1,0 +1,17 @@
+{
+  "vanda-pilot-1514292-failed.tar.gz": {
+    "bytes": 242614,
+    "sha256": "e5b79766dcd2c66978289422e808e9281b9aaa837608acdd74a4f41098159e78",
+    "description": "Original Vanda evidence download; repeated grid CSV files omitted during remote packaging"
+  },
+  "vanda-pilot-1514325-passed.tar.gz": {
+    "bytes": 341081,
+    "sha256": "6b73404ca15aaf63f96c44f39afaf977c423d8518a0944c398847fba524249ff",
+    "description": "Original Vanda evidence download; repeated grid CSV files omitted during remote packaging"
+  },
+  "vanda-measure-1514382-complete.tar.gz": {
+    "bytes": 108746,
+    "sha256": "add99f6047279d636555ddbb5aafdc130e311f440d681afdacb9870c3734ae22",
+    "description": "Complete measurement launches, failed preparation, serial validation; CSV excluded remotely, regenerated summaries available locally"
+  }
+}

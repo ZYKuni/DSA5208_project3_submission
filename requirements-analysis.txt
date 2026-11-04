@@ -1,0 +1,4 @@
+# Versions actually verified in the supplied Debian ARM64 development image.
+# Base correctness and collection scripts still use the Python standard library.
+matplotlib==3.6.3
+reportlab==3.6.12

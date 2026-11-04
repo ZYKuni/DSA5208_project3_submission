@@ -1,0 +1,71 @@
+Start testing: Oct 31 08:22 UTC
+----------------------------------------------------------
+1/9 Testing: core_contract
+1/9 Test: core_contract
+Command: "/work/build-c-sanitize-1031/test_core"
+Directory: /work/build-c-sanitize-1031
+"core_contract" start time: Oct 31 08:22 UTC
+Output:
+----------------------------------------------------------
+PASS: hand steps, boundaries, alias/range checks, uneven slabs, analytic residual
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"core_contract" end time: Oct 31 08:22 UTC
+"core_contract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/9 Testing: openmp_contract
+7/9 Test: openmp_contract
+Command: "/work/build-c-sanitize-1031/test_openmp"
+Directory: /work/build-c-sanitize-1031
+"openmp_contract" start time: Oct 31 08:22 UTC
+Output:
+----------------------------------------------------------
+PASS actual_threads=1; asymmetric/slab/empty/split/sentinel/contract tests
+PASS actual_threads=2; asymmetric/slab/empty/split/sentinel/contract tests
+PASS actual_threads=4; asymmetric/slab/empty/split/sentinel/contract tests
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"openmp_contract" end time: Oct 31 08:22 UTC
+"openmp_contract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/9 Testing: parallel_acceptance
+8/9 Test: parallel_acceptance
+Command: "/usr/bin/python3" "/work/tests/test_parallel.py" "--bin-dir" "/work/build-c-sanitize-1031" "--output" "/work/build-c-sanitize-1031/parallel-acceptance" "--mpiexec" "/usr/bin/mpiexec"
+Directory: /work/build-c-sanitize-1031
+"parallel_acceptance" start time: Oct 31 08:22 UTC
+Output:
+----------------------------------------------------------
+openmp-r1-t1-openmp-none PASS 14
+openmp-r1-t2-openmp-none PASS 14
+openmp-r1-t4-openmp-none PASS 14
+hybrid-r1-t1-serial-sendrecv PASS 17
+hybrid-r3-t1-serial-sendrecv PASS 15
+hybrid-r1-t1-openmp-sendrecv PASS 17
+hybrid-r1-t2-openmp-sendrecv PASS 17
+hybrid-r2-t2-openmp-sendrecv PASS 16
+hybrid-r3-t2-openmp-sendrecv PASS 15
+hybrid-r3-t4-openmp-sendrecv PASS 15
+hybrid-r4-t2-openmp-sendrecv PASS 14
+hybrid-r1-t1-serial-overlap PASS 17
+hybrid-r3-t1-serial-overlap PASS 15
+hybrid-r1-t1-openmp-overlap PASS 17
+hybrid-r1-t2-openmp-overlap PASS 17
+hybrid-r2-t2-openmp-overlap PASS 16
+hybrid-r3-t2-openmp-overlap PASS 15
+hybrid-r3-t4-openmp-overlap PASS 15
+hybrid-r4-t2-openmp-overlap PASS 14
+<end of output>
+Test time =  55.98 sec
+----------------------------------------------------------
+Test Passed.
+"parallel_acceptance" end time: Oct 31 08:23 UTC
+"parallel_acceptance" time elapsed: 00:00:55
+----------------------------------------------------------
+
+End testing: Oct 31 08:23 UTC

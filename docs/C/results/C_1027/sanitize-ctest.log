@@ -1,0 +1,10 @@
+Internal ctest changing into directory: /work/build-c-sanitize
+Test project /work/build-c-sanitize
+    Start 1: core_contract
+1/2 Test #1: core_contract ....................   Passed    0.71 sec
+    Start 6: openmp_contract
+2/2 Test #6: openmp_contract ..................   Passed    0.71 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Total Test time (real) =   1.42 sec

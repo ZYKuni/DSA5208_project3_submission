@@ -1,0 +1,35 @@
+[  8%] Building CXX object CMakeFiles/poisson_core.dir/src/kernel_serial.cpp.o
+[  8%] Building CXX object CMakeFiles/poisson_core.dir/src/grid.cpp.o
+[ 12%] Building CXX object CMakeFiles/poisson_core.dir/src/solver_serial.cpp.o
+[ 16%] Building CXX object CMakeFiles/poisson_core.dir/src/cli.cpp.o
+[ 20%] Building CXX object CMakeFiles/poisson_core.dir/src/decomposition.cpp.o
+[ 24%] Linking CXX static library libpoisson_core.a
+[ 24%] Built target poisson_core
+[ 28%] Building CXX object CMakeFiles/poisson_serial.dir/src/serial_main.cpp.o
+[ 32%] Building CXX object CMakeFiles/poisson_mpi_core.dir/src/halo.cpp.o
+[ 36%] Linking CXX executable poisson_serial
+[ 36%] Built target poisson_serial
+[ 40%] Building CXX object CMakeFiles/poisson_mpi_core.dir/src/solver_mpi.cpp.o
+[ 44%] Building CXX object CMakeFiles/poisson_openmp_core.dir/src/kernel_openmp.cpp.o
+[ 48%] Linking CXX static library libpoisson_openmp_core.a
+[ 48%] Built target poisson_openmp_core
+[ 52%] Building CXX object CMakeFiles/test_core.dir/tests/test_core.cpp.o
+[ 56%] Linking CXX static library libpoisson_mpi_core.a
+[ 56%] Built target poisson_mpi_core
+[ 60%] Building CXX object CMakeFiles/test_decomposition.dir/tests/test_decomposition.cpp.o
+[ 64%] Linking CXX executable test_decomposition
+[ 64%] Built target test_decomposition
+[ 68%] Building CXX object CMakeFiles/test_openmp.dir/tests/test_openmp.cpp.o
+[ 72%] Linking CXX executable test_core
+[ 72%] Built target test_core
+[ 76%] Building CXX object CMakeFiles/poisson_mpi.dir/src/mpi_main.cpp.o
+[ 80%] Linking CXX executable test_openmp
+[ 80%] Built target test_openmp
+[ 84%] Building CXX object CMakeFiles/poisson_openmp.dir/src/c_hybrid_main.cpp.o
+[ 88%] Linking CXX executable poisson_mpi
+[ 88%] Built target poisson_mpi
+[ 92%] Building CXX object CMakeFiles/poisson_hybrid.dir/src/hybrid_main.cpp.o
+[ 96%] Linking CXX executable poisson_openmp
+[ 96%] Built target poisson_openmp
+[100%] Linking CXX executable poisson_hybrid
+[100%] Built target poisson_hybrid

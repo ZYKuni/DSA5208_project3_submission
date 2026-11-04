@@ -1,0 +1,34 @@
+[CN-008:2141905] mca_base_component_repository_open: unable to open mca_plm_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141905] mca_base_component_repository_open: unable to open mca_ras_tm: libpbs.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141905] MCW rank 5 bound to socket 1[core 5[hwt 0]]: [][./././././B/./././././././././.]
+[CN-008:2141905] MCW rank 6 bound to socket 1[core 6[hwt 0]]: [][././././././B/././././././././.]
+[CN-008:2141905] MCW rank 7 bound to socket 1[core 7[hwt 0]]: [][./././././././B/./././././././.]
+[CN-008:2141905] MCW rank 8 bound to socket 1[core 8[hwt 0]]: [][././././././././B/././././././.]
+[CN-008:2141905] MCW rank 9 bound to socket 1[core 9[hwt 0]]: [][./././././././././B/./././././.]
+[CN-008:2141905] MCW rank 10 bound to socket 1[core 10[hwt 0]]: [][././././././././././B/././././.]
+[CN-008:2141905] MCW rank 11 bound to socket 1[core 11[hwt 0]]: [][./././././././././././B/./././.]
+[CN-008:2141905] MCW rank 12 bound to socket 1[core 12[hwt 0]]: [][././././././././././././B/././.]
+[CN-008:2141905] MCW rank 13 bound to socket 1[core 13[hwt 0]]: [][./././././././././././././B/./.]
+[CN-008:2141905] MCW rank 14 bound to socket 1[core 14[hwt 0]]: [][././././././././././././././B/.]
+[CN-008:2141905] MCW rank 15 bound to socket 1[core 15[hwt 0]]: [][./././././././././././././././B]
+[CN-008:2141905] MCW rank 0 bound to socket 1[core 0[hwt 0]]: [][B/././././././././././././././.]
+[CN-008:2141905] MCW rank 1 bound to socket 1[core 1[hwt 0]]: [][./B/./././././././././././././.]
+[CN-008:2141905] MCW rank 2 bound to socket 1[core 2[hwt 0]]: [][././B/././././././././././././.]
+[CN-008:2141933] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141905] MCW rank 3 bound to socket 1[core 3[hwt 0]]: [][./././B/./././././././././././.]
+[CN-008:2141934] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141905] MCW rank 4 bound to socket 1[core 4[hwt 0]]: [][././././B/././././././././././.]
+[CN-008:2141935] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141932] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141931] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141936] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141940] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141947] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141951] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141945] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141954] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141943] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141955] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141956] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141959] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)
+[CN-008:2141960] mca_base_component_repository_open: unable to open mca_osc_ucx: libucp.so.0: cannot open shared object file: No such file or directory (ignored)

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "reference": "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/acceptance/mixed_k5/reference.csv",
+  "candidate": "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/flip_rows.csv",
+  "n": 7,
+  "boundary_atol": 0.0,
+  "status": "FAIL",
+  "points": 81,
+  "mismatched_points": 42,
+  "max_abs_error": 1.278673976130537,
+  "worst_coordinate": [
+    2,
+    4
+  ],
+  "absolute_l2_error": 5.114695904522148,
+  "reference_l2": 2.8837910800143463,
+  "relative_l2_error": 1.7736014026705096,
+  "l2_error_kind": "relative",
+  "atol": 1e-10,
+  "rtol": 1e-10,
+  "pass_rule": "all points satisfy abs(candidate-reference) <= atol + rtol*abs(reference)"
+}

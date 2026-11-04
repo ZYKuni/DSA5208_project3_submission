@@ -1,0 +1,34 @@
+{
+  "argv": [
+    "mpiexec",
+    "--map-by",
+    "slot:PE=1",
+    "--bind-to",
+    "core",
+    "--report-bindings",
+    "-n",
+    "16",
+    "/nfs/home/svu/zheke.chen/project3-c-source-af45f5b/build-vanda/poisson_mpi",
+    "--communication",
+    "sendrecv",
+    "--n",
+    "127",
+    "--mode",
+    "converge",
+    "--problem",
+    "continuous-sine",
+    "--iterations",
+    "200000",
+    "--check-every",
+    "20",
+    "--tol",
+    "1e-08"
+  ],
+  "env_overrides": {
+    "OMP_DYNAMIC": "FALSE",
+    "OMP_PLACES": "cores",
+    "OMP_PROC_BIND": "close",
+    "OMP_WAIT_POLICY": "ACTIVE",
+    "OMP_NUM_THREADS": "1"
+  }
+}
