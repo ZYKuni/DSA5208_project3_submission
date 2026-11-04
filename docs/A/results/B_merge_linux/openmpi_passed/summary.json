@@ -1,7 +1,0 @@
-{
-  "status": "PASS",
-  "numerical_cases": 124,
-  "negative_cases": 4,
-  "failures": [],
-  "evidence": "/evidence/build/mpi-validation/run-1ognp6tk/evidence.json"
-}

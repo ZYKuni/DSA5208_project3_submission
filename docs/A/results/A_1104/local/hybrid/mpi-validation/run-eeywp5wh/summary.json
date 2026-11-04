@@ -1,7 +1,0 @@
-{
-  "status": "PASS",
-  "numerical_cases": 124,
-  "negative_cases": 4,
-  "failures": [],
-  "evidence": "/evidence/hybrid/build/mpi-validation/run-eeywp5wh/evidence.json"
-}

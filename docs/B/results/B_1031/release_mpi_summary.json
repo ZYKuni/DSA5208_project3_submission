@@ -1,7 +1,0 @@
-{
-  "status": "PASS",
-  "numerical_cases": 124,
-  "negative_cases": 4,
-  "failures": [],
-  "evidence": "/Users/arlo/.codex/.chatgpt-projects/g-p-6a8abc5cf380819198315d8e9c0d8b45/NUS_DSA5208_project3/build/mpi-validation/run-s6i8j3qm/evidence.json"
-}

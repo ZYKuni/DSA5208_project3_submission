@@ -1,9 +1,0 @@
-{
-  "schema_version": 1,
-  "reference": "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/acceptance/mixed_k5/reference.csv",
-  "candidate": "/Users/yikun_zhao/Documents/DSA5208/project3/docs/A/results/A_1027/fault_detection/nan_value.csv",
-  "n": 7,
-  "boundary_atol": 0.0,
-  "status": "ERROR",
-  "error": "candidate: line 23: field value is not finite"
-}

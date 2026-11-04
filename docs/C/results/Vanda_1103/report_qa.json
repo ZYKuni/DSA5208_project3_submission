@@ -1,9 +1,0 @@
-{
-  "pages": 8,
-  "team_details_checked": true,
-  "rendered_all_pages": true,
-  "visual_review": "All eight pages inspected after embedding Vera fonts; no clipping, overlap or missing glyphs. Charts and tables readable.",
-  "text_and_key_facts_checked": true,
-  "pdf_sha256": "cd013ec235dd4fe6d9c70b6b594067b685110c4fbfc4c53a828f4bc9cab33814",
-  "limitations": "Manual team review, multi-node experiments and additional A-requested combinations remain outstanding."
-}

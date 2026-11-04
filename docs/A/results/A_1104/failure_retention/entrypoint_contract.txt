@@ -1,1 +1,0 @@
-PASS: injected exit 23 preserved; failure log archived; existing output and invalid mode rejected.

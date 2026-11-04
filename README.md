@@ -1,5 +1,7 @@
 # DSA5208 Project 3 - Reproduction Guide
 
+> **Evidence location in this revision:** The `docs/` directory has been removed from the current tree. Historical design notes, AI records, raw Vanda data, and archived verification results remain in commit `19a519d1fbc005689f4dd3eea2d5a63dff560da0`. The sections below that refer to `docs/` describe that archived evidence. Building the solver and running its tests do not require it; rebuilding the report or running `audit_vanda.py` does. Restore it when needed with `git restore --source=19a519d1fbc005689f4dd3eea2d5a63dff560da0 -- docs`.
+
 This submission implements Jacobi iteration for the two-dimensional Poisson equation using serial C++17, MPI, OpenMP, and hybrid MPI + OpenMP. It compares blocking Sendrecv with nonblocking halo exchange, strong and weak scaling, and the balance between MPI ranks and OpenMP threads.
 
 | Team member | Student ID |

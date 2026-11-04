@@ -1,8 +1,0 @@
-cmake	3.25.1-1
-gcc-12	12.2.0-14+deb12u1
-libgomp1:arm64	12.2.0-14+deb12u1
-libopenmpi-dev:arm64	4.1.4-3+b1
-openmpi-bin	4.1.4-3+b1
-python3	3.11.2-1+b1
-python3-matplotlib	3.6.3-1+b1
-python3-reportlab	3.6.12-1+deb12u1
