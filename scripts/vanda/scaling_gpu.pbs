@@ -1,0 +1,36 @@
+#!/bin/bash -l
+#PBS -N pcg-gpu-scaling
+#PBS -q auto
+#PBS -l select=2:ncpus=36:mpiprocs=1:ompthreads=1:ngpus=1:mem=16gb:node_pool=gpu_node
+#PBS -l place=scatter
+#PBS -l walltime=01:00:00
+#PBS -j oe
+set -euo pipefail
+cd "${PBS_O_WORKDIR:?}"
+evidence="$PWD/results/raw/step3-gpu-${PBS_JOBID:?}"
+mkdir -p "$evidence"
+trap 'rc=$?; printf "%s\n" "$rc" > "$evidence/exit_code.txt"' EXIT
+exec > >(tee "$evidence/job.log") 2>&1
+qstat -f "$PBS_JOBID" > "$evidence/scheduler.txt"
+export PCG_MPI_MODULE=nvhpc-hpcx-cuda12/26.1
+source scripts/vanda/env.sh
+module list
+mpicxx --showme
+mpiexec --version
+nvcc --version
+nvidia-smi
+ompi_info --parsable --all | grep mpi_built_with_cuda_support
+arch=$(nvidia-smi --query-gpu=compute_cap --format=csv,noheader | head -n 1 | tr -d '. ')
+[[ "$arch" =~ ^[0-9]+$ ]]
+cmake -S . -B build-step3-gpu -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=mpicxx \
+    -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DENABLE_CUDA=ON \
+    -DBUILD_CLUSTER_SMOKE=ON \
+    "-DCMAKE_CUDA_ARCHITECTURES=$arch" -DCMAKE_CUDA_STANDARD=17 \
+    '-DPCG_MPIEXEC_EXTRA=--bind-to none'
+cmake --build build-step3-gpu --parallel 8
+OMP_NUM_THREADS=2 OMP_PROC_BIND=FALSE ctest --test-dir build-step3-gpu --output-on-failure
+nvcc -std=c++17 -arch="sm_$arch" src/hybrid_cuda/checks/kernel_check.cu -o build-step3-gpu/kernel_check
+build-step3-gpu/kernel_check
+cp build-step3-gpu/compile_commands.json "$evidence/"
+python3 scripts/run_gpu_scaling.py --bin-dir build-step3-gpu/bin --output "$evidence/measurements"
+printf 'STEP3_GPU_COMPLETE\n'

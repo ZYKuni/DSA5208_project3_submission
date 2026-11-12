@@ -1,169 +1,163 @@
-# DSA5208 Project 3 - Reproduction Guide
+# Parallel Conjugate Gradient for the 2D/3D Poisson Equation (MPI + X)
 
-This submission implements Jacobi iteration for the two-dimensional Poisson equation using serial C++17, MPI, OpenMP, and hybrid MPI + OpenMP. It compares blocking Sendrecv with nonblocking halo exchange, strong and weak scaling, and the balance between MPI ranks and OpenMP threads.
+DSA5208 Project 3, AY2026/27 Semester 1, National University of Singapore.
 
-| Team member | Student ID |
+| Name | Student ID | Main responsibility |
+| --- | --- | --- |
+| Yikun Zhao | A0353894M | Serial and MPI solvers, validation, report |
+| Jiahao Zhou | A0354090J | MPI + OpenMP and MPI + CUDA solvers |
+| Zheke Chen | A0356140M | Cluster builds, experiments on Vanda, analysis and figures |
+
+**Report:** [`DSA5208_Project3_Report.pdf`](DSA5208_Project3_Report.pdf). It covers the algorithm,
+the parallelisation design, validation, serial/MPI/MPI+X scaling results and the discussion.
+
+## Problem
+
+We solve -Δu = f on the unit square (2D) and the unit cube (3D), with u = 0 on the boundary.
+A 5-point (2D) or 7-point (3D) finite-difference stencil gives a sparse symmetric
+positive-definite system Au = b, which we solve with the conjugate gradient (CG) method.
+A is never stored: each matrix-vector product is a stencil sweep (matrix-free).
+The right-hand side comes from the manufactured solution u(x) = Π x_k (1 − x_k) e^{x_k}, so
+the discretisation error can be measured exactly. All input data are generated synthetically
+by each process for the grid points it owns. No BLAS or LAPACK is used.
+
+## Contents
+
+```
+DSA5208_Project3_Report.pdf  final report
+CMakeLists.txt               build configuration
+include/                     shared headers: CLI parameters, timers, CSV format, model problem,
+                             grid block + stencil kernels (grid.hpp), CG driver + Backend interface (cg.hpp)
+src/common/                  CG driver (cg.cpp), kernels, CLI parser, CSV writer
+src/serial/                  serial backend
+src/mpi/                     pure MPI backend: domain decomposition, halo exchange, reductions
+src/hybrid_omp/              MPI + OpenMP backend
+src/hybrid_cuda/             MPI + CUDA solver; checks/kernel_check.cu tests the GPU kernels
+apps/                        one main() per executable
+tests/                       validation tests (run by ctest)
+scripts/build.sh             configure, build and test
+scripts/vanda/               Vanda environment and the PBS jobs used for all reported measurements
+scripts/run_*_scaling.py     experiment drivers called by the PBS jobs
+scripts/smoke/               small CPU/GPU placement and CUDA-aware MPI probes run before the experiments
+```
+
+## Requirements
+
+- C++17 compiler and CMake >= 3.18
+- An MPI implementation providing `mpicxx` (Open MPI, MPICH or NVIDIA HPC-X)
+- OpenMP support in the compiler (for `poisson_omp`)
+- CUDA toolkit and an NVIDIA GPU (only for `poisson_cuda`)
+- Python 3.9+ (only for the experiment drivers)
+
+## Build
+
+```bash
+bash scripts/build.sh                     # serial + MPI + MPI/OpenMP, then runs the tests
+PCG_CUDA_ARCH=86 bash scripts/build.sh cuda   # also MPI/CUDA (86 = compute capability of an A40)
+```
+
+`PCG_CUDA_ARCH` must be the compute capability of the GPU you run on
+(`nvidia-smi --query-gpu=compute_cap --format=csv,noheader`, without the dot).
+Or build manually:
+
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=mpicxx [-DENABLE_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=86]
+cmake --build build -j
+ctest --test-dir build --output-on-failure
+```
+
+Executables are written to `build/bin/`.
+
+On Vanda, compile on a compute node (login nodes are virtual machines):
+
+```bash
+qsub -I -l select=1:ncpus=4 -l walltime=00:20:00
+cd $PBS_O_WORKDIR
+source scripts/vanda/env.sh               # CMake + NVIDIA HPC SDK 26.1 / HPC-X (Open MPI 4.1)
+bash scripts/build.sh
+```
+
+## Run
+
+All executables accept the same options:
+
+```
+--dim 2|3               problem dimension (default 2)
+--n N                   interior grid points per side (default 256)
+--tol T                 relative residual tolerance (default 1e-8)
+--maxit M               maximum CG iterations (default 10000)
+--decomp slab|cart      MPI decomposition (default cart)
+--halo block|overlap    halo exchange: blocking, or overlapped with interior computation (default block)
+--cg std|pipe           standard CG, or single-reduction (Chronopoulos-Gear) CG (default std)
+--repeat R              repeat the solve R times and report the fastest (default 1)
+--csv FILE              append one result row to FILE
+--verbose               print the residual history
+```
+
+Examples:
+
+```bash
+build/bin/poisson_serial --dim 2 --n 512
+mpirun -np 16 build/bin/poisson_mpi --dim 3 --n 256 --decomp cart --halo overlap
+OMP_NUM_THREADS=4 mpirun -np 4 --map-by slot:PE=4 build/bin/poisson_omp --dim 3 --n 256
+PCG_CUDA_HALO=staged mpirun -np 2 build/bin/poisson_cuda --dim 3 --n 256   # one GPU per rank
+```
+
+For hybrid runs, give each rank its own set of cores (Open MPI: `--map-by ppr:R:node:PE=T`, or
+`--bind-to none` with `OMP_PLACES=cores OMP_PROC_BIND=close`); the default `--bind-to core` puts
+all threads of a rank on one core. For `poisson_cuda`, `PCG_CUDA_HALO=staged|device` selects
+whether halo faces are copied to host memory before MPI or passed to MPI as device pointers
+(CUDA-aware MPI). The 2D CG needs about 3n iterations, so raise `--maxit` for n > 3300.
+
+Each run prints a summary and, with `--csv`, appends one row:
+
+```
+impl,dim,n,ranks,threads,gpus,decomp,halo,cg,iters,t_total,t_stencil,t_halo,t_reduce,rel_res,err_l2
+```
+
+Times are in seconds, cover the CG iterations only (not setup, validation or I/O), and are the
+maximum over ranks. `t_stencil`, `t_halo` and `t_reduce` are the per-phase maxima (computation,
+neighbour communication, global reductions); they can come from different ranks and need not add
+up to `t_total`. `rel_res` is the true residual ‖b − Ax‖/‖b‖ recomputed after the solve, and
+`err_l2` is the discrete L2 error against the manufactured solution.
+
+## Validation
+
+`ctest --test-dir build --output-on-failure` runs seven test groups:
+
+| Test | What it checks |
 | --- | --- |
-| Yikun Zhao | A0353894M |
-| Jiahao Zhou | A0354090J |
-| Zheke Chen | A0356140M |
+| `common` | CLI parser, CSV format, manufactured solution |
+| `serial` | A is symmetric positive definite; err_l2 falls as O(h²) (observed order 2.00 in 2D and 3D); standard and single-reduction CG give the same iterations and error |
+| `mpi_np1`, `mpi_np3`, `mpi_np4` | every `--decomp` × `--halo` × `--cg` combination, 2D and 3D, uneven splits and one-point-thick blocks: same iteration count as serial (±1), same err_l2 (1e-6 relative), and every grid point equal to the serial solution |
+| `omp_np1`, `omp_np2` | the same checks for the MPI+OpenMP solver with 2 threads per rank |
 
-Read **[report.pdf](report.pdf)** for the algorithm, parallel design, correctness results, Vanda runtimes, scaling analysis, limitations, and AI disclosure.
+With Open MPI on a machine with fewer cores than ranks, configure with
+`-DPCG_MPIEXEC_EXTRA="--oversubscribe"`. The CUDA kernels (stencil, dot product, halo-face
+packing) are checked against CPU results on a GPU node with:
 
-Repository: <https://github.com/ZYKuni/DSA5208_project3_submission>.
-
-Run commands from the directory containing this README. Build and test output directories should be new. The sections below cover local builds and verification. New cluster measurements require access to Vanda and an allocation under your own account.
-
-## 1. Package contents
-
-```text
-DSA5208_project3_submission/
-├── report.pdf                     # Sole final report
-├── report_facts.json              # Report statistics and PDF hash
-├── README.md                      # This guide
-├── CMakeLists.txt
-├── requirements.txt               # Validation uses Python standard library only
-├── requirements-analysis.txt      # Optional analysis dependencies
-├── requirements-report.txt        # Pinned report-generation dependencies
-├── src/                           # Four executable entry points and solver kernels
-├── include/                       # Shared configuration, grid, and kernel interfaces
-├── tests/                         # C++ contracts, independent oracles, CSV fixtures
-├── configs/                       # Acceptance and experiment configurations
-├── scripts/                       # Validation, collection, statistics, report generation
-│   ├── cluster/                   # Vanda PBS scripts and experiment preparation
-│   └── dev/                       # Optional development-container recipe
-├── report/
-│   ├── source/team.json           # Member names, IDs, repository URL
-│   └── figures/Vanda_1103/        # Report figures
-├── .github/workflows/             # Four-mode Linux GCC workflow
-└── SUBMISSION_MANIFEST.json       # Per-file SHA256 and source provenance
+```bash
+nvcc -std=c++17 -arch=sm_86 src/hybrid_cuda/checks/kernel_check.cu -o kernel_check && ./kernel_check
 ```
 
-Git metadata, virtual environments, local build trees, and historical progress PDFs are excluded.
+## Reproducing the measurements
 
-## 2. Requirements and supported environments
+All measurements in the report were produced on the Vanda cluster by two PBS jobs, submitted from
+this directory:
 
-- C++17 compiler, CMake >= 3.16, and Make or another CMake build backend.
-- Python >= 3.8 for validation and collection. No third-party Python package is needed for these operations.
-- Open MPI development libraries and `mpiexec` for MPI and hybrid targets.
-- An OpenMP-capable compiler/runtime for OpenMP and hybrid targets. GCC supplies this on Linux; macOS Apple Clang does not provide OpenMP by default.
-- Report generation: Python >= 3.10 and the packages in `requirements-report.txt` (the recorded rebuild used Python 3.12).
-
-Ubuntu example:
-
-```sh
-sudo apt-get update
-sudo apt-get install -y gcc g++ cmake make python3 openmpi-bin libopenmpi-dev
+```bash
+chmod +x scripts/vanda/pbs_rsh.py                  # used by mpiexec as the remote launcher
+qsub -P YOUR_PROJECT scripts/vanda/scaling_cpu.pbs   # 4 exclusive 72-core nodes: serial sweep, strong/weak scaling to 288/256 cores, MPI variants, MPI x OpenMP splits
+qsub -P YOUR_PROJECT scripts/vanda/scaling_gpu.pbs   # 2 A40 nodes: 1 and 2 GPUs, staged and device halo transport
 ```
 
-On macOS, a serial build can use Apple Clang. For OpenMP/hybrid, use a GCC or LLVM installation that supports OpenMP and a compatible MPI installation; select its actual C++ compiler path with `-DCMAKE_CXX_COMPILER=/path/to/g++`. Do not reuse a CMake build directory after changing the compiler.
+Each job builds the code, runs the tests, then runs every configuration as one warm-up plus three
+independent processes. Every run must have a true residual below 1e-8 and match a serial run on the
+same mesh in iteration count and error. Inter-node CPU communication used Open MPI's TCP transport
+(`--mca pml ob1 --mca btl self,vader,tcp`, HCOLL/UCC disabled) with each rank pinned to its own
+physical cores (`scripts/vanda/pin_rank.py`).
 
-Vanda timing environment: GCC 12.3.0, Open MPI 4.1.8, CMake 3.26.3, Release `-O3 -DNDEBUG`, one node, 16 assigned physical cores of an Intel Xeon Platinum 8452Y. Numerical verification is portable; performance conclusions apply to that allocation, placement, and workload.
+## Use of AI
 
-## 3. Quick verification: serial
-
-```sh
-cmake -S . -B build-serial -DCMAKE_BUILD_TYPE=Release \
-  -DENABLE_MPI=OFF -DENABLE_OPENMP=OFF
-cmake --build build-serial --parallel 2
-ctest --test-dir build-serial --output-on-failure
-python3 scripts/run_acceptance.py --exe build-serial/poisson_serial \
-  --config configs/acceptance_serial.json --output build-serial-acceptance
-```
-
-Expected: 6 CTest groups pass; the standalone acceptance suite passes 14 cases. CTest groups include additional numerical, CLI, oracle, and tooling checks; these are not six individual numerical examples.
-
-A single solve:
-
-```sh
-build-serial/poisson_serial --n 127 --mode converge --problem continuous-sine \
-  --iterations 200000 --tol 1e-8 --check-every 20
-```
-
-The program emits one JSON object with the actual iteration count, residual, errors, and solve time. Fixed mode performs exactly the requested number of sweeps. Convergence mode may stop early. A fixed-sweep large-grid performance run is not a converged PDE solution.
-
-## 4. MPI, OpenMP, and hybrid builds
-
-Both feature switches are explicit to avoid cached settings:
-
-```sh
-# MPI only
-cmake -S . -B build-mpi -DCMAKE_BUILD_TYPE=Release \
-  -DENABLE_MPI=ON -DENABLE_OPENMP=OFF
-cmake --build build-mpi --parallel 2
-
-# OpenMP only (select an OpenMP-capable compiler as needed)
-cmake -S . -B build-openmp -DCMAKE_BUILD_TYPE=Release \
-  -DENABLE_MPI=OFF -DENABLE_OPENMP=ON
-cmake --build build-openmp --parallel 2
-
-# Hybrid: builds all four executables
-cmake -S . -B build-hybrid -DCMAKE_BUILD_TYPE=Release \
-  -DENABLE_MPI=ON -DENABLE_OPENMP=ON
-cmake --build build-hybrid --parallel 2
-```
-
-For correctness runs, set:
-
-```sh
-export OMP_DYNAMIC=FALSE
-export OMP_WAIT_POLICY=PASSIVE
-ctest --test-dir build-mpi --output-on-failure
-ctest --test-dir build-openmp --output-on-failure
-ctest --test-dir build-hybrid --output-on-failure
-```
-
-Expected CTest groups: MPI 7/7, OpenMP 8/8, hybrid 9/9. The current mixed matrix checks 390 oracle cases plus five negative cases; the MPI-only matrix checks 124 cases plus four negative cases. These suites overlap and should not be added into a count of independent mathematical problems. The historical Vanda pilot used 294 mixed cases; the later 390-case expansion was verified separately on Linux/CI.
-
-The tests need permission to start up to four MPI ranks and use multiple threads. On a small Open MPI workstation or CI runner, correctness-only oversubscription can be enabled with `OMPI_MCA_rmaps_base_oversubscribe=1` and `OMPI_MCA_hwloc_base_binding_policy=none`. These settings are not suitable for reproducing the formal timing setup. Do not run MPI as root on a normal workstation.
-
-Example executions:
-
-```sh
-OMP_NUM_THREADS=4 build-openmp/poisson_openmp --n 127 --iterations 100 \
-  --mode fixed --problem discrete-mixed
-
-mpiexec -n 3 build-mpi/poisson_mpi --n 127 --iterations 100 \
-  --mode fixed --problem discrete-mixed --communication sendrecv
-
-OMP_NUM_THREADS=2 mpiexec -n 2 build-hybrid/poisson_hybrid --n 127 \
-  --iterations 100 --mode fixed --problem discrete-mixed --communication overlap
-```
-
-`poisson_mpi` always uses one thread per rank. `OMP_NUM_THREADS` selects threads only for OpenMP-enabled executables. Hybrid MPI calls run on the initializing thread with `MPI_THREAD_FUNNELED`; actual ranks and thread teams are checked. The number of ranks cannot exceed N.
-
-For Linux, `bash scripts/verify_linux.sh NEW_DIRECTORY MODE` provides the complete build, CTest, serial acceptance, environment capture, source/binary hashes, and failure-log retention. MODE is `serial`, `mpi`, `openmp`, or `hybrid`; the output directory must not exist. The same entry point is used by the four-mode GitHub workflow.
-
-## 5. Full-grid serial/parallel comparison
-
-```sh
-mkdir -p build-grid-check
-build-serial/poisson_serial --n 7 --iterations 5 --problem discrete-mixed \
-  --solution build-grid-check/serial.csv
-mpiexec -n 3 build-mpi/poisson_mpi --n 7 --iterations 5 \
-  --problem discrete-mixed --communication overlap \
-  --solution build-grid-check/mpi.csv
-python3 scripts/compare_grids.py --n 7 \
-  --reference build-grid-check/serial.csv --candidate build-grid-check/mpi.csv \
-  --report build-grid-check/comparison.json
-```
-
-The comparator validates all `(N+2)^2` points, unique coordinates, finite values, and zero physical boundaries. It reports maximum absolute error and relative L2 error; passing requires every point to satisfy `abs(candidate-reference) <= 1e-10 + 1e-10*abs(reference)`. Independent dense and modal references in the test suites avoid validating parallel code solely against the serial implementation.
-
-## 6. Report figures and measurement notes
-
-`report.pdf` and the figures in `report/figures/Vanda_1103/` were generated by `scripts/build_cluster_report.py` from the raw Vanda job output (performance job 1514382, validation job 1514325). That raw output is not included in this repository, so the report builder and `scripts/audit_vanda.py` cannot be rerun from this tree alone; the measured values they produce are reported in `report.pdf` and `report_facts.json`.
-
-No timing sample was replaced or removed. Single-rank MPI and some thread layouts show substantial variability. Communication ranges overlap; the data do not establish a robust benefit from nonblocking exchange. All measurements are single-node CPU experiments.
-
-## 7. New Vanda experiments (optional; not needed to inspect the submission)
-
-Generic entry points are `scripts/cluster/vanda_cpu_pilot.pbs`, `vanda_cpu_measure.pbs`, and `prepare_vanda_experiments.py`. Review account paths, PBS allocation, pilot job ID, MPI placement, and uploaded helper filenames before submission under your own account. The historical measurement script refers to an uploaded helper named `prepare_vanda_experiments_v3.py`; create that copy if reusing it.
-
-Formal measurements used ACTIVE OpenMP waiting, core binding, verified nonoverlapping physical-core placement, one warmup, and five measured repetitions. Runtime excludes initialization, process startup, gathering, and file I/O, while including halo exchanges and scheduled convergence reductions. Never interpret workstation verification times as new Vanda measurements.
-
-## 8. File integrity and AI usage
-
-`SUBMISSION_MANIFEST.json` lists every delivered file except itself, with SHA256 hashes and preparation provenance. The folder is runnable without Git or an internet connection once build dependencies are installed.
-
-AI usage is disclosed in the AI usage section of `report.pdf`. The report uses actual recorded Vanda outputs.
+Generative AI tools (Anthropic Claude and OpenAI Codex) assisted in drafting code, tests, job
+scripts and the report; all output was reviewed, tested and validated by the authors.

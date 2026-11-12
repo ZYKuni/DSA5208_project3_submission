@@ -1,0 +1,31 @@
+#!/bin/bash -l
+# Submit from the source root: qsub -P YOUR_PROJECT [-v SUITE=pilot] ...
+#PBS -N pcg-cpu-scaling
+#PBS -q auto
+#PBS -l select=4:ncpus=72:mpiprocs=72:ompthreads=1:mem=64gb:node_pool=cpu_node
+#PBS -l place=scatter:excl
+#PBS -l walltime=03:00:00
+#PBS -j oe
+set -euo pipefail
+cd "${PBS_O_WORKDIR:?}"
+evidence="$PWD/results/raw/step3-cpu-${PBS_JOBID:?}"
+mkdir -p "$evidence"
+trap 'rc=$?; printf "%s\n" "$rc" > "$evidence/exit_code.txt"' EXIT
+exec > >(tee "$evidence/job.log") 2>&1
+qstat -f "$PBS_JOBID" > "$evidence/scheduler.txt"
+pbsnodes -a -F json > "$evidence/nodes.json"
+export PCG_MPI_MODULE=nvhpc-hpcx-cuda12/26.1
+source scripts/vanda/env.sh
+module list
+mpicxx --showme
+mpiexec --version
+lscpu
+cmake -S . -B build-step3-cpu -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=mpicxx \
+    -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DENABLE_CUDA=OFF -DBUILD_CLUSTER_SMOKE=ON \
+    '-DPCG_MPIEXEC_EXTRA=--bind-to none'
+cmake --build build-step3-cpu --parallel 8
+OMP_NUM_THREADS=2 OMP_PROC_BIND=FALSE ctest --test-dir build-step3-cpu --output-on-failure
+cp build-step3-cpu/compile_commands.json "$evidence/"
+python3 scripts/run_cpu_scaling.py --bin-dir build-step3-cpu/bin \
+    --output "$evidence/measurements" --suite "${SUITE:-full}"
+printf 'STEP3_CPU_COMPLETE\n'
